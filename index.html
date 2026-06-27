@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  h1,h2,h3,h4,h5,p,li{text-wrap:pretty}
+  ::selection{background:#B08968;color:#420A17}
+  @keyframes uq-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes uq-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  @keyframes uq-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  @keyframes uq-spin-rev{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="background:#F3EBD8;color:#3A2418;font-family:'Manrope',system-ui,sans-serif;line-height:1.65;overflow-x:hidden;position:relative">
+
+  <!-- ===================== HERO (burgundy) ===================== -->
+  <div style="position:relative;background:radial-gradient(120% 90% at 50% 18%,#5A1422 0%,#420A17 45%,#320812 100%);color:#F3EBD8;overflow:hidden">
+    <sc-if value="{{ showArches }}" hint-placeholder-val="{{ true }}">
+    <svg width="100%" height="100%" viewBox="0 0 1440 1100" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;pointer-events:none;opacity:.5">
+      <g fill="none" stroke="rgba(176,137,104,.22)" stroke-width="1.3">
+        <path d="M120 1100 V300 a190 190 0 0 1 380 0 V1100"></path>
+        <path d="M560 1100 V230 a240 240 0 0 1 480 0 V1100"></path>
+        <path d="M1080 1100 V330 a160 160 0 0 1 320 0 V1100"></path>
+      </g>
+    </svg>
+    </sc-if>
+
+    <div style="position:relative;z-index:1">
+      <!-- NAV -->
+      <header style="max-width:1180px;margin:0 auto;padding:26px 28px;display:flex;align-items:center;gap:24px">
+        <a href="#" style="font-family:'Playfair Display',serif;font-weight:600;font-size:25px;letter-spacing:.5px;color:#F3EBD8;text-decoration:none">Uniqueate</a>
+        <nav style="display:flex;gap:30px;margin-left:auto;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:500">
+          <a href="#cases" style="text-decoration:none;color:#E7D2C6">Кейсы</a>
+          <a href="#formats" style="text-decoration:none;color:#E7D2C6">Услуги</a>
+          <a href="#about" style="text-decoration:none;color:#E7D2C6">Обо мне</a>
+          <a href="#team" style="text-decoration:none;color:#E7D2C6">Команда</a>
+          <a href="#faq" style="text-decoration:none;color:#E7D2C6">FAQ</a>
+        </nav>
+        <a href="#final" style="background:#B08968;color:#420A17;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 26px;border-radius:2px" style-hover="background:#c79c78">Обсудить проект</a>
+      </header>
+
+      <!-- HERO BODY -->
+      <section style="padding:24px 28px 60px;text-align:center">
+        <div style="max-width:1180px;margin:0 auto">
+          <div data-hero style="font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:#CDA892;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap">
+            <span style="color:#B08968">[</span>&nbsp;Международная маркетинговая команда · СНГ · Израиль · Мир&nbsp;<span style="color:#B08968">]</span>
+          </div>
+
+          <h1 data-hero style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(52px,11vw,128px);line-height:.92;color:#F3EBD8;letter-spacing:-.015em;margin:14px 0 2px;overflow-wrap:break-word">HI, <em style="font-style:italic;font-weight:500;color:#CFA98C">we are</em> Uniqueate</h1>
+          <div data-hero style="font-family:'Caveat',cursive;font-size:clamp(28px,4vw,44px);color:#B08968">[ Юникейт ]</div>
+
+          <div style="display:flex;align-items:flex-end;justify-content:center;gap:clamp(8px,3vw,40px);flex-wrap:nowrap;margin-top:18px">
+            <sc-if value="{{ showCallouts }}" hint-placeholder-val="{{ true }}">
+            <div data-hero style="flex:1 1 220px;max-width:280px;display:flex;flex-direction:column;gap:84px;padding-bottom:54px;text-align:right">
+              <div style="position:relative;font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#EBD8CC;line-height:1.6">
+                Маркетинг, при котором инвестиции приносят прибыль
+              </div>
+              <div style="position:relative;font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#EBD8CC;line-height:1.6">
+                16+ ниш · с 2019 · кейсы в деньгах
+              </div>
+            </div>
+            </sc-if>
+
+            <div data-hero style="position:relative;width:min(440px,82vw);flex:0 0 auto">
+              <img src="images/hero-cut.png" alt="Катерина Гуревич, основатель Uniqueate" style="width:100%;height:auto;display:block">
+            </div>
+
+            <sc-if value="{{ showCallouts }}" hint-placeholder-val="{{ true }}">
+            <div data-hero style="flex:1 1 220px;max-width:280px;display:flex;flex-direction:column;justify-content:center;padding-bottom:120px;text-align:left">
+              <div style="position:relative;font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#EBD8CC;line-height:1.6">
+                Берём весь маркетинг на себя — от стратегии до заявок
+              </div>
+            </div>
+            </sc-if>
+          </div>
+
+          <p data-hero style="font-family:'Playfair Display',serif;font-size:clamp(21px,2.9vw,32px);line-height:1.3;color:#F3EBD8;max-width:780px;margin:16px auto 0;font-weight:400"><span style="display:block">Внешний отдел маркетинга, который работает как часы:</span><span style="display:block;color:#CFA98C;font-style:italic;margin-top:4px">стратегия → поток заявок → рост выручки</span></p>
+
+          <div data-hero style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:32px">
+            <a href="#final" style="background:#B08968;color:#420A17;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:18px 40px;border-radius:2px" style-hover="background:#c79c78">Обсудить проект</a>
+            <span style="font-size:12.5px;color:#CDA892;letter-spacing:.3px">Ответим за 30 минут</span>
+          </div>
+
+          <!-- numbered stat band -->
+          <div data-hero style="margin-top:48px;border-top:1px solid rgba(176,137,104,.4);border-bottom:1px solid rgba(176,137,104,.4);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
+            <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="4">
+              <div style="padding:20px 18px;border-right:1px solid rgba(176,137,104,.22);text-align:left">
+                <div style="font-family:'Manrope';font-size:11px;letter-spacing:2px;color:#B08968;font-weight:600">[ {{ s.n }} ]</div>
+                <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,23px);color:#F3EBD8;margin-top:6px;line-height:1.2">{{ s.v }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ===================== DIFFERENCES (staggered cascade on burgundy) ===================== -->
+  <section style="background:#420A17;color:#F3EBD8;padding:96px 28px 110px;position:relative;overflow:hidden">
+    <!-- pearl-on-orbits doodle (brand motif) -->
+    <div style="position:absolute;right:-40px;top:90px;width:min(420px,40vw);pointer-events:none">
+      <svg viewBox="0 0 240 360" width="100%" fill="none">
+        <defs>
+          <radialGradient id="uqPearl" cx="38%" cy="32%" r="72%">
+            <stop offset="0%" stop-color="#FFFDF7"></stop>
+            <stop offset="42%" stop-color="#F1E3CC"></stop>
+            <stop offset="100%" stop-color="#C9A87E"></stop>
+          </radialGradient>
+        </defs>
+        <g stroke="rgba(176,137,104,.4)" stroke-width="1.4">
+          <ellipse cx="130" cy="170" rx="46" ry="46"></ellipse>
+          <ellipse cx="130" cy="170" rx="84" ry="84"></ellipse>
+          <ellipse cx="130" cy="170" rx="122" ry="122"></ellipse>
+        </g>
+        <!-- orbiting dots -->
+        <g style="transform-origin:130px 170px;animation:uq-spin 22s linear infinite">
+          <circle cx="130" cy="48" r="6" fill="#B08968"></circle>
+        </g>
+        <g style="transform-origin:130px 170px;animation:uq-spin-rev 30s linear infinite">
+          <circle cx="214" cy="170" r="5" fill="#CFA98C"></circle>
+        </g>
+        <g style="transform-origin:130px 170px;animation:uq-spin 14s linear infinite">
+          <circle cx="84" cy="170" r="4" fill="#E7D2C6"></circle>
+        </g>
+        <!-- pearl -->
+        <circle cx="130" cy="170" r="34" fill="url(#uqPearl)"></circle>
+        <ellipse cx="120" cy="159" rx="10" ry="7" fill="rgba(255,255,255,.6)"></ellipse>
+      </svg>
+    </div>
+
+    <div style="max-width:1180px;margin:0 auto;position:relative">
+      <div style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#CFA98C;font-weight:600;margin-bottom:14px">[ почему с нами работает ]</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(34px,6vw,72px);line-height:1.02;color:#F3EBD8;margin:0 0 56px;letter-spacing:-.01em;max-width:900px;overflow-wrap:break-word">Наше отличие в деталях, которые вы почувствуете</h2>
+
+      <div style="display:flex;flex-direction:column;gap:22px;max-width:680px">
+        <sc-for list="{{ differences }}" as="d" hint-placeholder-count="4">
+          <div data-reveal data-stagger="{{ d.i }}" style="background:#FBF6EC;border-radius:6px;padding:34px 36px;box-shadow:0 20px 44px rgba(20,4,8,.4);transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-5px);box-shadow:0 28px 56px rgba(20,4,8,.5)">
+            <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(20px,2.6vw,26px);line-height:1.2;margin:0 0 10px;color:#420A17;overflow-wrap:break-word">{{ d.n }}. {{ d.title }}</h3>
+            <p style="font-size:15.5px;color:#6f5f4d;margin:0;line-height:1.65;overflow-wrap:break-word">{{ d.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CASES (image cards) ===================== -->
+  <section id="cases" style="padding:90px 28px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="text-align:center;max-width:820px;margin:0 auto 52px">
+        <div style="display:flex;justify-content:center;margin-bottom:12px"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"><defs><radialGradient id="pCa" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FFFDF7"></stop><stop offset="42%" stop-color="#F1E3CC"></stop><stop offset="100%" stop-color="#C9A87E"></stop></radialGradient></defs><circle cx="17" cy="17" r="12" fill="url(#pCa)"></circle><ellipse cx="13" cy="13" rx="3.6" ry="2.4" fill="rgba(255,255,255,.6)"></ellipse></svg></div>
+        <div style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#B08968;font-weight:600">[ наши кейсы ]</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(38px,6vw,76px);line-height:1;color:#3A2418;margin:8px 0 0;letter-spacing:-.015em;text-transform:uppercase">Кому мы уже помогли</h2>
+      </div>
+      <div style="display:flex;justify-content:flex-end;margin-bottom:14px"><span style="font-family:'Manrope';font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:#B08968;font-weight:600">листайте в сторону →</span></div>
+      <div style="display:flex;gap:18px;overflow-x:auto;padding:4px 2px 18px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch">
+        <sc-for list="{{ caseCards }}" as="c" hint-placeholder-count="4">
+          <div data-reveal style="flex:0 0 clamp(280px,78vw,356px);scroll-snap-align:start;position:relative;border-radius:5px;overflow:hidden;min-height:466px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 20px 44px rgba(58,36,24,.16);transition:transform .35s" style-hover="transform:translateY(-5px)">
+            <image-slot id="{{ c.slot }}" shape="rect" fit="cover" placeholder="{{ c.ph }}" src="{{ c.src }}" style="position:absolute;inset:0;width:100%;height:100%;filter:brightness(.74) contrast(1.06) saturate(.92)"></image-slot>
+            <div style="position:absolute;inset:0;background:#420A17;mix-blend-mode:multiply;opacity:.42;pointer-events:none"></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,6,12,.35) 0%,rgba(40,6,12,.12) 34%,rgba(30,5,10,.92) 100%);pointer-events:none"></div>
+            <div style="position:relative;padding:30px 30px 0">
+              <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(24px,3vw,32px);line-height:1.06;color:#F3EBD8;margin:0;text-transform:uppercase;letter-spacing:-.01em;overflow-wrap:break-word">{{ c.title }}</h3>
+            </div>
+            <div style="position:relative;padding:0 30px 28px">
+              <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(22px,2.6vw,30px);color:#F3EBD8;line-height:1.1;margin-bottom:6px;overflow-wrap:break-word">{{ c.metric }}</div>
+              <div style="font-size:13.5px;color:#E7D2C6;margin-bottom:14px;overflow-wrap:break-word">{{ c.sub }}</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px">
+                <sc-for list="{{ c.tags }}" as="t" hint-placeholder-count="2">
+                  <span style="font-size:11.5px;letter-spacing:.4px;color:#F3EBD8;border:1px solid rgba(243,235,216,.45);border-radius:40px;padding:6px 14px">[ {{ t }} ]</span>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- flagship detail strip -->
+      <div data-reveal style="display:flex;flex-wrap:wrap;background:#FBF6EC;border:1px solid rgba(58,36,24,.12);border-radius:5px;overflow:hidden;box-shadow:0 20px 48px rgba(58,36,24,.1);margin-top:18px">
+        <div style="flex:1 1 380px;padding:44px;min-width:0">
+          <div style="font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#B08968;font-weight:700">[ флагманский кейс ]</div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:600;font-size:27px;margin:12px 0 14px;color:#420A17;overflow-wrap:break-word">Ser Clinic — косметология, Тель-Авив</h3>
+          <p style="font-size:15px;color:#8A7860;margin:0 0 10px"><b style="color:#3A2418">Было:</b> один врач, ~90 000 ₪/мес, продавались только губы и ботокс, лиды терялись.</p>
+          <p style="font-size:15px;color:#8A7860;margin:0 0 10px"><b style="color:#3A2418">Сделали:</b> нашли недооценённый сегмент, перепаковали клинику, выстроили воронку курсовых процедур, перевели контент на иврит.</p>
+          <p style="font-size:15px;color:#8A7860;margin:0 0 24px"><b style="color:#3A2418">Результат:</b> 90 000 → 148 000 ₪, распроданы дорогие Profhilo, запись забита — клиент готовит второго врача.</p>
+          <a href="#final" style="background:#420A17;color:#F3EBD8;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;padding:16px 28px;border-radius:2px;display:inline-block" style-hover="background:#2E0710">Узнать результат в вашей нише</a>
+        </div>
+        <div style="flex:1 1 260px;background:linear-gradient(160deg,#FBF6EC,#ECE0C8);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 30px;gap:8px;border-left:1px solid rgba(58,36,24,.12);text-align:center;min-width:0">
+          <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,4.5vw,46px);color:#420A17;line-height:1.05">90 000 ₪</div>
+          <div style="font-size:26px;color:#B08968">↓</div>
+          <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,4.5vw,46px);color:#420A17;line-height:1.05">148 000 ₪</div>
+          <div style="font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#8A7860;margin-top:8px">выручка клиники в месяц</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NICHES ===================== -->
+  <section style="padding:70px 28px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="text-align:center;max-width:820px;margin:0 auto 52px">
+        <div style="font-family:'Caveat',cursive;font-size:32px;color:#420A17">это про вас?</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,5vw,58px);line-height:1.04;color:#3A2418;margin:6px 0 0;letter-spacing:-.01em">С какими бизнесами мы работаем</h2>
+      </div>
+      <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+        <sc-for list="{{ niches }}" as="n" hint-placeholder-count="6">
+          <div data-reveal style="background:#FBF6EC;border:1px solid rgba(58,36,24,.12);border-radius:3px;padding:22px 24px;font-family:'Playfair Display',serif;font-weight:600;font-size:21px;color:#3A2418;display:flex;align-items:center;gap:14px;transition:transform .3s,color .3s;min-width:0" style-hover="transform:translateY(-3px);color:#420A17">
+            <span style="font-family:'Manrope';font-size:12px;font-weight:600;color:#B08968;letter-spacing:1px;flex:0 0 auto">{{ n.n }}</span>
+            <span style="overflow-wrap:break-word">{{ n.t }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="font-family:'Playfair Display',serif;font-size:22px;color:#3A2418;text-align:center;max-width:820px;margin:36px auto 0;overflow-wrap:break-word">За 7 лет — 16+ ниш. С каждым проектом работает специалист с опытом и результатом в вашей сфере.</p>
+    </div>
+  </section>
+
+  <!-- ===================== MANIFEST (circle reveal) ===================== -->
+  <section data-circle-sec style="position:relative;overflow:hidden;background:#F3EBD8;height:clamp(780px,126vh,1200px);display:flex;align-items:center;justify-content:center;padding:40px 28px">
+    <div data-circle style="position:absolute;left:50%;top:50%;width:140vh;height:140vh;border-radius:50%;background:radial-gradient(120% 120% at 50% 35%,#5A1422,#420A17 60%,#320812);transform:translate(-50%,-50%) scale(.12);will-change:transform"></div>
+    <div data-circle-content style="position:relative;text-align:center;max-width:920px;opacity:0;will-change:opacity">
+      <div style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#CFA98C;font-weight:600;margin-bottom:14px">[ Uniqueate ]</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(34px,6vw,72px);line-height:1.02;margin:0;color:#F3EBD8;text-transform:uppercase;letter-spacing:-.015em;overflow-wrap:break-word">Превращаем маркетинг в работающий механизм</h2>
+      <p style="font-size:18px;color:#E7D2C6;margin:20px auto 0;max-width:680px;font-family:'Playfair Display',serif">Берём весь цикл — от стратегии до продаж. Всё, чтобы маркетинг работал как система, без ручного контроля и «надеемся, сработает».</p>
+      <div style="display:flex;gap:clamp(20px,5vw,56px);flex-wrap:wrap;justify-content:center;margin-top:30px">
+        <sc-for list="{{ affirmations }}" as="a" hint-placeholder-count="3">
+          <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(22px,3vw,34px);color:#F3EBD8">{{ a }}<span style="color:#B08968">.</span></div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AGENCY EXPERIENCE (doodle chart) ===================== -->
+  <section style="padding:80px 28px 30px">
+    <div style="max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(24px,5vw,64px);justify-content:center">
+      <div data-reveal style="flex:1 1 360px;min-width:280px;max-width:520px">
+        <svg viewBox="0 0 420 240" width="100%" fill="none" stroke="#420A17" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 18 V210 H400" stroke="rgba(58,36,24,.45)" stroke-width="2"></path>
+          <path d="M30 200 L100 120 L150 168 L210 70 L270 150 L330 50 L392 160"></path>
+          <path d="M100 120 V200 M210 70 V200 M330 50 V200" stroke="rgba(58,36,24,.35)" stroke-width="1.6" stroke-dasharray="5 7"></path>
+          <g stroke-width="2.6"><path d="M214 28 c -16 -2 -18 14 -4 16 c 12 2 10 14 -2 16"></path><path d="M206 78 l 0.5 0.5" stroke-width="5"></path></g>
+        </svg>
+      </div>
+      <div data-reveal style="flex:1 1 300px;min-width:260px;max-width:420px;text-align:left">
+        <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(40px,6vw,68px);line-height:1;color:#420A17">80%</div>
+        <p style="font-size:19px;color:#3A2418;margin:10px 0 0;line-height:1.5;font-family:'Playfair Display',serif">клиентов работают с нами <b>12+ месяцев</b> — потому что видят возврат вложений, а не «отчёты ради отчётов».</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT WE FIX (pains, numbered rows) ===================== -->
+  <section style="padding:90px 28px 70px">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="text-align:center;max-width:820px;margin:0 auto 56px">
+        <div style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#B08968;font-weight:600">[ знакомые сомнения ]</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(32px,4.6vw,52px);line-height:1.06;color:#3A2418;margin:8px 0 0;letter-spacing:-.01em">Сомнения, которые мы снимаем</h2>
+        <p style="font-family:'Playfair Display',serif;font-size:21px;color:#8A7860;margin:12px 0 0">Вы наверняка это уже думали — и у нас есть ответ на каждое.</p>
+      </div>
+      <div>
+        <sc-for list="{{ pains }}" as="p" hint-placeholder-count="5">
+          <div data-reveal style="display:flex;flex-wrap:wrap;gap:clamp(16px,4vw,52px);align-items:baseline;padding:30px 8px;border-top:1px solid rgba(58,36,24,.16)">
+            <div style="flex:0 0 auto;font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,4vw,46px);color:#B08968;line-height:1;width:78px">{{ p.n }}</div>
+            <div style="flex:1 1 300px;min-width:0">
+              <div style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(21px,2.6vw,28px);color:#420A17;line-height:1.25;overflow-wrap:break-word">«{{ p.q }}»</div>
+            </div>
+            <div style="flex:1 1 320px;min-width:0;font-size:16px;color:#6f5f4d;line-height:1.7;overflow-wrap:break-word">{{ p.a }}</div>
+          </div>
+        </sc-for>
+        <div style="border-top:1px solid rgba(58,36,24,.16)"></div>
+      </div>
+      <div data-reveal style="margin-top:30px;background:linear-gradient(150deg,#321912,#1d0d06);color:#E9DDCB;border-radius:5px;padding:32px 36px;font-size:16px;line-height:1.8;box-shadow:0 20px 44px rgba(50,25,18,.3);overflow-wrap:break-word">7+ лет практики · 16+ ниш · 500 000+ ₽ вложено в обучение. Училась у сильнейших: <b style="color:#fff">ElPodium</b>, Алексей Ткачук / Dnative, Gems Marketing, Элеонора Тюрина, LAVA Agency, Алина Острецова, Карина Тагирова.</div>
+    </div>
+  </section>
+
+  <!-- ===================== FORMATS + TOOLS ===================== -->
+  <section id="formats" style="padding:70px 28px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="text-align:center;max-width:820px;margin:0 auto 52px">
+        <div style="display:flex;justify-content:center;margin-bottom:12px"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"><defs><radialGradient id="pFo" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FFFDF7"></stop><stop offset="42%" stop-color="#F1E3CC"></stop><stop offset="100%" stop-color="#C9A87E"></stop></radialGradient></defs><circle cx="17" cy="17" r="12" fill="url(#pFo)"></circle><ellipse cx="13" cy="13" rx="3.6" ry="2.4" fill="rgba(255,255,255,.6)"></ellipse></svg></div>
+        <div style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#B08968;font-weight:600">[ форматы работы ]</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,5vw,58px);line-height:1.04;color:#3A2418;margin:8px 0 0;letter-spacing:-.01em">Три формата — под ваш этап</h2>
+      </div>
+      <div style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+        <div data-reveal style="background:#FBF6EC;border:1px solid rgba(58,36,24,.12);border-radius:3px;padding:38px 34px">
+          <div style="font-family:'Playfair Display',serif;font-size:34px;color:#B08968;font-weight:600">01</div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:600;font-size:23px;margin:12px 0 10px;color:#420A17">Стратегия + консалтинг</h3>
+          <p style="font-size:15px;color:#8A7860;margin:0;line-height:1.65">Разрабатываем стратегию и ведём вас — вы внедряете сами с нашим сопровождением.</p>
+        </div>
+        <div data-reveal style="background:linear-gradient(160deg,#420A17,#2E0710);color:#F3EBD8;border-radius:3px;padding:38px 34px">
+          <div style="font-family:'Playfair Display',serif;font-size:34px;color:#CFA98C;font-weight:600">02</div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:600;font-size:23px;margin:12px 0 10px;color:#F3EBD8">Project management</h3>
+          <p style="font-size:15px;color:#E7D2C6;margin:0;line-height:1.65">Стратегия + мы координируем подрядчиков и контролируем реализацию.</p>
+        </div>
+        <div data-reveal style="background:#FBF6EC;border:1px solid rgba(58,36,24,.12);border-radius:3px;padding:38px 34px">
+          <div style="font-family:'Playfair Display',serif;font-size:34px;color:#B08968;font-weight:600">03</div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:600;font-size:23px;margin:12px 0 10px;color:#420A17">Полный цикл</h3>
+          <p style="font-size:15px;color:#8A7860;margin:0;line-height:1.65">Берём весь маркетинг на себя — от стратегии до потока заявок.</p>
+        </div>
+      </div>
+      <p style="text-align:center;font-family:'Caveat',cursive;font-size:30px;color:#420A17;margin-top:28px">всё начинается со стратегии — это фундамент любого формата</p>
+
+      <div style="margin-top:48px">
+        <h3 style="text-align:center;font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,3.4vw,34px);color:#3A2418;margin:0 0 30px">Чем и как работаем</h3>
+        <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+          <sc-for list="{{ tools }}" as="t" hint-placeholder-count="6">
+            <div data-reveal style="background:#FBF6EC;border:1px solid rgba(58,36,24,.12);border-radius:3px;padding:26px 28px;min-width:0">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+                <span style="font-family:'Manrope';font-size:12px;font-weight:600;letter-spacing:1px;color:#B08968">{{ t.n }}</span>
+                <h4 style="font-family:'Playfair Display',serif;font-weight:600;font-size:20px;margin:0;color:#420A17">{{ t.t }}</h4>
+              </div>
+              <p style="font-size:14.5px;color:#8A7860;margin:0;line-height:1.6;overflow-wrap:break-word">{{ t.d }}</p>
+            </div>
+          </sc-for>
+        </div>
+        <p style="text-align:center;font-size:12.5px;color:#8A7860;margin:22px 0 0">* Meta — организация, деятельность которой запрещена на территории РФ.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RISK FLOW + CARDS ===================== -->
+  <section style="padding:clamp(70px,9vw,110px) 28px;background:radial-gradient(130% 100% at 50% 0%,#5A1422,#2E0710 70%);color:#F3EBD8">
+    <div style="max-width:1120px;margin:0 auto">
+      <div style="text-align:center;max-width:820px;margin:0 auto 56px">
+        <div style="font-family:'Caveat',cursive;font-size:32px;color:#CFA98C">с нами спокойно</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,5vw,58px);line-height:1.04;color:#F3EBD8;margin:6px 0 0;letter-spacing:-.01em">Мы работаем с рисками</h2>
+      </div>
+      <!-- flow as connected timeline -->
+      <div style="position:relative;max-width:920px;margin:0 auto 56px">
+        <div style="position:absolute;left:16%;right:16%;top:8px;height:2px;background:rgba(207,169,140,.32)"></div>
+        <div data-reveal style="position:relative;display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center">
+          <sc-for list="{{ flow }}" as="f" hint-placeholder-count="3">
+            <div style="flex:1 1 200px;min-width:0;text-align:center;padding:0 clamp(14px,2.2vw,28px)">
+              <div style="width:18px;height:18px;border-radius:50%;background:#CFA98C;margin:0 auto 22px;box-shadow:0 0 0 6px rgba(207,169,140,.18)"></div>
+              <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#F3EBD8;margin:0 0 6px">{{ f.t }}</div>
+              <div style="font-size:13.5px;color:#D7BFB4;line-height:1.55;overflow-wrap:break-word">{{ f.d }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <!-- risks as guarantee cards -->
+      <div style="display:grid;gap:clamp(14px,1.6vw,20px);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));max-width:760px;margin:0 auto">
+        <sc-for list="{{ risks }}" as="r" hint-placeholder-count="4">
+          <div data-reveal style="display:flex;gap:16px;align-items:flex-start;padding:24px 24px;background:rgba(243,235,216,.05);border:1px solid rgba(207,169,140,.26);border-radius:12px;min-width:0">
+            <div style="width:34px;height:34px;border-radius:50%;flex:0 0 auto;background:rgba(207,169,140,.16);border:1px solid rgba(207,169,140,.4);display:flex;align-items:center;justify-content:center;color:#CFA98C;font-size:16px">✓</div>
+            <div style="min-width:0">
+              <h3 style="font-family:'Playfair Display',serif;font-weight:600;font-size:19px;margin:0 0 6px;color:#F3EBD8;overflow-wrap:break-word">{{ r.t }}</h3>
+              <p style="font-size:14.5px;color:#D7BFB4;margin:0;line-height:1.6;overflow-wrap:break-word">{{ r.d }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:#F0DCC9;text-align:center;max-width:820px;margin:42px auto 0">Работаем по договору с фиксированными этапами и отчётностью.</p>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" style="padding:90px 28px;position:relative;overflow:hidden">
+    <div style="max-width:1180px;margin:0 auto;position:relative">
+      <div style="text-align:center;max-width:820px;margin:0 auto 52px">
+        <div style="font-family:'Caveat',cursive;font-size:34px;color:#420A17">привет, я Катерина</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(32px,4.6vw,54px);line-height:1.04;color:#3A2418;margin:4px 0 0;letter-spacing:-.01em">Основатель агентства</h2>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,5vw,72px);align-items:center;justify-content:center">
+        <!-- cutout photo over soft blob -->
+        <div data-reveal style="flex:0 0 auto;position:relative;width:min(400px,88vw);display:flex;justify-content:center;align-items:flex-end">
+          <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:108%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(60% 60% at 50% 45%,#F0DEC9,#E7CDB2 60%,rgba(231,205,178,0));"></div>
+          <img src="images/founder-cut.png" alt="Катерина Гуревич" style="position:relative;width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(58,36,24,.28))">
+        </div>
+
+        <!-- quote + facts, no box -->
+        <div data-reveal style="flex:1 1 420px;max-width:560px;min-width:0;border-left:3px solid #B08968;padding-left:clamp(20px,3vw,34px)">
+          <p style="font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(20px,2.5vw,27px);line-height:1.4;color:#3A2418;margin:0 0 26px">«Бизнесу нужны <span style="background:rgba(176,137,104,.32);padding:1px 6px;border-radius:2px">не отчёты ради отчётов, а конкретный результат и прибыль</span>. Я отвечаю за деньги клиента, а не за процесс.»</p>
+          <div style="display:flex;flex-direction:column;gap:13px">
+            <div style="display:flex;gap:12px;font-size:15.5px;color:#6f5f4d;line-height:1.5"><span style="color:#B08968;font-weight:700">—</span><span>7 лет в маркетинге и предпринимательстве, с 2019 года</span></div>
+            <div style="display:flex;gap:12px;font-size:15.5px;color:#6f5f4d;line-height:1.5"><span style="color:#B08968;font-weight:700">—</span><span>Прошла <b style="color:#3A2418">16+ ниш</b> и десятки твёрдых кейсов в деньгах</span></div>
+            <div style="display:flex;gap:12px;font-size:15.5px;color:#6f5f4d;line-height:1.5"><span style="color:#B08968;font-weight:700">—</span><span>Выросла из исполнителя в стратега — понимаю бизнес из боли и роста</span></div>
+            <div style="display:flex;gap:12px;font-size:15.5px;color:#6f5f4d;line-height:1.5"><span style="color:#B08968;font-weight:700">—</span><span>Сильна в стратегии, аналитике и поиске точек роста, которые не видит никто</span></div>
+          </div>
+          <div style="margin-top:26px">
+            <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:#420A17;letter-spacing:.3px">Катерина Гуревич</div>
+            <div style="font-size:11.5px;letter-spacing:1.4px;color:#B08968;font-weight:600;text-transform:uppercase;margin-top:3px">[ основатель · маркетолог-стратег ]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VALUES ===================== -->
+  <section style="padding:90px 28px;background:#F6EEDF">
+    <div style="max-width:1180px;margin:0 auto">
+      <div data-reveal style="text-align:center;max-width:720px;margin:0 auto 54px">
+        <div style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#B08968;font-weight:600;margin-bottom:14px">[ как я работаю ]</div>
+        <h2 style="font-family:'Caveat',cursive;font-weight:600;font-size:clamp(46px,8vw,86px);line-height:.95;color:#420A17;margin:0">мои принципы</h2>
+      </div>
+      <div style="display:grid;gap:1px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));background:rgba(176,137,104,.28);border:1px solid rgba(176,137,104,.28);border-radius:14px;overflow:hidden">
+        <sc-for list="{{ values }}" as="v" hint-placeholder-count="4">
+          <div data-reveal style="background:#FBF6EC;padding:38px 30px;min-width:0;transition:background .3s" style-hover="background:#fff">
+            <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:30px;color:#B08968;margin-bottom:18px">0{{ v.n }}</div>
+            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:22px;color:#3A2418;letter-spacing:-.01em">{{ v.t }}</div>
+            <p style="font-size:14px;color:#6f5f4d;margin:10px 0 0;line-height:1.65;overflow-wrap:break-word">{{ v.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TEAM ===================== -->
+  <section id="team" style="padding:90px 28px clamp(60px,8vw,100px);background:#F6EEDF;color:#3A2418;overflow:hidden">
+    <div style="max-width:1240px;margin:0 auto">
+      <div style="text-align:center;max-width:980px;margin:0 auto 12px">
+        <div style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#B08968;font-weight:600;margin-bottom:10px">[ команда ]</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(34px,6.5vw,80px);line-height:.98;color:#420A17;margin:0;letter-spacing:-.02em;text-transform:uppercase">Команда<br>агентства</h2>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(16px,3vw,40px);margin-top:24px">
+        <!-- LEFT text -->
+        <div data-reveal style="flex:1 1 230px;max-width:300px;min-width:0;order:1">
+          <div style="position:relative;background:#FBF6EC;border-radius:4px;padding:22px 24px;box-shadow:0 14px 30px rgba(58,36,24,.1)">
+            <svg width="22" height="28" viewBox="0 0 30 38" fill="none" style="position:absolute;left:18px;top:-10px"><path d="M15 2 C 8 2 4 7 4 13 C 4 21 15 36 15 36 C 15 36 26 21 26 13 C 26 7 22 2 15 2 Z" fill="#6E1D28"></path><circle cx="15" cy="13" r="5" fill="#F3EBD8"></circle></svg>
+            <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(15px,1.5vw,18px);line-height:1.45;color:#3A2418;margin:6px 0 0">«Мы не гадаем — <span style="background:rgba(176,137,104,.32);padding:1px 5px;border-radius:2px">мы считаем</span>. Каждый канал и каждый рубль на учёте.»</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:22px">
+            <div style="display:flex;gap:10px;font-size:14.5px;color:#6f5f4d;line-height:1.5"><span style="color:#B08968;font-weight:700">—</span><span>Стратегия, поток заявок и сайты-воронки под ключ</span></div>
+            <div style="display:flex;gap:10px;font-size:14.5px;color:#6f5f4d;line-height:1.5"><span style="color:#B08968;font-weight:700">—</span><span>Аналитика на каждом этапе: ER / CPL / ROI</span></div>
+            <div style="display:flex;gap:10px;font-size:14.5px;color:#6f5f4d;line-height:1.5"><span style="color:#B08968;font-weight:700">—</span><span>Держим проекты на результате, а не на процессе</span></div>
+          </div>
+        </div>
+
+        <!-- CENTER figures cluster -->
+        <div data-reveal style="flex:0 1 auto;position:relative;align-self:flex-end;order:2;max-width:96vw">
+          <div style="position:absolute;left:50%;bottom:14px;transform:translateX(-50%);width:90%;height:28px;border-radius:50%;background:radial-gradient(closest-side,rgba(66,10,23,.2),rgba(66,10,23,0))"></div>
+          <div style="position:relative;display:flex;align-items:flex-end;justify-content:center;height:clamp(230px,30vw,360px)">
+            <sc-for list="{{ team }}" as="m">
+              <div style="height:{{ m.h }};margin:0 clamp(-58px,-4.4vw,-30px);position:relative;z-index:{{ m.z }};filter:drop-shadow(0 16px 22px rgba(58,36,24,.22))">{{ m.avatar }}</div>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- RIGHT text -->
+        <div data-reveal style="flex:1 1 230px;max-width:300px;min-width:0;order:3">
+          <div style="position:relative;background:#FBF6EC;border-radius:4px;padding:22px 24px;box-shadow:0 14px 30px rgba(58,36,24,.1)">
+            <svg width="22" height="28" viewBox="0 0 30 38" fill="none" style="position:absolute;left:18px;top:-10px"><path d="M15 2 C 8 2 4 7 4 13 C 4 21 15 36 15 36 C 15 36 26 21 26 13 C 26 7 22 2 15 2 Z" fill="#6E1D28"></path><circle cx="15" cy="13" r="5" fill="#F3EBD8"></circle></svg>
+            <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(15px,1.5vw,18px);line-height:1.45;color:#3A2418;margin:6px 0 0">«Контент и трафик — части одной системы. Задача системы — <span style="background:rgba(176,137,104,.32);padding:1px 5px;border-radius:2px">прибыль, а не охваты</span>.»</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:22px">
+            <div style="display:flex;gap:10px;font-size:14.5px;color:#6f5f4d;line-height:1.5"><span style="color:#B08968;font-weight:700">—</span><span>Reels и Shorts, которые набирают охваты</span></div>
+            <div style="display:flex;gap:10px;font-size:14.5px;color:#6f5f4d;line-height:1.5"><span style="color:#B08968;font-weight:700">—</span><span>Смыслы и визуал — от идеи до публикации</span></div>
+            <div style="display:flex;gap:10px;font-size:14.5px;color:#6f5f4d;line-height:1.5"><span style="color:#B08968;font-weight:700">—</span><span>Говорим на языке аудитории — без клише и фальши</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAME PLATES -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.2vw,16px);margin-top:8px;max-width:680px;margin-left:auto;margin-right:auto">
+        <sc-for list="{{ team }}" as="m">
+          <div data-reveal style="background:linear-gradient(155deg,#5A1422,#2E0710);color:#F3EBD8;border-radius:10px;padding:16px 12px;text-align:center;box-shadow:0 16px 30px rgba(20,4,8,.26)">
+            <h4 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(16px,1.7vw,24px);margin:0;letter-spacing:.5px;text-transform:uppercase">{{ m.name }}</h4>
+            <div style="font-size:9.5px;letter-spacing:.8px;color:#CFA98C;font-weight:600;margin-top:4px">[ {{ m.pos }} ]</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section id="reviews" style="padding:90px 28px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="text-align:center;max-width:760px;margin:0 auto 48px">
+        <div style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#B08968;font-weight:600">[ живые рекомендации ]</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,5vw,58px);line-height:1.04;color:#3A2418;margin:8px 0 0;letter-spacing:-.01em">Не верьте на слово — проверьте сами</h2>
+        <p style="font-family:'Playfair Display',serif;font-size:18px;color:#6f5f4d;margin:14px auto 0">Это реальные клиенты. Напишите любому напрямую и спросите, как мы сработали.</p>
+      </div>
+      <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))">
+        <sc-for list="{{ reviews }}" as="rv" hint-placeholder-count="7">
+          <a data-reveal href="{{ rv.link }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:16px;background:#FBF6EC;border:1px solid rgba(58,36,24,.1);border-radius:12px;padding:18px 20px;text-decoration:none;transition:transform .3s,border-color .3s,box-shadow .3s;min-width:0" style-hover="transform:translateY(-3px);border-color:#B08968;box-shadow:0 14px 30px rgba(58,36,24,.12)">
+            <div style="width:52px;height:52px;border-radius:50%;flex:0 0 auto;background:linear-gradient(150deg,#5A1422,#2E0710);color:#F3EBD8;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:22px">{{ rv.initial }}</div>
+            <div style="min-width:0;flex:1">
+              <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:#3A2418;overflow-wrap:break-word">{{ rv.name }}</div>
+              <div style="font-size:12.5px;color:#8A7860;margin-top:2px;overflow-wrap:break-word">{{ rv.role }}</div>
+              <div style="display:inline-flex;align-items:center;gap:5px;margin-top:9px;font-size:11.5px;letter-spacing:.5px;font-weight:600;color:#420A17">Проверьте сами<span style="color:#B08968">· {{ rv.via }} →</span></div>
+            </div>
+          </a>
+        </sc-for>
+        <a data-reveal href="https://t.me/katyagurevich" target="_blank" rel="noopener" style="display:flex;flex-direction:column;justify-content:center;gap:6px;background:linear-gradient(150deg,#420A17,#2E0710);color:#F3EBD8;border-radius:12px;padding:22px;min-width:0;text-decoration:none;transition:transform .3s" style-hover="transform:translateY(-3px)">
+          <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:19px">Нужен контакт из вашей ниши?</div>
+          <div style="font-size:13px;color:#E7D2C6">Дам прямые контакты клиентов под ваш бизнес →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq" style="padding:50px 28px 90px">
+    <div style="max-width:900px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:44px">
+        <div style="display:flex;justify-content:center;margin-bottom:10px"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"><defs><radialGradient id="pFq" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FFFDF7"></stop><stop offset="42%" stop-color="#F1E3CC"></stop><stop offset="100%" stop-color="#C9A87E"></stop></radialGradient></defs><circle cx="17" cy="17" r="12" fill="url(#pFq)"></circle><ellipse cx="13" cy="13" rx="3.6" ry="2.4" fill="rgba(255,255,255,.6)"></ellipse></svg></div>
+        <div style="font-family:'Caveat',cursive;font-size:32px;color:#420A17">а что если…</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,5vw,58px);line-height:1.04;color:#3A2418;margin:6px 0 0;letter-spacing:-.01em">Частые вопросы</h2>
+      </div>
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <details data-faq style="background:#FBF6EC;border:1px solid rgba(58,36,24,.12);border-radius:4px;margin-bottom:12px;overflow:hidden">
+          <summary style="list-style:none;cursor:pointer;padding:24px 26px;display:flex;justify-content:space-between;gap:18px;align-items:center;font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(18px,2.4vw,22px);color:#3A2418">
+            <span style="overflow-wrap:break-word;min-width:0">{{ f.q }}</span>
+            <span data-mark style="color:#420A17;font-size:28px;flex:0 0 auto;font-weight:300;line-height:1">+</span>
+          </summary>
+          <div style="padding:0 26px 24px;color:#8A7860;font-size:15px;line-height:1.75;overflow-wrap:break-word">{{ f.a }}</div>
+        </details>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section id="reviews" style="padding:90px 28px;background:#F3EBD8;overflow:hidden">
+    <div style="max-width:1180px;margin:0 auto">
+      <div data-reveal style="text-align:center;max-width:820px;margin:0 auto 48px">
+        <div style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#B08968;font-weight:600">[ отзывы ]</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,5vw,58px);line-height:1.04;color:#3A2418;margin:8px 0 0;letter-spacing:-.01em">Что говорят клиенты</h2>
+        <p style="font-family:'Playfair Display',serif;font-size:18px;color:#6f5f4d;margin:14px auto 0;max-width:620px">Не обещания, а слова тех, кто уже доверил нам свой маркетинг.</p>
+      </div>
+      <div data-reveal style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+        <sc-for list="{{ testimonials }}" as="r" hint-placeholder-count="3">
+          <div style="background:#FBF6EC;border-radius:12px;padding:30px 28px;box-shadow:0 16px 38px rgba(58,36,24,.1);display:flex;flex-direction:column;position:relative">
+            <div style="font-family:'Playfair Display',serif;font-size:64px;line-height:.6;color:#B08968;opacity:.45;height:30px">“</div>
+            <div style="display:flex;gap:3px;margin:2px 0 14px;color:#C99A4E;font-size:15px">★★★★★</div>
+            <p style="font-size:16px;color:#3A2418;line-height:1.6;margin:0 0 22px;flex:1">{{ r.text }}</p>
+            <div style="display:flex;align-items:center;gap:13px;border-top:1px solid rgba(176,137,104,.28);padding-top:16px">
+              <div style="width:46px;height:46px;border-radius:50%;flex:0 0 auto;background:linear-gradient(150deg,#5A1422,#2E0710);color:#F3EBD8;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:19px">{{ r.initial }}</div>
+              <div style="min-width:0">
+                <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16.5px;color:#3A2418">{{ r.name }}</div>
+                <div style="font-size:12.5px;color:#B08968;letter-spacing:.3px">{{ r.role }}</div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PEARL REVEAL ===================== -->
+  <section data-pearl-sec style="position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 28%,#5A1422,#2E0710 72%);padding:clamp(80px,13vh,140px) 28px;display:flex;flex-direction:column;align-items:center;text-align:center">
+    <div data-reveal style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#CFA98C;font-weight:600;margin-bottom:clamp(90px,15vh,170px)">[ философия Uniqueate ]</div>
+    <div style="position:relative;width:min(300px,72vw);aspect-ratio:1;margin-bottom:clamp(110px,17vh,200px)">
+      <div data-pearl-glow style="position:absolute;left:50%;top:52%;width:72%;height:72%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,246,232,.75),rgba(255,246,232,0) 68%);opacity:0;will-change:opacity"></div>
+      <div data-pearl style="position:absolute;left:50%;top:52%;width:40%;aspect-ratio:1;transform:translate(-50%,-50%) scale(.5);border-radius:50%;background:radial-gradient(42% 38% at 37% 30%,#FFFFFF,#F6E9D9 44%,#DCC6AB 78%,#B89F81);box-shadow:0 12px 32px rgba(0,0,0,.45),inset -9px -11px 24px rgba(150,120,90,.5),inset 7px 9px 18px rgba(255,255,255,.75);opacity:0;will-change:transform,opacity"></div>
+      <div data-pearl-top style="position:absolute;left:50%;top:3%;width:92%;transform:translate(-50%,0);transform-origin:50% 100%;will-change:transform">
+        <svg viewBox="0 0 300 150" width="100%" fill="none" style="display:block">
+          <defs><linearGradient id="shTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3E7D3"></stop><stop offset="1" stop-color="#C4A985"></stop></linearGradient></defs>
+          <path d="M8 140 C 30 30 120 2 150 2 C 180 2 270 30 292 140 C 220 116 80 116 8 140 Z" fill="url(#shTop)" stroke="#A88A66" stroke-width="2"></path>
+          <path d="M150 138 L 40 44 M150 138 L 96 24 M150 138 L 150 8 M150 138 L 204 24 M150 138 L 260 44" stroke="rgba(168,138,102,.55)" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </div>
+      <div data-pearl-bottom style="position:absolute;left:50%;bottom:3%;width:92%;transform:translate(-50%,0);transform-origin:50% 0%;will-change:transform">
+        <svg viewBox="0 0 300 150" width="100%" fill="none" style="display:block">
+          <defs><linearGradient id="shBot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C4A985"></stop><stop offset="1" stop-color="#EADBC4"></stop></linearGradient></defs>
+          <path d="M8 10 C 30 120 120 148 150 148 C 180 148 270 120 292 10 C 220 34 80 34 8 10 Z" fill="url(#shBot)" stroke="#A88A66" stroke-width="2"></path>
+          <path d="M150 12 L 40 106 M150 12 L 96 126 M150 12 L 150 142 M150 12 L 204 126 M150 12 L 260 106" stroke="rgba(168,138,102,.5)" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </div>
+    </div>
+    <h2 data-pearl-text style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,4vw,46px);line-height:1.12;color:#F3EBD8;margin:0;max-width:760px;opacity:0;transition:opacity .8s ease;will-change:opacity">Мы — жемчужина<br><span style="color:#CFA98C;font-style:italic">в мире маркетинга.</span></h2>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section id="final" style="padding:50px 28px 90px">
+    <div style="max-width:1180px;margin:0 auto;background:radial-gradient(120% 120% at 20% 10%,#5A1422,#420A17 55%,#320812);color:#F3EBD8;border-radius:6px;padding:clamp(44px,6vw,80px);position:relative;overflow:hidden;box-shadow:0 28px 60px rgba(66,10,23,.3)">
+      <svg width="300" height="300" viewBox="0 0 200 200" fill="none" stroke="rgba(243,235,216,.1)" stroke-width="2" style="position:absolute;left:-50px;top:-70px"><path d="M30 200 V90 a70 70 0 0 1 140 0 V200"></path></svg>
+      <div style="position:relative;display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,56px);align-items:center">
+        <div style="flex:1 1 420px;min-width:0">
+        <span style="font-family:'Manrope';font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#CFA98C;font-weight:600">[ бесплатная консультация ]</span>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,4.6vw,52px);line-height:1.1;margin:16px 0 0;max-width:820px;overflow-wrap:break-word">За 30 минут запишем вас на консультацию с маркетологом</h2>
+        <p style="font-size:18px;color:#E7D2C6;margin:18px 0 0;max-width:720px;font-family:'Playfair Display',serif">Разберём, как устроено ваше продвижение, что тормозит рост и куда вы хотите прийти — и сформулируем стратегический вектор.</p>
+        <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap">
+          <a href="https://t.me/katyagurevich" target="_blank" rel="noopener" style="background:#B08968;color:#420A17;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:17px 32px;border-radius:2px" style-hover="background:#c79c78">Написать в Telegram</a>
+          <a href="mailto:gurevichsmm@gmail.com" style="background:transparent;color:#F3EBD8;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:15.5px 30px;border-radius:2px;border:1.5px solid rgba(243,235,216,.6)" style-hover="background:rgba(243,235,216,.12)">Написать на email</a>
+        </div>
+        <div style="font-size:13px;color:#CDA892;margin-top:16px">Telegram @katyagurevich · gurevichsmm@gmail.com</div>
+        </div>
+        <div data-reveal style="flex:1 1 320px;min-width:260px;position:relative;min-height:clamp(300px,34vw,380px)">
+          <div style="position:absolute;top:4%;left:0;width:82%;transform:rotate(-3deg);background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,.42)">
+            <div style="display:flex;align-items:center;gap:9px;padding:10px 14px;background:#ECECEC">
+              <span style="display:flex;gap:5px"><i style="width:9px;height:9px;border-radius:50%;background:#FF5F57;display:block"></i><i style="width:9px;height:9px;border-radius:50%;background:#FEBC2E;display:block"></i><i style="width:9px;height:9px;border-radius:50%;background:#28C840;display:block"></i></span>
+              <span style="font-size:11px;color:#555;font-weight:600;letter-spacing:.3px">Созвон с вами</span>
+            </div>
+            <img src="images/call-a.jpg" alt="Созвон с клиентом" style="width:100%;display:block">
+          </div>
+          <div style="position:absolute;bottom:2%;right:0;width:82%;transform:rotate(3deg);background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,.42)">
+            <div style="display:flex;align-items:center;gap:9px;padding:10px 14px;background:#ECECEC">
+              <span style="display:flex;gap:5px"><i style="width:9px;height:9px;border-radius:50%;background:#FF5F57;display:block"></i><i style="width:9px;height:9px;border-radius:50%;background:#FEBC2E;display:block"></i><i style="width:9px;height:9px;border-radius:50%;background:#28C840;display:block"></i></span>
+              <span style="font-size:11px;color:#555;font-weight:600;letter-spacing:.3px">Созвон с вами</span>
+            </div>
+            <img src="images/call-b.jpg" alt="Созвон с клиентом" style="width:100%;display:block">
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer style="background:#321912;color:#D7C8B6;padding:56px 28px 34px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:34px">
+        <div style="flex:0 1 320px">
+          <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:28px;color:#F3EBD8">Uniqueate</div>
+          <p style="margin:12px 0 0;max-width:300px;font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#E3CFC6">Жемчужина в мире маркетинга. СНГ · Израиль · Мир.</p>
+        </div>
+        <div style="display:flex;gap:48px;flex-wrap:wrap">
+          <div>
+            <b style="display:block;color:#F3EBD8;margin-bottom:12px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:500">Разделы</b>
+            <a href="#cases" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">Кейсы</a>
+            <a href="#formats" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">Услуги</a>
+            <a href="#about" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">Обо мне</a>
+            <a href="#faq" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">FAQ</a>
+          </div>
+          <div>
+            <b style="display:block;color:#F3EBD8;margin-bottom:12px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:500">Контакты</b>
+            <a href="https://t.me/katyagurevich" target="_blank" rel="noopener" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">Telegram @katyagurevich</a>
+            <a href="mailto:gurevichsmm@gmail.com" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">gurevichsmm@gmail.com</a>
+            <a href="#final" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">Обсудить проект</a>
+          </div>
+          <div>
+            <b style="display:block;color:#F3EBD8;margin-bottom:12px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:500">Языки</b>
+            <span style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6">Русский</span>
+            <span style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6">עברית</span>
+            <span style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6">English</span>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(243,235,216,.12);margin-top:34px;padding-top:18px;font-size:12.5px;color:#A8967F">© 2026 Uniqueate</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showCallouts&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showArches&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props || {};
+    return {
+      showCallouts: p.showCallouts ?? true,
+      showArches: p.showArches ?? true,
+
+      heroStats: [
+        { n: '01', v: '7+ лет на рынке' },
+        { n: '02', v: '16+ ниш' },
+        { n: '03', v: 'кейсы в € и ₪' },
+        { n: '04', v: '+64% за 3 месяца' },
+      ],
+
+      differences: [
+        { i: 0, n: '1', title: 'Финучёт встроен в маркетинг', text: 'Не просто «привели 100 лидов», а «лид стоит X, конверсия Y%, прибыль с клиента Z».' },
+        { i: 1, n: '2', title: 'План Б заложен изначально', text: 'Знаем по опыту: всегда нужен запасной аэродром. Канал не даёт динамику — переключаемся по сценарию.' },
+        { i: 2, n: '3', title: 'Работаем с вашим маркетологом, а не вместо него', text: 'Усиливаем, обучаем, передаём систему — чтобы вы не зависели от нас вечно.' },
+        { i: 3, n: '4', title: 'ROMI не обещаем — считаем', text: 'Таблица с формулами, а не красивые слова. Вы видите возврат на каждый вложенный рубль.' },
+      ],
+
+      caseCards: [
+        { slot: 'case-cosmo', ph: 'Фото клиники / процедуры →', src: 'images/case-cosmo.png', title: 'Косметология, Тель-Авив', metric: '+64% выручки', sub: 'за 3 месяца, на фоне военной обстановки', tags: ['Profhilo', 'воронка на иврите'] },
+        { slot: 'case-ortho', ph: 'Фото клиники / улыбки →', src: 'images/case-ortho.png', title: 'Ортодонтия, СПб', metric: '1 029 500 ₽', sub: 'при бюджете 15 000 ₽ · ROMI 7.63', tags: ['Яндекс.Директ', 'Performance'] },
+        { slot: 'case-massage', ph: 'Фото занятия / студии →', src: 'images/case-massage.png', title: 'Школа массажа', metric: '+200 студентов', sub: '+30% выручки за 4 месяца', tags: ['онлайн-школа', 'воронка'] },
+        { slot: 'case-edu', ph: 'Фото детей / класса →', src: 'images/case-edu.png', title: 'Детское образование, Израиль', metric: '88 заявок', sub: '≈ 100 000 ₽ при небольшом бюджете', tags: ['локальный таргет', 'Meta'] },
+      ],
+
+      niches: [
+        { n: '01', t: 'Бьюти и медицина' },
+        { n: '02', t: 'Образование и онлайн-школы' },
+        { n: '03', t: 'Локальный бизнес и услуги' },
+        { n: '04', t: 'E-com и товарка' },
+        { n: '05', t: 'Эксперты и личные бренды' },
+        { n: '06', t: 'Культура и события' },
+      ],
+
+      affirmations: ['Прозрачно', 'Просчитано', 'Предсказуемо'],
+
+      pains: [
+        { n: '01', q: 'Теперь ещё и маркетинг на мне?', a: 'Берём маркетинг полностью на себя. Вы видите результат, а не тонете в задачах.' },
+        { n: '02', q: 'А вдруг это снова слив бюджета?', a: 'Прозрачность на каждом шаге: вы знаете, куда уходят деньги и что они приносят.' },
+        { n: '03', q: 'Говорят сложно, а толку нет', a: 'Говорим на языке денег и продаж, а не непонятных метрик.' },
+        { n: '04', q: 'Почему конкуренты выглядят круче?', a: 'Работаем с позиционированием и уникальностью, а не только с рекламой.' },
+        { n: '05', q: 'Не нужен подрядчик на месяц', a: 'Строим долгосрочное партнёрство и растём вместе с вашим бизнесом.' },
+      ],
+
+      tools: [
+        { n: '01', t: 'Исследования', d: 'Кастдевы, JTBD, 5 стадий прогрева, Miro.' },
+        { n: '02', t: 'Аналитика', d: 'Google Analytics, Яндекс.Метрика, ER / CPL / ROI.' },
+        { n: '03', t: 'Трафик', d: 'Meta*, Google, Яндекс.Директ, VK, TG, TikTok Ads.' },
+        { n: '04', t: 'Контент', d: 'Canva, CapCut — смыслы и визуал.' },
+        { n: '05', t: 'Сайты-воронки', d: 'Tilda, Senler, Bothelp.' },
+        { n: '06', t: 'Управление', d: 'Notion, договор / акт / чек.' },
+      ],
+
+      flow: [
+        { step: 1, t: 'Видим отклонения вовремя', d: 'Еженедельные точки контроля, а не разбор в конце месяца.' },
+        { step: 2, t: 'Переключаемся по плану Б', d: 'Канал не даёт динамику — меняем по согласованному сценарию.' },
+        { step: 3, t: 'Остаёмся в проекте', d: 'Тестируем и оптимизируем, пока не дойдём до ваших целей.' },
+      ],
+
+      risks: [
+        { step: 1, t: 'Точки контроля еженедельно', d: 'Видим отклонения вовремя, а не в конце месяца.' },
+        { step: 2, t: 'План Б по каналам', d: 'Не даёт динамику — переключаемся по согласованному сценарию.' },
+        { step: 3, t: 'Отчёты про деньги', d: 'Вы всегда понимаете, что и зачем мы делаем.' },
+        { step: 4, t: 'Постоянная оптимизация', d: 'Тестируем гипотезы и улучшаем, а не «надеемся, что сработает».' },
+      ],
+
+      values: [
+        { n: 1, t: 'Партнёрство', d: 'Входим как партнёр и относимся к вашим деньгам как к своим.' },
+        { n: 2, t: 'Прозрачность', d: 'Видно, куда уходит каждый рубль и что он приносит.' },
+        { n: 3, t: 'Ответственность', d: 'Отвечаем за результат, а не за процесс.' },
+        { n: 4, t: 'Команда', d: 'Собираем людей по ценностям — без токсичности.' },
+      ],
+
+      team: [
+        { initial: 'Р', name: 'Роза', pos: 'Руководитель реализации', d: 'Маркетолог-стратег. Держит проекты на результате.', img: 'images/team-cut-roza.png', h: '90%', z: 3 },
+        { initial: 'К', name: 'Кристина', pos: 'Трафик и веб', d: 'Отвечает за поток заявок и сайты-воронки.', img: 'images/team-cut-kristina.png', h: '100%', z: 4 },
+        { initial: 'М', name: 'Марина', pos: 'Вертикальный контент', d: 'Reels и Shorts, которые набирают охваты.', img: 'images/team-cut-marina.png', h: '93%', z: 2 },
+      ].map(function (m) {
+        m.avatar = m.img
+          ? React.createElement('img', { src: m.img, alt: m.name, style: { display: 'block', height: '100%', width: 'auto', objectFit: 'contain', objectPosition: 'bottom' } })
+          : React.createElement('div', { style: { height: '100%', width: 'auto', aspectRatio: '0.66', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' } },
+              React.createElement('div', { style: { width: 'min(150px,40vw)', aspectRatio: '1', borderRadius: '50%', background: 'linear-gradient(160deg,#5A1422,#2E0710)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '6px' } },
+                React.createElement('span', { style: { fontFamily: "'Playfair Display',serif", fontWeight: 600, fontSize: '64px', color: 'rgba(243,235,216,.7)' } }, m.initial)));
+        return m;
+      }),
+
+      testimonials: [
+        { initial: 'А', name: 'Алина Острецова', role: 'руководитель агентства', text: 'Пришли с хаосом в маркетинге и сливом бюджета. Через два месяца — внятная стратегия, поток заявок и понимание, за что мы платим. Впервые маркетинг работает как система.' },
+        { initial: 'Ю', name: 'Юлия Терещенко', role: 'ген. директор группы компаний', text: 'Отдельное спасибо за прозрачность. Я вижу каждый рубль и его отдачу. Выручка за квартал выросла ощутимо, а я наконец перестала держать маркетинг в голове 24/7.' },
+        { initial: 'А', name: 'Артём Рябоконь', role: 'владелец ивент-агентства', text: 'Команда реально берёт ответственность за результат, а не за процесс. Не «мы запустили рекламу», а «мы привели вам клиентов». Это другой уровень работы.' },
+      ],
+
+      reviews: [
+        { name: 'Алина Острецова', role: 'руководитель агентства', via: 'Telegram', link: 'https://t.me/katyagurevich' },
+        { name: 'Юлия Терещенко', role: 'ген. директор группы компаний', via: 'Telegram', link: 'https://t.me/katyagurevich' },
+        { name: 'Артём Рябоконь', role: 'владелец ивент-агентства', via: 'Сайт', link: 'https://t.me/katyagurevich' },
+        { name: 'Нина Северина', role: 'школа массажа', via: 'Instagram', link: 'https://t.me/katyagurevich' },
+        { name: 'Irina Perov', role: 'архитектура', via: 'Сайт', link: 'https://t.me/katyagurevich' },
+        { name: 'Анастасия Бородина', role: 'таргетолог', via: 'Telegram', link: 'https://t.me/katyagurevich' },
+        { name: 'Татьяна Русакова', role: 'продажи, маркетинг', via: 'Telegram', link: 'https://t.me/katyagurevich' },
+      ].map(function (r) {
+        r.initial = (r.name.match(/[A-Za-zА-Яа-яЁё]/) || ['•'])[0].toUpperCase();
+        return r;
+      }),
+
+      faqs: [
+        { q: 'Сколько времени до первых результатов?', a: 'Зависит от ниши и точки старта. Первые гипотезы и трафик запускаем в первые недели после стратегии; системный результат — на горизонте 1–3 месяцев.' },
+        { q: 'Как формируется стоимость?', a: 'От задач и формата работы (консультация / сопровождение / полный цикл). Точную смету называю после бесплатной консультации. Ориентир — от 400 до 4000 $.' },
+        { q: 'С какими нишами и странами работаете?', a: 'СНГ, Израиль и мир, на любом языке. За 7 лет — 16+ ниш. Мы не просто переводим креативы — адаптируем стратегию под локальный рынок: язык, культуру и поведение покупателей.' },
+        { q: 'Зачем стратегия, а не сразу реклама?', a: 'Реклама без стратегии — это слив бюджета. Стратегия — фундамент, на котором каждый рубль работает на результат.' },
+        { q: 'Что если у меня уже есть маркетолог?', a: 'Усилим и направим его работу или возьмём стратегию на себя — без конфликта, с общей целью.' },
+        { q: 'Что если мы не подойдём друг другу?', a: 'На бесплатной консультации честно скажу, могу ли быть полезна. Без навязывания.' },
+      ],
+    };
+  }
+
+  componentDidMount() {
+    const root = document;
+    // FAQ toggle
+    root.querySelectorAll('details[data-faq]').forEach(function (d) {
+      const mark = d.querySelector('[data-mark]');
+      d.addEventListener('toggle', function () { if (mark) mark.textContent = d.open ? '\u2013' : '+'; });
+    });
+    // staggered scroll reveal
+    const items = [...root.querySelectorAll('[data-reveal]:not([data-stagger])')];
+    items.forEach(function (it) {
+      it.style.opacity = '0';
+      it.style.transform = 'translateY(26px) scale(.99)';
+      it.style.transition = 'opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1)';
+    });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            const sibs = [...e.target.parentElement.children].filter(function (c) { return c.hasAttribute('data-reveal'); });
+            const idx = Math.max(0, sibs.indexOf(e.target));
+            e.target.style.transitionDelay = ((idx % 4) * 0.08) + 's';
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      items.forEach(function (it) { io.observe(it); });
+    } else {
+      items.forEach(function (it) { it.style.opacity = '1'; it.style.transform = 'none'; });
+    }
+
+    // uneven, layered cascade for the "differences" cards (elpodium-style depth)
+    const staggers = [...root.querySelectorAll('[data-stagger]')];
+    const layout = [
+      { w: 0.90, ml: 0.00, mt: 0,   rot: -0.8, z: 2 },
+      { w: 0.78, ml: 0.16, mt: -18, rot: 0.7,  z: 4 },
+      { w: 0.86, ml: 0.06, mt: -14, rot: -0.5, z: 3 },
+      { w: 0.72, ml: 0.22, mt: -16, rot: 0.9,  z: 5 },
+    ];
+    function applyStagger() {
+      const narrow = window.innerWidth < 620;
+      staggers.forEach(function (el) {
+        const i = parseInt(el.getAttribute('data-stagger'), 10) || 0;
+        const L = layout[i] || layout[0];
+        el.style.position = 'relative';
+        if (narrow) {
+          el.style.width = '100%'; el.style.marginLeft = '0'; el.style.marginTop = (i ? 16 : 0) + 'px';
+          el.style.transform = 'none'; el.style.zIndex = String(L.z);
+        } else {
+          el.style.width = (L.w * 100).toFixed(1) + '%';
+          el.style.marginLeft = (L.ml * 100).toFixed(1) + '%';
+          el.style.marginTop = L.mt + 'px';
+          el.style.transform = 'rotate(' + L.rot + 'deg)';
+          el.style.zIndex = String(L.z);
+        }
+      });
+    }
+    applyStagger();
+
+    window.addEventListener('resize', applyStagger);
+
+    // circle-reveal manifest (beige -> burgundy through a growing circle)
+    const sec = root.querySelector('[data-circle-sec]');
+    const circle = root.querySelector('[data-circle]');
+    const content = root.querySelector('[data-circle-content]');
+    const pSec = root.querySelector('[data-pearl-sec]');
+    const pTop = root.querySelector('[data-pearl-top]');
+    const pBot = root.querySelector('[data-pearl-bottom]');
+    const pearl = root.querySelector('[data-pearl]');
+    const pGlow = root.querySelector('[data-pearl-glow]');
+    const pText = root.querySelector('[data-pearl-text]');
+    let lastP = -1;
+    let lastQ = -1;
+    function tick() {
+      if (sec && circle) {
+        const r = sec.getBoundingClientRect();
+        const vh = window.innerHeight || 800;
+        // starts later (top at ~65% of viewport) and spans a longer scroll range = slower
+        let p = (vh * 0.65 - r.top) / (vh * 0.85);
+        p = Math.max(0, Math.min(1, p));
+        if (Math.abs(p - lastP) > 0.002) {
+          lastP = p;
+          const eased = p * p * (3 - 2 * p);
+          const scale = 0.10 + eased * 2.4;
+          circle.style.transform = 'translate(-50%,-50%) scale(' + scale.toFixed(3) + ')';
+          if (content) content.style.opacity = Math.max(0, Math.min(1, (p - 0.55) / 0.24)).toFixed(3);
+        }
+      }
+      if (pSec && pTop && pBot && pearl) {
+        const pr = pSec.getBoundingClientRect();
+        const pvh = window.innerHeight || 800;
+        let q = (pvh * 0.5 - pr.top) / (pvh * 0.55);
+        q = Math.max(0, Math.min(1, q));
+        if (Math.abs(q - lastQ) > 0.002) {
+          lastQ = q;
+          const e = q * q * (3 - 2 * q);
+          pTop.style.transform = 'translate(-50%,' + (-58 * e).toFixed(1) + '%) rotate(' + (-7 * e).toFixed(2) + 'deg)';
+          pBot.style.transform = 'translate(-50%,' + (58 * e).toFixed(1) + '%) rotate(' + (7 * e).toFixed(2) + 'deg)';
+          const s = 0.5 + 0.5 * e;
+          const lift = 8 * e;
+          pearl.style.transform = 'translate(-50%,calc(-50% - ' + lift.toFixed(1) + 'px)) scale(' + s.toFixed(3) + ')';
+          pearl.style.opacity = Math.max(0, Math.min(1, (q - 0.18) / 0.5)).toFixed(3);
+          if (pGlow) pGlow.style.opacity = (0.85 * e).toFixed(3);
+          if (pText) pText.style.opacity = Math.max(0, Math.min(1, (q - 0.5) / 0.3)).toFixed(3);
+        }
+      }
+      window.requestAnimationFrame(tick);
+    }
+    window.requestAnimationFrame(tick);
+  }
+}
+</script>
+</body>
+</html>
