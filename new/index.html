@@ -642,6 +642,10 @@
   @keyframes uq-cursor{0%,100%{transform:translate(0,0)}40%{transform:translate(-26px,-10px)}55%{transform:translate(-26px,-10px) scale(.86)}70%{transform:translate(-26px,-10px)}}
   [data-cursor]{animation:uq-cursor 3.4s ease-in-out infinite}
   [data-pulse]{animation:uq-pulse 2s ease-in-out infinite}
+  html:not([data-v="machine"]) [data-money]{display:none !important}
+  html[data-v="machine"] [data-phone-wrap]{display:none !important}
+  @keyframes ph-in{from{opacity:0;transform:translateY(-18px) scale(.94)}to{opacity:1;transform:none}}
+  [data-ph-card]{animation:ph-in .5s cubic-bezier(.22,.61,.36,1)}
   [data-cd-wipe]{transform:translateY(100%);transition:transform 2.2s cubic-bezier(.45,.05,.25,1)}
   [data-cond].on [data-cd-wipe]{transform:none}
   [data-cd-trail]{transition:stroke-dashoffset 1.8s ease-out 1.6s}
@@ -728,6 +732,25 @@
 
           <p data-hero="" style="font-size:clamp(15px,1.6vw,19px);color:#E7D2C6;margin:22px auto 0;max-width:640px;font-family:'Commissioner',sans-serif">UniKate <span data-gold="" style="font-family:'Comforter',cursive;color:#B08968">[ Юникейт ]</span> – международное маркетинговое агентство.</p>
           <div data-hero="" style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(22px,3vw,38px);color:#F3EBD8;margin-top:8px">Пора <span style="border-bottom:3px solid #B08968">зарабатывать&nbsp;с&nbsp;нами</span>.</div>
+          <!-- телефон с заявками и оплатами (вариант по умолчанию; машинка – по ссылке ?v=machine) -->
+          <div data-hero="" data-phone-wrap="" style="margin:30px auto 0;display:flex;flex-direction:column;align-items:center;gap:12px">
+            <div style="position:relative;width:clamp(210px,19vw,240px);aspect-ratio:9/18.5;border-radius:36px;background:#120306;padding:9px;box-shadow:0 0 0 1.5px rgba(207,169,140,.55),0 30px 60px rgba(0,0,0,.5)">
+              <div style="position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden;background:radial-gradient(140% 90% at 50% 0%,#6A1A2A,#2E0710 70%);font-family:'Commissioner',sans-serif;text-align:left">
+                <div style="position:absolute;left:50%;top:8px;transform:translateX(-50%);width:76px;height:20px;border-radius:12px;background:#120306;z-index:3"></div>
+                <div style="text-align:center;padding-top:36px;color:#F3EBD8">
+                  <div style="font-size:42px;font-weight:300;line-height:1;letter-spacing:-1px">9:41</div>
+                  <div style="font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:#CFA98C;margin-top:4px">сегодня с UniKate</div>
+                </div>
+                <div style="display:flex;gap:6px;margin:12px 10px 0">
+                  <div style="flex:1;background:rgba(243,235,216,.1);border:1px solid rgba(207,169,140,.25);border-radius:12px;padding:7px 9px"><div style="font-size:9px;color:#CFA98C;text-transform:uppercase;letter-spacing:.8px">заявки</div><div data-ph-leads="" style="font-size:18px;font-weight:700;color:#F3EBD8">0</div></div>
+                  <div style="flex:1.4;background:rgba(243,235,216,.1);border:1px solid rgba(207,169,140,.25);border-radius:12px;padding:7px 9px"><div style="font-size:9px;color:#CFA98C;text-transform:uppercase;letter-spacing:.8px">выручка</div><div data-ph-sum="" style="font-size:18px;font-weight:700;color:#EFD08E;white-space:nowrap">0 ₽</div></div>
+                </div>
+                <div data-ph-list="" style="position:absolute;left:8px;right:8px;top:192px;bottom:10px;display:flex;flex-direction:column;gap:7px;overflow:hidden"></div>
+              </div>
+            </div>
+            <button type="button" data-ph-sound="" style="appearance:none;border:1px solid rgba(207,169,140,.5);background:transparent;color:#CDA892;border-radius:30px;padding:8px 16px;font-family:'Commissioner',sans-serif;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;cursor:pointer">Включить звук</button>
+          </div>
+
           <!-- счётная машинка (правки 29.09 п.4): купюры летят, сумма растёт, звук по клику -->
           <button type="button" data-hero="" data-money="" aria-label="Включить звук счётной машинки" style="appearance:none;border:none;background:none;cursor:pointer;padding:0;margin:26px auto 0;display:block;width:clamp(190px,20vw,250px);position:relative">
             <svg sc-camel-view-box="0 0 260 230" width="100%" style="display:block;overflow:visible">
@@ -817,8 +840,8 @@
       <div data-hero="" style="overflow:hidden;padding:0 0 46px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)">
         <div style="display:flex;gap:14px;width:max-content;animation:uq-marquee 60s linear infinite">
           <sc-for list="{{ clientsLoop }}" as="c">
-            <div style="flex:0 0 auto;background:#FBF6EC;border-radius:6px;padding:0 22px;height:76px;min-width:170px;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:17px;color:#420A17;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.25);overflow:hidden">
-              <img src="{{ c.logo }}" alt="{{ c.t }}" style="max-height:62px;max-width:180px;width:auto;height:auto;display:block;mix-blend-mode:multiply">
+            <div style="flex:0 0 auto;background:#FBF6EC;border-radius:6px;padding:0 22px;height:96px;min-width:170px;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:17px;color:#420A17;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.25);overflow:hidden">
+              <img src="{{ c.logo }}" alt="{{ c.t }}" style="max-height:78px;max-width:230px;width:auto;height:auto;display:block;mix-blend-mode:multiply">
               <span>{{ c.label }}</span>
             </div>
           </sc-for>
@@ -1655,13 +1678,14 @@ class Component extends DCLogic {
         const c = [
           { t: 'Ser Clinic', logo: '', label: 'Ser Clinic' },
           { t: 'Школа массажных методик', logo: 'assets/e16878fb-b985-4241-8f94-547e1532c100.jpg', label: '' },
+          { t: 'Enduro Energy', logo: 'assets/05dd9b5b-6a26-4f9b-8fd3-9c2db410ec7e.png', label: '' },
           { t: 'Ginzburg', logo: 'assets/e726f720-aa15-405c-80eb-19e36a702372.jpg', label: '' },
           { t: 'Анле-Дент', logo: '', label: 'Анле-Дент' },
           { t: 'Хирург Помазков', logo: 'assets/491eeedb-3576-41f6-8934-14e30b2ce637.png', label: '' },
           { t: 'Эвакуаторы', logo: 'assets/7b9d235a-248f-4551-bf9b-75e912157180.png', label: '' },
           { t: 'Музей Русской Сказки', logo: 'assets/bfeaf59a-d8e4-4809-aa2a-784c9cdfa395.jpg', label: '' },
           { t: 'МакШтаб', logo: '', label: 'МакШтаб' },
-          { t: 'Лодки Ладога', logo: 'assets/31168ff8-5d2b-4de2-acdd-f2879d515c9a.png', label: '' },
+          { t: 'Лодки Ладога', logo: 'assets/8ff10727-70b8-4c1d-9304-ff95e5e768d2.jpg', label: '' },
           { t: 'Libe studio', logo: 'assets/3cb23a53-0a91-4235-a0a9-b6a4175fc75b.jpg', label: '' },
           { t: 'С корабля на бал', logo: 'assets/db3a0357-a141-4989-a429-c63f023dbcf6.jpg', label: '' },
           { t: 'Ильинская больница', logo: 'assets/6f1ccb0b-8df3-4c47-8a63-57a2b5b7ec74.jpg', label: '' },
@@ -1669,7 +1693,6 @@ class Component extends DCLogic {
           { t: 'Моцарт для детей', logo: 'assets/7549d9eb-7f75-43ef-8eb8-5d4aa947f26b.jpg', label: '' },
           { t: 'Поляклиника', logo: '', label: 'Поляклиника' },
           { t: 'Peroarchkids', logo: '', label: 'Peroarchkids' },
-          { t: 'Enduro Energy', logo: 'assets/05dd9b5b-6a26-4f9b-8fd3-9c2db410ec7e.png', label: '' },
           { t: 'Цветоград', logo: 'assets/369b10a2-3302-4530-bed3-5fc884908710.jpg', label: '' }
         ];
         return c.concat(c);
@@ -1889,6 +1912,77 @@ class Component extends DCLogic {
       const r = c.getBoundingClientRect();
       if (r.top < (window.innerHeight || 800) * 0.85 && r.bottom > 0) { c.classList.add('on'); clearInterval(condTimer); }
     }, 250);
+
+    // ---- вариант hero: телефон (по умолчанию) или машинка (?v=machine) ----
+    try { if (/[?&]v=machine/.test(location.search)) document.documentElement.setAttribute('data-v', 'machine'); } catch (e) {}
+
+    // ---- телефон: заявки и оплаты падают уведомлениями, звук по кнопке ----
+    const phList = root.querySelector('[data-ph-list]');
+    if (phList && !phList.dataset.ready) {
+      phList.dataset.ready = '1';
+      const icoMail = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
+      const icoCal = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>';
+      const feed = [
+        { ic: icoMail, bg: '#B08968', t: 'Новая заявка с сайта', d: 'Анна: хочу на консультацию', lead: 1 },
+        { ic: '₽', bg: '#2F7A4D', t: 'Поступление', d: '+48 000 ₽ · оплата по договору', sum: 48000 },
+        { ic: icoMail, bg: '#B08968', t: 'Заявка из соцсетей', d: 'Михаил: сколько стоит запуск?', lead: 1 },
+        { ic: icoCal, bg: '#6A1A2A', t: 'Запись на завтра', d: 'Консультация в 11:00', lead: 1 },
+        { ic: '₽', bg: '#2F7A4D', t: 'Поступление', d: '+120 000 ₽ · предоплата', sum: 120000 },
+        { ic: icoMail, bg: '#B08968', t: 'Новая заявка с сайта', d: 'Елена: нужна реклама клиники', lead: 1 },
+        { ic: '₽', bg: '#2F7A4D', t: 'Поступление', d: '+36 500 ₽ · оплата курса', sum: 36500 },
+      ];
+      const leadsEl = root.querySelector('[data-ph-leads]'), sumEl = root.querySelector('[data-ph-sum]');
+      let i = 0, leads = 0, sum = 0, shown = 0, sound = false, actx = null;
+      const fmt = function (n) { return Math.round(n).toLocaleString('ru-RU').replace(/,/g, ' ') + ' ₽'; };
+      const tone = function (money) {
+        if (!sound) return;
+        actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+        const t0 = actx.currentTime;
+        const notes = money ? [1568, 2093] : [1318];
+        notes.forEach(function (f, k) {
+          const o = actx.createOscillator(), g = actx.createGain();
+          o.type = 'sine'; o.frequency.value = f;
+          const st = t0 + k * 0.09;
+          g.gain.setValueAtTime(0, st); g.gain.linearRampToValueAtTime(0.18, st + 0.01); g.gain.exponentialRampToValueAtTime(0.001, st + (money ? 0.9 : 0.5));
+          o.connect(g); g.connect(actx.destination); o.start(st); o.stop(st + 1);
+        });
+      };
+      const countTo = function (el, from, to, money) {
+        const id = (el._cnt = (el._cnt || 0) + 1), st = performance.now();
+        const step = function (now) {
+          if (el._cnt !== id) return;
+          const p = Math.max(0, Math.min(1, (now - st) / 700));
+          const v = from + (to - from) * (1 - Math.pow(1 - p, 3));
+          el.textContent = money ? fmt(v) : String(Math.round(v));
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+      const push = function () {
+        if (i >= feed.length) { i = 0; leads = 0; sum = 0; phList.innerHTML = ''; leadsEl._cnt = (leadsEl._cnt || 0) + 1; sumEl._cnt = (sumEl._cnt || 0) + 1; leadsEl.textContent = '0'; sumEl.textContent = '0 ₽'; }
+        const f = feed[i++];
+        const c = document.createElement('div');
+        c.setAttribute('data-ph-card', '');
+        c.style.cssText = 'display:flex;gap:8px;align-items:flex-start;background:rgba(251,246,236,.94);border-radius:13px;padding:8px 9px;box-shadow:0 6px 16px rgba(0,0,0,.25);flex:0 0 auto';
+        c.innerHTML = '<div style="flex:0 0 26px;height:26px;border-radius:8px;background:' + f.bg + ';color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">' + f.ic + '</div>' +
+          '<div style="min-width:0;flex:1"><div style="display:flex;justify-content:space-between;gap:6px"><b style="font-size:10.5px;color:#2A1410;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + f.t + '</b><span style="font-size:9px;color:#8A6B4F;flex:0 0 auto">сейчас</span></div>' +
+          '<div style="font-size:10px;color:#5c4c3b;line-height:1.35;margin-top:1px">' + f.d + '</div></div>';
+        phList.insertBefore(c, phList.firstChild);
+        while (phList.children.length > 4) phList.removeChild(phList.lastChild);
+        if (f.lead) { countTo(leadsEl, leads, leads + 1, false); leads += 1; }
+        if (f.sum) { countTo(sumEl, sum, sum + f.sum, true); sum += f.sum; }
+        tone(!!f.sum);
+      };
+      push();
+      setInterval(function () { if (!document.hidden) push(); }, 2200);
+      const sb = root.querySelector('[data-ph-sound]');
+      if (sb) sb.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        sound = !sound;
+        sb.textContent = sound ? 'Выключить звук' : 'Включить звук';
+        if (sound) tone(true);
+      });
+    }
 
     // ---- счётная машинка: сумма растёт, звук по клику ----
     const mm = root.querySelector('[data-money]');
