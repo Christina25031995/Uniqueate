@@ -743,8 +743,8 @@
                   <div style="font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:#CFA98C;margin-top:4px">сегодня с UniKate</div>
                 </div>
                 <div style="display:flex;gap:6px;margin:12px 10px 0">
-                  <div style="flex:1;background:rgba(243,235,216,.1);border:1px solid rgba(207,169,140,.25);border-radius:12px;padding:7px 9px"><div style="font-size:9px;color:#CFA98C;text-transform:uppercase;letter-spacing:.8px">заявки</div><div data-ph-leads="" style="font-size:18px;font-weight:700;color:#F3EBD8">0</div></div>
-                  <div style="flex:1.4;background:rgba(243,235,216,.1);border:1px solid rgba(207,169,140,.25);border-radius:12px;padding:7px 9px"><div style="font-size:9px;color:#CFA98C;text-transform:uppercase;letter-spacing:.8px">выручка</div><div data-ph-sum="" style="font-size:18px;font-weight:700;color:#EFD08E;white-space:nowrap">0 ₽</div></div>
+                  <div style="flex:1;background:rgba(243,235,216,.1);border:1px solid rgba(207,169,140,.25);border-radius:12px;padding:7px 9px"><div style="font-size:9px;color:#CFA98C;text-transform:uppercase;letter-spacing:.8px">заявки</div><div data-ph-leads="" style="font-size:18px;font-weight:700;color:#F3EBD8;min-height:1.3em"></div></div>
+                  <div style="flex:1.4;background:rgba(243,235,216,.1);border:1px solid rgba(207,169,140,.25);border-radius:12px;padding:7px 9px"><div style="font-size:9px;color:#CFA98C;text-transform:uppercase;letter-spacing:.8px">выручка</div><div data-ph-sum="" style="font-size:18px;font-weight:700;color:#EFD08E;white-space:nowrap;min-height:1.3em"></div></div>
                 </div>
                 <div data-ph-list="" style="position:absolute;left:8px;right:8px;top:192px;bottom:10px;display:flex;flex-direction:column;gap:7px;overflow:hidden"></div>
               </div>
@@ -1949,15 +1949,15 @@ class Component extends DCLogic {
         });
       };
       const countTo = function (el, from, to, money) {
-        const id = (el._cnt = (el._cnt || 0) + 1), st = performance.now();
-        const step = function (now) {
+        const id = (el._cnt = (el._cnt || 0) + 1), st = Date.now();
+        const tick = function () {
           if (el._cnt !== id) return;
-          const p = Math.max(0, Math.min(1, (now - st) / 700));
+          const p = Math.max(0, Math.min(1, (Date.now() - st) / 700));
           const v = from + (to - from) * (1 - Math.pow(1 - p, 3));
           el.textContent = money ? fmt(v) : String(Math.round(v));
-          if (p < 1) requestAnimationFrame(step);
+          if (p < 1) setTimeout(tick, 30);
         };
-        requestAnimationFrame(step);
+        tick();
       };
       const push = function () {
         if (i >= feed.length) { i = 0; leads = 0; sum = 0; phList.innerHTML = ''; leadsEl._cnt = (leadsEl._cnt || 0) + 1; sumEl._cnt = (sumEl._cnt || 0) + 1; leadsEl.textContent = '0'; sumEl.textContent = '0 ₽'; }
@@ -1974,8 +1974,9 @@ class Component extends DCLogic {
         if (f.sum) { countTo(sumEl, sum, sum + f.sum, true); sum += f.sum; }
         tone(!!f.sum);
       };
-      push();
-      setInterval(function () { if (!document.hidden) push(); }, 2200);
+      leadsEl.textContent = '0'; sumEl.textContent = '0 ₽';
+      push(); setTimeout(push, 900);
+      setInterval(function () { if (!document.hidden) push(); }, 2400);
       const sb = root.querySelector('[data-ph-sound]');
       if (sb) sb.addEventListener('click', function (e) {
         e.preventDefault(); e.stopPropagation();
