@@ -9,7 +9,7 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Forum&family=Wix+Madefor+Display:wght@500;600;700;800&family=Commissioner:wght@400;500;600;700&family=WindSong&family=Comforter&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Wix+Madefor+Display:wght@500;600;700;800&family=Commissioner:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>/* cyrillic-ext */
 @font-face {
   font-family: 'Manrope';
@@ -664,6 +664,9 @@
   [data-money]:hover svg{transform:scale(1.03)} [data-money] svg{transition:transform .3s}
   img[src=""]{display:none !important}
   [data-removed]{display:none !important}
+  @media (max-width:860px){ [data-why-grid],[data-faq-grid]{grid-template-columns:1fr !important} }
+  #why [data-stagger]{width:auto !important;margin:0 !important}
+  @media (max-width:900px){ [data-hero-top]{min-height:0 !important} }
   /* по памятке UniKate: H2 44–52 / 28–32, кнопки Commissioner 16 строчные, пилюля */
   h2{font-size:clamp(28px,3.8vw,52px) !important;line-height:1.2 !important;letter-spacing:-.01em !important}
   a[data-lead][style*="padding"], a[href^="https://t.me"][style*="padding"], a[href^="mailto"][style*="padding"]{font-family:'Commissioner',sans-serif !important;font-size:16px !important;font-weight:600 !important;letter-spacing:0 !important;text-transform:none !important;border-radius:40px !important;padding:15px 30px !important}
@@ -671,7 +674,7 @@
   img[data-photo="1"]{mix-blend-mode:normal !important;border-radius:8px;max-height:80px !important}
   [data-shot2="0"]{display:none !important}
   /* шрифты по памятке UniKate */
-  [style*="Comforter"]{font-size-adjust:.5;line-height:1.1;letter-spacing:.01em}
+  
   div[data-gold]{display:block !important}
   [data-gold]{background:linear-gradient(100deg,#F6DFA8,#D9AE62 45%,#B08968 70%,#EFD08E);-webkit-background-clip:text;background-clip:text;color:transparent !important;display:inline-block;padding:.05em .35em;margin:-.05em -.35em}
   h2[style*="Wix Madefor"]{letter-spacing:-.01em !important;line-height:1.14 !important}
@@ -727,18 +730,22 @@
       <section style="padding:24px 28px 60px;text-align:center">
         <div style="max-width:1180px;margin:0 auto">
           <!-- sketch hero: Представьте ×3 клиентов через 2 мес -->
+          <div data-hero-top="" style="display:flex;align-items:center;justify-content:center;gap:clamp(24px,4vw,64px);flex-wrap:wrap;min-height:calc(100vh - 120px);padding:10px 0 30px">
+            <div style="flex:1 1 560px;max-width:720px;min-width:0">
           <div data-hero="" style="display:flex;align-items:center;justify-content:center;gap:clamp(14px,2.6vw,34px);flex-wrap:wrap;margin-top:10px">
-            <span data-gold="" style="font-family:'Comforter',cursive;font-size:clamp(28px,3vw,40px);color:#CFA98C;transform:rotate(-4deg)">Представьте:</span>
+            <span data-gold="" style="font-family:'Forum',serif;font-weight:400;letter-spacing:.03em;font-size:clamp(22px,2.8vw,36px);color:#CFA98C;text-transform:uppercase">Представьте:</span>
             <h1 style="font-family:'Forum',serif;font-weight:400;font-size:clamp(76px,13vw,190px);line-height:.86;color:#F3EBD8;letter-spacing:.03em;text-transform:uppercase;margin:0;display:flex;align-items:baseline;gap:.05em"><span style="font-size:.6em">в</span>3<span style="font-size:.33em;white-space:nowrap">&nbsp;раза</span></h1>
             <span style="font-family:'Forum',serif;font-size:clamp(22px,2.8vw,36px);color:#CFA98C;text-align:left;line-height:1.1;letter-spacing:.03em;text-transform:uppercase">больше клиентов<br>через&nbsp;3&nbsp;месяца</span>
           </div>
 
           <div data-hero="" style="font-family:'Forum',serif;font-weight:400;font-size:clamp(28px,4.6vw,60px);color:#F3EBD8;letter-spacing:.03em;text-transform:uppercase;margin-top:18px">Страшно? <em style="font-style:italic;color:#CFA98C">Потянете?</em></div>
 
-          <p data-hero="" style="font-size:clamp(15px,1.6vw,19px);color:#E7D2C6;margin:22px auto 0;max-width:640px;font-family:'Commissioner',sans-serif">UniKate <span data-gold="" style="font-family:'Comforter',cursive;color:#B08968">[ Юникейт ]</span> – международное маркетинговое агентство.</p>
+          <p data-hero="" style="font-size:clamp(15px,1.6vw,19px);color:#E7D2C6;margin:22px auto 0;max-width:640px;font-family:'Commissioner',sans-serif">UniKate <span data-gold="" style="font-family:'Forum',serif;font-weight:400;letter-spacing:.03em;color:#B08968">[ Юникейт ]</span> – международное маркетинговое агентство.</p>
           <div data-hero="" style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(22px,3vw,38px);color:#F3EBD8;margin-top:8px">Пора <span style="border-bottom:3px solid #B08968">зарабатывать&nbsp;с&nbsp;нами</span>.</div>
+            </div>
+            <div style="flex:0 0 auto">
           <!-- телефон с заявками и оплатами (вариант по умолчанию; машинка – по ссылке ?v=machine) -->
-          <div data-hero="" data-phone-wrap="" style="margin:30px auto 0;display:flex;flex-direction:column;align-items:center;gap:12px">
+          <div data-hero="" data-phone-wrap="" style="margin:0;display:flex;flex-direction:column;align-items:center;gap:12px">
             <div style="position:relative;width:clamp(210px,19vw,240px);aspect-ratio:9/18.5;border-radius:36px;background:#120306;padding:9px;box-shadow:0 0 0 1.5px rgba(207,169,140,.55),0 30px 60px rgba(0,0,0,.5)">
               <div style="position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden;background:radial-gradient(140% 90% at 50% 0%,#6A1A2A,#2E0710 70%);font-family:'Commissioner',sans-serif;text-align:left">
                 <div style="position:absolute;left:50%;top:8px;transform:translateX(-50%);width:76px;height:20px;border-radius:12px;background:#120306;z-index:3"></div>
@@ -757,7 +764,7 @@
           </div>
 
           <!-- счётная машинка (правки 29.09 п.4): купюры летят, сумма растёт, звук по клику -->
-          <button type="button" data-hero="" data-money="" aria-label="Включить звук счётной машинки" style="appearance:none;border:none;background:none;cursor:pointer;padding:0;margin:26px auto 0;display:block;width:clamp(190px,20vw,250px);position:relative">
+          <button type="button" data-hero="" data-money="" aria-label="Включить звук счётной машинки" style="appearance:none;border:none;background:none;cursor:pointer;padding:0;margin:0 auto;display:block;width:clamp(190px,20vw,250px);position:relative">
             <svg sc-camel-view-box="0 0 260 230" width="100%" style="display:block;overflow:visible">
               <defs>
                 <linearGradient id="mmBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A1A2A"></stop><stop offset="1" stop-color="#2E0710"></stop></linearGradient>
@@ -787,7 +794,10 @@
             <span data-mm-hint="" style="display:block;margin-top:10px;font-family:'Commissioner',sans-serif;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#CDA892">нажмите, чтобы услышать</span>
           </button>
 
-          <div data-hero-row="" style="display:flex;align-items:flex-end;justify-content:center;gap:clamp(8px,3vw,40px);flex-wrap:nowrap;margin-top:34px">
+            </div>
+          </div>
+
+          <div data-hero-row="" style="display:flex;align-items:flex-end;justify-content:center;gap:clamp(8px,3vw,40px);flex-wrap:nowrap;margin-top:0">
             <sc-if value="{{ showCallouts }}" hint-placeholder-val="{{ true }}">
             <div data-hero="" data-callouts="" style="flex:1 1 220px;max-width:280px;display:flex;flex-direction:column;gap:84px;padding-bottom:54px;text-align:right">
               <div style="position:relative;font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#EBD8CC;line-height:1.6">
@@ -800,9 +810,9 @@
             </sc-if>
 
             <!-- фото основателя убрано по правкам 29.09, в центре – текст -->
-            <div data-hero="" data-hero-center="" style="position:relative;width:min(470px,86vw);flex:0 0 auto;text-align:left;padding:30px 0 40px">
+            <div data-hero="" data-hero-center="" style="position:relative;width:min(470px,86vw);flex:0 0 auto;text-align:left;padding:0 0 10px">
               <p style="font-family:'Commissioner',sans-serif;font-weight:600;font-size:clamp(20px,2.3vw,27px);line-height:1.3;color:#F3EBD8;margin:0 0 20px;text-align:center">Аналитически точные маркетинговые стратегии для&nbsp;роста прибыли бизнеса</p>
-              <div data-gold="" style="font-family:'Comforter',cursive;font-size:clamp(28px,3vw,40px);color:#CFA98C;margin:0 0 12px;text-align:center">Подключаемся командой и…</div>
+              <div data-gold="" style="font-family:'Forum',serif;font-weight:400;letter-spacing:.03em;font-size:clamp(20px,2.2vw,26px);color:#CFA98C;margin:0 0 12px;text-align:center">Подключаемся командой и…</div>
               <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px">
                 <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:#EBD8CC"><span style="flex:0 0 14px;height:1px;background:#B08968;margin-top:.8em"></span><span>Систематизируем или строим отдел маркетинга с&nbsp;нуля</span></li>
                 <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:#EBD8CC"><span style="flex:0 0 14px;height:1px;background:#B08968;margin-top:.8em"></span><span>Работаем точечно или закрываем весь цикл под ключ: аналитика рынка и&nbsp;продукта, сайт, соцсети, реклама, воронки, SEO, AI-поиск, продажи</span></li>
@@ -823,13 +833,13 @@
             </sc-if>
           </div>
 
-          <div data-hero="" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:32px">
+          <div data-hero="" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:18px">
             <a href="#final" data-lead="" style="background:#B08968;color:#420A17;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:18px 40px;border-radius:2px;white-space:nowrap;flex-shrink:0" style-hover="background:#c79c78">Обсудить бизнес с маркетологом ↗</a>
             <span style="font-size:12.5px;color:#CDA892;letter-spacing:.3px">Ответим за 30 минут</span>
           </div>
 
           <!-- numbered stat band -->
-          <div data-hero="" style="margin-top:40px;font-size:15px;letter-spacing:0;text-transform:none;color:#CDA892">СНГ · Израиль · Мир</div>
+          <div data-hero="" style="margin-top:28px;font-size:15px;letter-spacing:0;text-transform:none;color:#CDA892">СНГ · Израиль · Мир</div>
           <div data-hero="" style="margin-top:16px;border-top:1px solid rgba(176,137,104,.4);border-bottom:1px solid rgba(176,137,104,.4);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
             <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="4">
               <div style="padding:20px 18px;border-right:1px solid rgba(176,137,104,.22);text-align:left">
@@ -842,7 +852,7 @@
       </section>
 
       <!-- бегущая строка клиентов (пока названиями, логотипы добавим) -->
-      <div data-hero="" style="overflow:hidden;padding:0 0 46px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)">
+      <div data-hero="" style="overflow:hidden;padding:0 0 34px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)">
         <div style="display:flex;gap:14px;width:max-content;animation:uq-marquee 60s linear infinite">
           <sc-for list="{{ clientsLoop }}" as="c">
             <div style="flex:0 0 auto;background:#FBF6EC;border-radius:6px;padding:0 22px;height:96px;min-width:170px;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:17px;color:#420A17;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.25);overflow:hidden">
@@ -1067,7 +1077,7 @@
   <section data-screen-label="Ниши" data-removed="правки 29.09" style="background:#F6EEDF;padding:90px 28px">
     <div style="max-width:1180px;margin:0 auto">
       <div style="text-align:center;max-width:900px;margin:0 auto 60px">
-        <div style="font-family:'Comforter',cursive;font-size:32px;color:#420A17">это про вас?</div>
+        <div style="font-family:'Forum',serif;font-weight:400;letter-spacing:.03em;font-size:32px;color:#420A17">это про вас?</div>
         <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(38px,5.6vw,66px);line-height:1.02;color:#3A2418;margin:6px 0 0;letter-spacing:-.01em">С какими бизнесами мы работаем</h2>
       </div>
       <div style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(330px,1fr))">
@@ -1141,7 +1151,7 @@
   </section>
 
   <!-- ===================== SERVICES ===================== -->
-  <section id="formats" data-screen-label="Услуги" style="padding:clamp(70px,9vw,110px) 28px;background:radial-gradient(120% 90% at 50% 28%,#5A1422,#2E0710 72%);color:#F3EBD8">
+  <section id="formats" data-screen-label="Услуги" style="padding:clamp(56px,6vw,80px) 28px;background:radial-gradient(120% 90% at 50% 28%,#5A1422,#2E0710 72%);color:#F3EBD8">
     <div style="max-width:1180px;margin:0 auto">
       <div data-reveal="" style="max-width:760px;margin-bottom:clamp(40px,6vw,64px)">
         <div style="font-family:'Commissioner';font-size:15px;letter-spacing:0;text-transform:none;color:#CFA98C;font-weight:600;margin-bottom:14px">Услуги</div>
@@ -1216,14 +1226,14 @@
   
 
   <!-- ===================== ABOUT ===================== -->
-  <section id="about" data-screen-label="Об основателе" style="padding:clamp(70px,9vw,110px) 28px;position:relative;overflow:hidden;background:#F6EEDF">
+  <section id="about" data-screen-label="Об основателе" style="padding:56px 28px clamp(56px,6vw,80px);position:relative;overflow:hidden;background:#F6EEDF">
     <div style="max-width:1240px;margin:0 auto;position:relative">
 
 
       <!-- С НАМИ СПИТСЯ СПОКОЙНО (скрыто по правкам 29.09) -->
       <div data-removed="правки 29.09" style="flex-wrap:wrap;align-items:center;gap:clamp(24px,4vw,56px);margin-bottom:clamp(60px,8vw,110px)">
         <div data-reveal="" style="flex:1 1 560px;min-width:0;display:flex;align-items:center;gap:clamp(12px,2vw,28px)">
-          <span data-gold="" style="font-family:'Comforter',cursive;font-size:clamp(26px,3.4vw,44px);color:#B08968;flex:0 0 auto;transform:rotate(-4deg)">с нами</span>
+          <span data-gold="" style="font-family:'Forum',serif;font-weight:400;letter-spacing:.03em;font-size:clamp(26px,3.4vw,44px);color:#B08968;flex:0 0 auto;transform:rotate(-4deg)">с нами</span>
           <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(32px,6.4vw,88px);line-height:.9;color:#420A17;margin:0;letter-spacing:-.03em;text-transform:uppercase">Спится<br>спокойно</h2>
         </div>
         <div data-reveal="" style="flex:1 1 320px;max-width:430px;min-width:0;margin-left:auto">
@@ -1254,25 +1264,25 @@
       <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4.5vw,72px);align-items:center;position:relative">
         <!-- фото Рейчел убрано по правкам 29.09; слева – Катя -->
         <div data-reveal="" style="flex:1 1 380px;min-width:0;position:relative;display:flex;justify-content:center;align-items:flex-end;align-self:stretch">
-          <img src="assets/76a7ab0a-0662-421f-8fb0-fc14165bf431.jpg" alt="Катерина Гуревич" style="width:100%;max-width:560px;aspect-ratio:4/5;object-fit:cover;object-position:40% 30%;display:block;border-radius:6px;box-shadow:0 22px 46px rgba(58,36,24,.25)">
+          <img src="assets/76a7ab0a-0662-421f-8fb0-fc14165bf431.jpg" alt="Катерина Гуревич" style="width:100%;max-width:500px;max-height:66vh;aspect-ratio:4/5;object-fit:cover;object-position:40% 30%;display:block;border-radius:6px;box-shadow:0 22px 46px rgba(58,36,24,.25)">
         </div>
 
-        <div data-reveal="" style="flex:1 1 440px;max-width:560px;min-width:0;position:relative;z-index:2">
+        <div data-reveal="" style="flex:1 1 520px;max-width:700px;min-width:0;position:relative;z-index:2">
           <div style="font-family:'Commissioner';font-size:20px;letter-spacing:0;text-transform:none;color:#8A6B4F;font-weight:500;margin-bottom:16px">Об основателе</div>
           <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(30px,4.4vw,56px);line-height:1;color:#420A17;margin:0 0 22px;letter-spacing:-.02em">Катерина Гуревич</h3>
           <p style="font-family:'Commissioner',sans-serif;font-weight:600;font-size:clamp(19px,2.1vw,26px);line-height:1.35;color:#3A2418;margin:0 0 18px">Знаю, как выстроить эффективный маркетинг – и в теории, и на практике.</p>
-          <p style="font-size:15.5px;color:#5c4c3b;line-height:1.75;margin:0 0 14px">План на бумаге – не результат. Результат – это реализация и оптимизация. <span style="white-space:nowrap">За это я и отвечаю.</span></p>
-          <p style="font-size:15.5px;color:#5c4c3b;line-height:1.75;margin:0 0 14px">Я работаю по принципу «маркетинг можно просчитать и&nbsp;предсказать». Я строю систему, которая делает маркетинг предсказуемым и&nbsp;прибыльным, а&nbsp;не хаотичным набором действий и&nbsp;дырой в&nbsp;бюджете. Никакой деятельности ради деятельности – только чёткая стратегия, глубокая аналитика и&nbsp;постоянная оптимизация.</p>
-          <p style="font-size:15.5px;color:#5c4c3b;line-height:1.75;margin:0 0 14px">Я считаю, что каждый должен заниматься тем, что получается у&nbsp;него лучше всего. Поэтому я собрала команду сильных специалистов с&nbsp;таким же подходом, как мой, и&nbsp;выстроила агентский формат, где стратегия не остаётся презентацией.</p>
-          <p style="font-size:15.5px;color:#5c4c3b;line-height:1.75;margin:0 0 26px">У меня редкая комбинация аналитических и творческих навыков, отшлифованных долгой «работой руками» почти во всех аспектах интернет-маркетинга: от аналитики и&nbsp;стратегии до&nbsp;контента, рекламы и&nbsp;системных процессов.</p>
+          <p style="font-size:15.5px;color:#5c4c3b;line-height:1.6;margin:0 0 10px">План на бумаге – не результат. Результат – это реализация и оптимизация. <span style="white-space:nowrap">За это я и отвечаю.</span></p>
+          <p style="font-size:15.5px;color:#5c4c3b;line-height:1.6;margin:0 0 10px">Я работаю по принципу «маркетинг можно просчитать и&nbsp;предсказать». Я строю систему, которая делает маркетинг предсказуемым и&nbsp;прибыльным, а&nbsp;не хаотичным набором действий и&nbsp;дырой в&nbsp;бюджете. Никакой деятельности ради деятельности – только чёткая стратегия, глубокая аналитика и&nbsp;постоянная оптимизация.</p>
+          <p style="font-size:15.5px;color:#5c4c3b;line-height:1.6;margin:0 0 10px">Я считаю, что каждый должен заниматься тем, что получается у&nbsp;него лучше всего. Поэтому я собрала команду сильных специалистов с&nbsp;таким же подходом, как мой, и&nbsp;выстроила агентский формат, где стратегия не остаётся презентацией.</p>
+          <p style="font-size:15.5px;color:#5c4c3b;line-height:1.6;margin:0 0 18px">У меня редкая комбинация аналитических и творческих навыков, отшлифованных долгой «работой руками» почти во всех аспектах интернет-маркетинга: от аналитики и&nbsp;стратегии до&nbsp;контента, рекламы и&nbsp;системных процессов.</p>
 
-          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px">
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px">
             <span style="font-family:'Commissioner';font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#420A17;background:#F0E4CE;border-radius:40px;padding:9px 16px">В маркетинге с 2019</span>
             <span style="font-family:'Commissioner';font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#420A17;background:#F0E4CE;border-radius:40px;padding:9px 16px">35+ ниш</span>
             <span style="font-family:'Commissioner';font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#420A17;background:#F0E4CE;border-radius:40px;padding:9px 16px">Стратег, управленец, предприниматель</span>
           </div>
 
-          <div style="border-top:1px solid rgba(176,137,104,.45);padding-top:24px">
+          <div style="border-top:1px solid rgba(176,137,104,.45);padding-top:16px">
             <p style="font-family:'Commissioner',sans-serif;font-style:italic;font-weight:600;font-size:clamp(18px,2vw,24px);line-height:1.4;color:#420A17;margin:0">«Моя задача – превратить маркетинг из хаотичного набора действий в понятную систему роста».</p>
           </div>
         </div>
@@ -1340,9 +1350,9 @@
   </section>
 
   <!-- ===================== PEARL REVEAL ===================== -->
-  <section data-pearl-sec="" data-screen-label="Философия" style="position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 28%,#5A1422,#2E0710 72%);padding:clamp(64px,9vh,100px) 28px;display:flex;flex-direction:column;align-items:center;text-align:center">
-    <div data-reveal="" style="font-family:'Commissioner';font-size:15px;letter-spacing:0;text-transform:none;color:#CFA98C;font-weight:600;margin-bottom:clamp(60px,10vh,110px);max-width:560px;line-height:1.7">Мы не конвейерное агентство с&nbsp;шаблонным подходом</div>
-    <div style="position:relative;width:min(300px,72vw);aspect-ratio:1;margin-bottom:clamp(70px,11vh,130px)">
+  <section data-pearl-sec="" data-screen-label="Философия" style="position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 28%,#5A1422,#2E0710 72%);padding:clamp(44px,6vh,70px) 28px;display:flex;flex-direction:column;align-items:center;text-align:center">
+    <div data-reveal="" style="font-family:'Commissioner';font-size:15px;letter-spacing:0;text-transform:none;color:#CFA98C;font-weight:600;margin-bottom:clamp(30px,5vh,60px);max-width:560px;line-height:1.7">Мы не конвейерное агентство с&nbsp;шаблонным подходом</div>
+    <div style="position:relative;width:min(230px,60vw);aspect-ratio:1;margin-bottom:clamp(30px,5vh,60px)">
       <div data-pearl-glow="" style="position:absolute;left:50%;top:52%;width:72%;height:72%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,246,232,.75),rgba(255,246,232,0) 68%);opacity:0;will-change:opacity"></div>
       <div data-pearl="" style="position:absolute;left:50%;top:52%;width:40%;aspect-ratio:1;transform:translate(-50%,-50%) scale(.5);border-radius:50%;background:radial-gradient(42% 38% at 37% 30%,#FFFFFF,#F6E9D9 44%,#DCC6AB 78%,#B89F81);box-shadow:0 12px 32px rgba(0,0,0,.45),inset -9px -11px 24px rgba(150,120,90,.5),inset 7px 9px 18px rgba(255,255,255,.75);opacity:0;will-change:transform,opacity"></div>
       <div data-pearl-top="" style="position:absolute;left:50%;top:3%;width:92%;transform:translate(-50%,0);transform-origin:50% 100%;will-change:transform">
@@ -1368,7 +1378,7 @@
   </section>
 
   <!-- ===================== ПОЧЕМУ МЫ (перенесено ближе к концу, правки 29.09 п.17) ===================== -->
-  <section id="why" data-screen-label="Почему мы" style="background:radial-gradient(120% 90% at 50% 28%,#5A1422,#2E0710 72%);color:#F3EBD8;padding:96px 28px 110px;position:relative;overflow:hidden">
+  <section id="why" data-screen-label="Почему мы" style="background:radial-gradient(120% 90% at 50% 28%,#5A1422,#2E0710 72%);color:#F3EBD8;padding:44px 28px 50px;position:relative;overflow:hidden">
     <!-- pearl-on-orbits doodle (brand motif) -->
     <div style="position:absolute;right:-40px;top:90px;width:min(420px,40vw);pointer-events:none">
       <svg sc-camel-view-box="0 0 240 360" width="100%" fill="none">
@@ -1401,11 +1411,11 @@
     <div style="max-width:1180px;margin:0 auto;position:relative">
       <div style="font-family:'Commissioner';font-size:15px;letter-spacing:0;text-transform:none;color:#CFA98C;font-weight:600;margin-bottom:14px">Почему мы</div>
       <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,56px);line-height:1.06;color:#F3EBD8;margin:0 0 14px;letter-spacing:-.01em;max-width:900px;overflow-wrap:break-word">Уже обжигались на&nbsp;подрядчиках – или&nbsp;просто не&nbsp;верите в&nbsp;маркетинг?</h2>
-      <p style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.25;color:#CFA98C;margin:0 0 50px">Проверьте нас по&nbsp;фактам</p>
+      <p style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.25;color:#CFA98C;margin:0 0 30px">Проверьте нас по&nbsp;фактам</p>
 
-      <div style="position:relative;max-width:900px">
+      <div data-why-grid="" style="position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1100px">
         <sc-for list="{{ whyUs }}" as="d" hint-placeholder-count="6">
-          <div data-reveal="" data-stagger="{{ d.i }}" style="width:{{ d.w }};margin-left:{{ d.ml }};margin-top:{{ d.mt }};transform:rotate({{ d.rot }}deg);background:#FBF6EC;border-radius:8px;padding:34px 36px;box-shadow:0 26px 52px rgba(20,4,8,.55),0 8px 18px rgba(20,4,8,.35);transition:transform .35s,box-shadow .35s;position:relative" style-hover="transform:translateY(-6px) rotate(0deg);box-shadow:0 34px 64px rgba(20,4,8,.6),0 10px 22px rgba(20,4,8,.4)">
+          <div data-reveal="" data-stagger="{{ d.i }}" style="width:{{ d.w }};margin-left:{{ d.ml }};margin-top:{{ d.mt }};transform:rotate({{ d.rot }}deg);background:#FBF6EC;border-radius:8px;padding:24px 28px;box-shadow:0 26px 52px rgba(20,4,8,.55),0 8px 18px rgba(20,4,8,.35);transition:transform .35s,box-shadow .35s;position:relative" style-hover="transform:translateY(-6px) rotate(0deg);box-shadow:0 34px 64px rgba(20,4,8,.6),0 10px 22px rgba(20,4,8,.4)">
             <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(20px,2.6vw,26px);line-height:1.2;margin:0 0 10px;color:#420A17;overflow-wrap:break-word">{{ d.n }}. {{ d.title }}</h3>
             <p style="font-size:15.5px;color:#6f5f4d;margin:0;line-height:1.65;overflow-wrap:break-word">{{ d.text }}</p>
           </div>
@@ -1448,23 +1458,25 @@
   </section>
 
   <!-- ===================== FAQ ===================== -->
-  <section id="faq" data-screen-label="Вопросы" style="padding:clamp(70px,8vw,100px) 28px clamp(80px,9vw,110px);background:#F3EBD8">
-    <div style="max-width:900px;margin:0 auto">
-      <div style="text-align:center;margin-bottom:44px">
-        <div style="display:flex;justify-content:center;margin-bottom:10px"><svg width="34" height="34" sc-camel-view-box="0 0 34 34" fill="none"><defs><radialGradient id="pFq" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FFFDF7"></stop><stop offset="42%" stop-color="#F1E3CC"></stop><stop offset="100%" stop-color="#C9A87E"></stop></radialGradient></defs><circle cx="17" cy="17" r="12" fill="url(#pFq)"></circle><ellipse cx="13" cy="13" rx="3.6" ry="2.4" fill="rgba(255,255,255,.6)"></ellipse></svg></div>
-        <div style="font-family:'Comforter',cursive;font-size:28px;color:#420A17">а что если…</div>
+  <section id="faq" data-screen-label="Вопросы" style="padding:36px 28px 44px;background:#F3EBD8">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:28px">
+        <div style="display:none;justify-content:center;margin-bottom:10px"><svg width="34" height="34" sc-camel-view-box="0 0 34 34" fill="none"><defs><radialGradient id="pFq" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FFFDF7"></stop><stop offset="42%" stop-color="#F1E3CC"></stop><stop offset="100%" stop-color="#C9A87E"></stop></radialGradient></defs><circle cx="17" cy="17" r="12" fill="url(#pFq)"></circle><ellipse cx="13" cy="13" rx="3.6" ry="2.4" fill="rgba(255,255,255,.6)"></ellipse></svg></div>
+        <div style="font-family:'Forum',serif;font-weight:400;letter-spacing:.03em;font-size:28px;color:#420A17">а что если…</div>
         <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(34px,5vw,58px);line-height:1.04;color:#3A2418;margin:6px 0 0;letter-spacing:-.01em">Мы знаем, что вы хотите спросить</h2>
       </div>
+      <div data-faq-grid="" style="display:grid;grid-template-columns:repeat(2,1fr);gap:0 14px;align-items:start">
       <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="12">
         <details data-faq="" style="background:#FBF6EC;border:1px solid rgba(58,36,24,.12);border-radius:4px;margin-bottom:12px;overflow:hidden">
-          <summary style="list-style:none;cursor:pointer;padding:24px 26px;display:flex;justify-content:space-between;gap:18px;align-items:center;font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(18px,2.4vw,22px);color:#3A2418">
+          <summary style="list-style:none;cursor:pointer;padding:13px 20px;display:flex;justify-content:space-between;gap:14px;align-items:center;font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(16px,1.5vw,18px);color:#3A2418">
             <span style="overflow-wrap:break-word;min-width:0">{{ f.q }}</span>
             <span data-mark="" style="color:#420A17;font-size:28px;flex:0 0 auto;font-weight:300;line-height:1">+</span>
           </summary>
           <div style="padding:0 26px 24px;color:#6b5a45;font-size:15px;line-height:1.75;overflow-wrap:break-word">{{ f.a }}</div>
         </details>
       </sc-for>
-      <div data-reveal="" style="margin-top:36px;background:#420A17;color:#F3EBD8;border-radius:12px;padding:clamp(24px,3vw,34px) clamp(24px,3.4vw,40px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
+      </div>
+      <div data-reveal="" style="margin-top:20px;background:#420A17;color:#F3EBD8;border-radius:12px;padding:clamp(24px,3vw,34px) clamp(24px,3.4vw,40px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
         <p style="font-family:'Commissioner',sans-serif;font-weight:600;font-size:clamp(18px,2vw,23px);line-height:1.35;margin:0;flex:1 1 380px;min-width:0">Не нашли ответ на свой вопрос? Запишитесь на&nbsp;консультацию с&nbsp;маркетологом</p>
         <a href="#final" data-lead="" style="background:#B08968;color:#420A17;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:17px 36px;border-radius:2px;white-space:nowrap" style-hover="background:#c79c78">Записаться</a>
       </div>
@@ -2158,7 +2170,7 @@ class Component extends DCLogic {
     }
 
     // 2) рукописные подписи вокруг заголовка
-    const scribbles = [...root.querySelectorAll("[data-hero] span[style*='Comforter']")];
+    const scribbles = [...root.querySelectorAll("[data-hero] span[data-gold]")];
     scribbles.forEach(function (el) {
       const base = el.style.transform || '';
       el.style.opacity = '0';
