@@ -664,6 +664,7 @@
   [data-money]:hover svg{transform:scale(1.03)} [data-money] svg{transition:transform .3s}
   img[src=""]{display:none !important}
   [data-removed]{display:none !important}
+  img[data-photo="1"]{mix-blend-mode:normal !important;border-radius:8px;max-height:80px !important}
   [data-shot2="0"]{display:none !important}
   /* шрифты по памятке UniKate */
   [style*="Comforter"]{font-size-adjust:.5;line-height:1.1;letter-spacing:.01em}
@@ -841,7 +842,7 @@
         <div style="display:flex;gap:14px;width:max-content;animation:uq-marquee 60s linear infinite">
           <sc-for list="{{ clientsLoop }}" as="c">
             <div style="flex:0 0 auto;background:#FBF6EC;border-radius:6px;padding:0 22px;height:96px;min-width:170px;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:17px;color:#420A17;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.25);overflow:hidden">
-              <img src="{{ c.logo }}" alt="{{ c.t }}" style="max-height:78px;max-width:230px;width:auto;height:auto;display:block;mix-blend-mode:multiply">
+              <img src="{{ c.logo }}" alt="{{ c.t }}" data-photo="{{ c.photo }}" style="max-height:78px;max-width:230px;width:auto;height:auto;display:block;mix-blend-mode:multiply">
               <span>{{ c.label }}</span>
             </div>
           </sc-for>
@@ -1685,7 +1686,7 @@ class Component extends DCLogic {
           { t: 'Эвакуаторы', logo: 'assets/7b9d235a-248f-4551-bf9b-75e912157180.png', label: '' },
           { t: 'Музей Русской Сказки', logo: 'assets/bfeaf59a-d8e4-4809-aa2a-784c9cdfa395.jpg', label: '' },
           { t: 'МакШтаб', logo: '', label: 'МакШтаб' },
-          { t: 'Лодки Ладога', logo: 'assets/8ff10727-70b8-4c1d-9304-ff95e5e768d2.jpg', label: '' },
+          { t: 'Лодки Ладога', logo: 'assets/fcc10548-2649-49c2-8d26-93360f52d4db.jpg', label: '', photo: '1' },
           { t: 'Libe studio', logo: 'assets/3cb23a53-0a91-4235-a0a9-b6a4175fc75b.jpg', label: '' },
           { t: 'С корабля на бал', logo: 'assets/db3a0357-a141-4989-a429-c63f023dbcf6.jpg', label: '' },
           { t: 'Ильинская больница', logo: 'assets/6f1ccb0b-8df3-4c47-8a63-57a2b5b7ec74.jpg', label: '' },
