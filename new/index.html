@@ -664,6 +664,10 @@
   [data-money]:hover svg{transform:scale(1.03)} [data-money] svg{transition:transform .3s}
   img[src=""]{display:none !important}
   [data-removed]{display:none !important}
+  [data-sketch]{clip-path:inset(0 100% 0 0);transition:clip-path 1.8s cubic-bezier(.45,.05,.25,1)}
+  [data-sketch].on{clip-path:inset(0 0 0 0);animation:sk-float 6s ease-in-out 2s infinite}
+  @keyframes sk-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  @media (max-width:640px){ #cases img[data-sketch], #team img[data-sketch]{display:none} }
   @media (max-width:860px){ [data-why-grid],[data-faq-grid]{grid-template-columns:1fr !important} }
   #why [data-stagger]{width:auto !important;margin:0 !important}
   @media (max-width:900px){ [data-hero-top]{min-height:0 !important} }
@@ -738,7 +742,7 @@
             <span style="font-family:'Forum',serif;font-size:clamp(22px,2.8vw,36px);color:#CFA98C;text-align:left;line-height:1.1;letter-spacing:.03em;text-transform:uppercase">больше клиентов<br>через&nbsp;3&nbsp;месяца</span>
           </div>
 
-          <div data-hero="" style="font-family:'Forum',serif;font-weight:400;font-size:clamp(28px,4.6vw,60px);color:#F3EBD8;letter-spacing:.03em;text-transform:uppercase;margin-top:18px">Страшно? <em style="font-style:italic;color:#CFA98C">Потянете?</em></div>
+          <div data-hero="" style="font-family:'Forum',serif;font-weight:400;font-size:clamp(28px,4.6vw,60px);color:#F3EBD8;letter-spacing:.03em;text-transform:uppercase;margin-top:18px">Страшно? <em style="font-style:normal;color:#CFA98C">Потянете?</em></div>
 
           <p data-hero="" style="font-size:clamp(15px,1.6vw,19px);color:#E7D2C6;margin:22px auto 0;max-width:640px;font-family:'Commissioner',sans-serif">UniKate <span data-gold="" style="font-family:'Forum',serif;font-weight:400;letter-spacing:.03em;color:#B08968">[ Юникейт ]</span> – международное маркетинговое агентство.</p>
           <div data-hero="" style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(22px,3vw,38px);color:#F3EBD8;margin-top:8px">Пора <span style="border-bottom:3px solid #B08968">зарабатывать&nbsp;с&nbsp;нами</span>.</div>
@@ -760,7 +764,7 @@
                 <div data-ph-list="" style="position:absolute;left:8px;right:8px;top:192px;bottom:10px;display:flex;flex-direction:column;gap:7px;overflow:hidden"></div>
               </div>
             </div>
-            <button type="button" data-ph-sound="" style="appearance:none;border:1px solid rgba(207,169,140,.5);background:transparent;color:#CDA892;border-radius:30px;padding:9px 20px;font-family:'Commissioner',sans-serif;font-size:14px;font-weight:500;letter-spacing:0;cursor:pointer">Включить звук</button>
+            <button type="button" data-ph-sound="" data-removed="кнопка звука убрана 01.10" style="appearance:none;border:1px solid rgba(207,169,140,.5);background:transparent;color:#CDA892;border-radius:30px;padding:9px 20px;font-family:'Commissioner',sans-serif;font-size:14px;font-weight:500;letter-spacing:0;cursor:pointer">Включить звук</button>
           </div>
 
           <!-- счётная машинка (правки 29.09 п.4): купюры летят, сумма растёт, звук по клику -->
@@ -904,7 +908,7 @@
       <div data-approach-grid="" style="display:grid;gap:18px;grid-template-columns:repeat(3,1fr)">
         <sc-for list="{{ approach }}" as="a">
           <div data-reveal="" style="background:{{ a.bg }};color:{{ a.fg }};border:1px solid rgba(58,36,24,.1);border-radius:14px;padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:12px;min-width:0;box-shadow:0 14px 34px rgba(58,36,24,.08)">
-            <div style="display:flex;align-items:center;gap:10px"><span style="font-family:'Wix Madefor Display',sans-serif;font-style:italic;font-size:26px;color:#B08968;line-height:1">{{ a.n }}</span><sc-if value="{{ a.isNew }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Commissioner';font-size:10px;font-weight:800;letter-spacing:1.6px;background:#B08968;color:#420A17;border-radius:30px;padding:4px 10px">NEW</span></sc-if></div>
+            <div style="display:flex;align-items:center;gap:10px;min-height:30px"><span style="font-family:'Wix Madefor Display',sans-serif;font-style:italic;font-size:26px;color:#B08968;line-height:1">{{ a.n }}</span><img data-sketch="" src="{{ a.sk }}" alt="" style="margin-left:auto;height:78px;width:auto;max-width:110px;margin-top:-14px;margin-bottom:-14px"><sc-if value="{{ a.isNew }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Commissioner';font-size:10px;font-weight:800;letter-spacing:1.6px;background:#B08968;color:#420A17;border-radius:30px;padding:4px 10px">NEW</span></sc-if></div>
             <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(19px,1.9vw,23px);line-height:1.2;margin:0;color:inherit">{{ a.t }}</h3>
             <p style="font-size:14.5px;line-height:1.65;margin:0;opacity:.86">{{ a.d }}</p>
           </div>
@@ -932,6 +936,7 @@
           <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(34px,5.8vw,74px);line-height:1.02;color:#420A17;margin:0;letter-spacing:-.02em">Ниши, в&nbsp;которых<br>нам нет равных</h2>
         </div>
         <p style="flex:1 1 300px;max-width:420px;min-width:0;font-size:clamp(15px,1.5vw,17px);line-height:1.65;color:#5c4c3b;margin:0 0 10px">Фактические показатели, достигнутые вместе с&nbsp;клиентами.</p>
+        <img data-sketch="" src="assets/9e70ca64-0bfa-40e9-baeb-7d68a67cb644.svg" alt="" style="flex:0 0 auto;height:140px;width:auto;margin:0 0 6px">
       </div>
 
       <!-- clickable case tabs (static imgs so they survive bundling) -->
@@ -1153,10 +1158,13 @@
   <!-- ===================== SERVICES ===================== -->
   <section id="formats" data-screen-label="Услуги" style="padding:clamp(56px,6vw,80px) 28px;background:radial-gradient(120% 90% at 50% 28%,#5A1422,#2E0710 72%);color:#F3EBD8">
     <div style="max-width:1180px;margin:0 auto">
-      <div data-reveal="" style="max-width:760px;margin-bottom:clamp(40px,6vw,64px)">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(40px,6vw,64px)">
+      <div data-reveal="" style="max-width:760px;margin-bottom:0">
         <div style="font-family:'Commissioner';font-size:15px;letter-spacing:0;text-transform:none;color:#CFA98C;font-weight:600;margin-bottom:14px">Услуги</div>
         <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(36px,5.6vw,64px);line-height:1.05;color:#F3EBD8;margin:0 0 16px;letter-spacing:-.02em">Выберите точку,<br>с которой начнём</h2>
         <p style="font-size:16px;color:#E7D2C6;line-height:1.6;margin:0">От точечной консультации до внешнего отдела маркетинга. Формат зависит от задачи, ресурсов и готовности команды.</p>
+      </div>
+        <img data-sketch="" src="assets/edfb024b-f0a7-463e-8acc-c13478ae3211.svg" alt="" style="height:clamp(130px,14vw,190px);width:auto;flex:0 0 auto">
       </div>
 
       <div data-svc-grid="" style="display:grid;gap:18px;grid-template-columns:repeat(3,1fr)">
@@ -1184,6 +1192,7 @@
         <div>
           <div style="font-family:'Commissioner';font-size:15px;letter-spacing:0;text-transform:none;color:#CFA98C;font-weight:600;margin-bottom:10px">Три формата реализации</div>
           <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(24px,2.6vw,32px);line-height:1.15;color:#F3EBD8;margin:0">Столько участия, сколько нужно бизнесу</h3>
+          <img data-sketch="" src="assets/ff531f60-8da3-46f0-82d8-c55ca6b31821.svg" alt="" style="width:100%;max-width:300px;height:auto;margin-top:14px">
         </div>
         <div data-svc-grid="" style="display:grid;gap:22px;grid-template-columns:repeat(3,1fr)">
           <div data-reveal="">
@@ -1311,6 +1320,7 @@
           <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(32px,5.6vw,72px);line-height:1.02;color:#420A17;margin:0;letter-spacing:-.02em">Ответственная команда,<br>заряженная на&nbsp;результат</h2>
         </div>
         <p style="flex:1 1 300px;max-width:420px;min-width:0;font-size:clamp(15px,1.5vw,17px);line-height:1.65;color:#5c4c3b;margin:0 0 10px">Стратегия, контент, управление и аналитика соединяются в одном процессе – у проекта одна цель и общая ответственность за результат.</p>
+        <img data-sketch="" src="assets/722115cc-6e92-4466-8cea-762eb67b937a.svg" alt="" style="flex:0 0 auto;height:150px;width:auto">
       </div>
 
       <!-- TEAM CARDS (static imgs) -->
@@ -1716,12 +1726,12 @@ class Component extends DCLogic {
       })(),
 
       approach: [
-        { n: '01', t: 'Не льём трафик в ненадёжную систему', d: 'До запуска рекламы собираем воронку, где каждый шаг ведёт к следующему: разбираем, что человек думает и ищет на каждом этапе, и заранее даём ответ. Так вы опережаете конкурентов ещё до того, как клиент их сравнил.', bg: '#FBF6EC', fg: '#3A2418' },
-        { n: '02', t: 'Больше продаж при том же бюджете', d: 'Выжимаем больше из того, что уже есть: между «увидел рекламу» и «оплатил» много шагов – и на одном из них всё ломается. Мы находим этот шаг, чиним и повышаем конверсию.', bg: '#420A17', fg: '#F3EBD8' },
-        { n: '03', t: 'От стратегии до денег в кассе', d: 'Закрываем весь путь: аналитика → стратегия с прогнозами в цифрах → упаковка → трафик из интернета и соцсетей → воронки продаж → продающие скрипты → отчётность → оптимизация. Одна команда, одна ответственность.', bg: '#FBF6EC', fg: '#3A2418' },
-        { n: '04', t: 'Прозрачная экономика', d: 'Вы можете контролировать, как работают ваши инвестиции: даём прогнозы и показываем, как они реализуются на практике. Цена показов в вашем гео, цена лида, конверсия в покупку.', bg: '#FBF6EC', fg: '#3A2418' },
-        { n: '05', t: 'Международный опыт', d: 'Знаем, как исследовать, чем покупатель в Тель-Авиве отличается от покупателя в Москве или Берлине. Адаптируем продвижение под менталитет, паттерны выбора, язык.', bg: '#FBF6EC', fg: '#3A2418' },
-        { n: '06', isNew: true, t: 'Вас рекомендуют поисковики, нейронки, карты', d: 'SEO (Яндекс, Google), GEO (ChatGPT, Gemini, Алиса и др.), продвижение в картах – вы уже там, где вас ищут сегодня, а конкуренты ещё не сориентировались.', bg: '#420A17', fg: '#F3EBD8' },
+        { n: '01', sk: '', t: 'Не льём трафик в ненадёжную систему', d: 'До запуска рекламы собираем воронку, где каждый шаг ведёт к следующему: разбираем, что человек думает и ищет на каждом этапе, и заранее даём ответ. Так вы опережаете конкурентов ещё до того, как клиент их сравнил.', bg: '#FBF6EC', fg: '#3A2418' },
+        { n: '02', sk: 'assets/4029fbb3-0dd0-4d52-a534-645dfeca310b.svg', t: 'Больше продаж при том же бюджете', d: 'Выжимаем больше из того, что уже есть: между «увидел рекламу» и «оплатил» много шагов – и на одном из них всё ломается. Мы находим этот шаг, чиним и повышаем конверсию.', bg: '#420A17', fg: '#F3EBD8' },
+        { n: '03', sk: 'assets/370f2211-4854-451d-800e-87c279019938.svg', t: 'От стратегии до денег в кассе', d: 'Закрываем весь путь: аналитика → стратегия с прогнозами в цифрах → упаковка → трафик из интернета и соцсетей → воронки продаж → продающие скрипты → отчётность → оптимизация. Одна команда, одна ответственность.', bg: '#FBF6EC', fg: '#3A2418' },
+        { n: '04', sk: 'assets/0df3d7ee-57fa-4110-adce-b43074f533c7.svg', t: 'Прозрачная экономика', d: 'Вы можете контролировать, как работают ваши инвестиции: даём прогнозы и показываем, как они реализуются на практике. Цена показов в вашем гео, цена лида, конверсия в покупку.', bg: '#FBF6EC', fg: '#3A2418' },
+        { n: '05', sk: '', t: 'Международный опыт', d: 'Знаем, как исследовать, чем покупатель в Тель-Авиве отличается от покупателя в Москве или Берлине. Адаптируем продвижение под менталитет, паттерны выбора, язык.', bg: '#FBF6EC', fg: '#3A2418' },
+        { n: '06', sk: '', isNew: true, t: 'Вас рекомендуют поисковики, нейронки, карты', d: 'SEO (Яндекс, Google), GEO (ChatGPT, Gemini, Алиса и др.), продвижение в картах – вы уже там, где вас ищут сегодня, а конкуренты ещё не сориентировались.', bg: '#420A17', fg: '#F3EBD8' },
       ],
 
       pains: [
@@ -1753,12 +1763,10 @@ class Component extends DCLogic {
         { photo: 'assets/f51abd29-b759-4d11-8320-5df2dcfb3b65.jpg', shot1: 'assets/dcc324c5-9358-440d-b900-27830916ff86.jpg', shot2: '', has2: '0', name: 'Екатерина Гинзбург', role: 'клиника аппаратной косметологии, СПб' },
         { photo: 'assets/81f781f8-9b95-4391-8b67-feaeca9c3ace.jpg', shot1: 'assets/d0b8ee2e-791c-417f-881f-b54774cfa5bd.jpg', shot2: '', has2: '0', name: 'Ирина', role: 'детская студия архитектуры' },
         { photo: 'assets/6fea0e9a-1077-45f2-bb08-8e7aa74ab708.jpg', shot1: 'assets/14b84cc8-ed1f-4775-bdeb-4802d75e5077.jpg', shot2: '', has2: '0', name: 'Юлия', role: 'Музей Русской Сказки' },
-        { photo: '', shot1: '', shot2: '', has2: '0', name: '', role: '' },
-        { photo: '', shot1: '', shot2: '', has2: '0', name: '', role: '' },
-        { photo: '', shot1: '', shot2: '', has2: '0', name: '', role: '' },
-        { photo: '', shot1: '', shot2: '', has2: '0', name: '', role: '' },
-        { photo: '', shot1: '', shot2: '', has2: '0', name: '', role: '' },
-        { photo: '', shot1: '', shot2: '', has2: '0', name: '', role: '' },
+        { photo: 'assets/5f0d0716-7044-410b-9c77-ba8ccb85cc5e.jpg', shot1: 'assets/7c4197a6-2f84-4fc2-8fbc-9a1d0a0ccc98.jpg', shot2: 'assets/7cb63196-7175-4150-9857-70ceef26ac8d.jpg', has2: '1', name: 'Анастасия Романова', role: 'врач-ортодонт, СПб' },
+        { photo: 'assets/80344d4c-c23a-423f-8aaf-d1c05de9c13b.jpg', shot1: 'assets/29a47262-2dab-4a6c-97a7-d8e1e3041e22.jpg', shot2: 'assets/5f165ddb-b106-4be3-8fac-f609671643d8.jpg', has2: '1', name: 'Рейчел Сер', role: 'Ser Clinic, Тель-Авив' },
+        { photo: '', shot1: 'assets/039c7c7b-fe06-4bcf-95b2-45e8d11ead96.jpg', shot2: 'assets/86b145ac-2528-4359-a683-1fde38c0e4a3.jpg', has2: '1', name: 'МакШтаб', role: 'сервис техники Apple, СПб' },
+        { photo: '', shot1: 'assets/ba04e860-7324-4dec-9a11-dd96a0c3f8a3.jpg', shot2: '', has2: '0', name: 'Фотограф', role: 'личный бренд с нуля, СПб' },
       ],
 
       testimonials: [
@@ -1921,6 +1929,15 @@ class Component extends DCLogic {
         form.reset();
       });
     }
+
+    // ---- скетчи (касса, монеты, калькулятор, шахматы, лупа, пазлы): прорисовка при появлении ----
+    setInterval(function () {
+      const vh = window.innerHeight || 800;
+      document.querySelectorAll('[data-sketch]:not(.on)').forEach(function (el) {
+        const r = el.getBoundingClientRect();
+        if (r.width && r.top < vh * 0.9 && r.bottom > 0) el.classList.add('on');
+      });
+    }, 300);
 
     // ---- дирижёр: прорисовка при появлении (опрос, т.к. узлы могут перерисовываться) ----
     const condTimer = setInterval(function () {
