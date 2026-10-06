@@ -664,6 +664,15 @@
   [data-money]:hover svg{transform:scale(1.03)} [data-money] svg{transition:transform .3s}
   img[src=""]{display:none !important}
   [data-removed]{display:none !important}
+  [data-rvphoto=""]{display:none !important}
+  [data-formulas] [data-f]{opacity:0;transition:opacity .7s ease}
+  [data-sketch].on [data-formulas] [data-f="1"]{opacity:1;transition-delay:.3s}
+  [data-sketch].on [data-formulas] [data-f="2"]{opacity:1;transition-delay:.9s}
+  [data-sketch].on [data-formulas] [data-f="3"]{opacity:1;transition-delay:1.5s}
+  [data-sketch].on [data-formulas] [data-f="6"]{opacity:1;transition-delay:2s}
+  [data-sketch].on [data-formulas] [data-f="4"]{opacity:1;transition-delay:2.4s}
+  [data-sketch].on [data-formulas] [data-f="5"]{opacity:1;transition-delay:3s}
+  @media (max-width:860px){ [data-h2row]{grid-template-columns:1fr !important;gap:16px !important} [data-h2row] > div:nth-child(2){max-width:360px;margin:0 auto} }
   @media (max-width:900px){ [data-intro2]{grid-template-columns:1fr !important;gap:12px !important} }
   h1,h2,h3,h4,p,li,summary{-webkit-hyphens:none;hyphens:none}
   div,span,summary,a,figcaption{text-wrap:pretty}
@@ -748,7 +757,7 @@
 
           <div data-hero="" style="font-family:'Forum',serif;font-weight:400;font-size:clamp(28px,4.6vw,60px);color:#F3EBD8;letter-spacing:.03em;text-transform:uppercase;margin-top:18px">Страшно? <em style="font-style:normal;color:#CFA98C">Потянете?</em></div>
 
-          <p data-hero="" style="font-size:clamp(15px,1.6vw,19px);color:#E7D2C6;margin:22px auto 0;max-width:640px;font-family:'Commissioner',sans-serif">UniKate <span data-gold="" style="font-family:'Forum',serif;font-weight:400;letter-spacing:.03em;color:#B08968">[ Юникейт ]</span>международное маркетинговое агентство.</p>
+          <p data-hero="" style="font-size:clamp(15px,1.6vw,19px);color:#E7D2C6;margin:22px auto 0;max-width:640px;font-family:'Commissioner',sans-serif">UniKate <span data-gold="" style="font-family:'Forum',serif;font-weight:400;letter-spacing:.03em;color:#B08968">[Юникейт]</span> – международное маркетинговое агентство.</p>
           <div data-hero="" style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(22px,3vw,38px);color:#F3EBD8;margin-top:8px">Пора <span style="border-bottom:3px solid #B08968">зарабатывать с&nbsp;нами</span>.</div>
             </div>
             <div style="flex:0 0 auto">
@@ -805,7 +814,33 @@
             </div>
           </div>
 
-          <div data-hero-row="" style="display:flex;align-items:flex-end;justify-content:center;gap:clamp(8px,3vw,40px);flex-wrap:nowrap;margin-top:0">
+          <!-- первый экран, правки 02.10: пункты по бокам, формулы в центре, оффер крупно -->
+          <div data-hero="" data-hero2="" style="padding:6px 0 0">
+            <p style="font-family:'Commissioner',sans-serif;font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.3;color:#F3EBD8;margin:0 auto 10px;max-width:640px;text-align:center">Аналитически точные маркетинговые стратегии для&nbsp;роста прибыли&nbsp;бизнеса</p>
+            <div data-gold="" style="font-family:'Forum',serif;font-weight:400;letter-spacing:.03em;font-size:clamp(20px,2.2vw,26px);color:#CFA98C;margin:0 0 8px;text-align:center">Подключаемся командой и…</div>
+            <div data-h2row="" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,440px) minmax(0,1fr);gap:clamp(20px,3vw,48px);align-items:center;margin-top:10px">
+              <div style="display:flex;flex-direction:column;gap:22px"><div style="display:flex;gap:12px;font-size:16.5px;line-height:1.5;color:#EBD8CC;text-align:left"><span style="flex:0 0 7px;height:7px;border-radius:50%;background:#B08968;margin-top:.62em"></span><span>Систематизируем или&nbsp;строим отдел маркетинга&nbsp;с&nbsp;нуля</span></div><div style="display:flex;gap:12px;font-size:16.5px;line-height:1.5;color:#EBD8CC;text-align:left"><span style="flex:0 0 7px;height:7px;border-radius:50%;background:#B08968;margin-top:.62em"></span><span>Снижаем цену лида и&nbsp;клиента, поднимаем окупаемость&nbsp;в&nbsp;разы</span></div></div>
+              <div data-sketch="" data-formulas-wrap="" style="width:100%">
+                <svg data-formulas="" sc-camel-view-box="0 0 440 300" width="100%" fill="none" style="display:block;overflow:visible">
+                  <g stroke="rgba(207,169,140,.35)" stroke-width="1"><path d="M10 288 H430"></path><path d="M10 288 V12"></path></g>
+                  <g data-f="1"><text x="24" y="52" fill="#CFA98C" font-family="Forum, serif" font-size="27" letter-spacing=".5">CPL = бюджет ÷ заявки</text></g>
+                  <g data-f="2"><text x="24" y="104" fill="#CFA98C" font-family="Forum, serif" font-size="27" letter-spacing=".5">CR = продажи ÷ заявки</text></g>
+                  <g data-f="3"><text x="24" y="156" fill="#F3EBD8" font-family="Forum, serif" font-size="21.5" letter-spacing=".3">ROMI = (выручка − расходы) ÷ расходы</text></g>
+                  <g data-f="4"><text x="24" y="212" fill="#CFA98C" font-family="Forum, serif" font-size="30" letter-spacing=".5">LTV &gt; CAC</text>
+                    <path d="M196 196 l10 12 l22 -28" stroke="#EFD08E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></g>
+                  <g data-f="5" stroke="#CFA98C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M260 270 L300 248 L330 256 L370 222 L410 190"></path>
+                    <path d="M396 188 L412 188 L410 204"></path>
+                    <circle cx="300" cy="248" r="3.5" fill="#CFA98C"></circle><circle cx="330" cy="256" r="3.5" fill="#CFA98C"></circle><circle cx="370" cy="222" r="3.5" fill="#CFA98C"></circle>
+                  </g>
+                  <path data-f="6" d="M22 168 C 120 176, 300 176, 420 166" stroke="rgba(239,208,142,.7)" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:22px"><div style="display:flex;gap:12px;font-size:16.5px;line-height:1.5;color:#EBD8CC;text-align:left"><span style="flex:0 0 7px;height:7px;border-radius:50%;background:#B08968;margin-top:.62em"></span><span>Работаем точечно или&nbsp;закрываем весь цикл под&nbsp;ключ: аналитика рынка и&nbsp;продукта, сайт, соцсети, реклама, воронки, SEO, AI-⁠поиск,&nbsp;продажи</span></div></div>
+            </div>
+            <p data-offer="" style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(22px,2.6vw,34px);line-height:1.3;color:#F3EBD8;margin:22px auto 0;max-width:980px;text-align:center">…чтобы вы&nbsp;точно знали, когда и&nbsp;откуда придёт следующий клиент, сколько он&nbsp;стоит&nbsp;и&nbsp;что&nbsp;принесёт.</p>
+          </div>
+          <div data-removed="старый ряд hero до правок 02.10" data-hero-row="" style="display:flex;align-items:flex-end;justify-content:center;gap:clamp(8px,3vw,40px);flex-wrap:nowrap;margin-top:0">
             <sc-if value="{{ showCallouts }}" hint-placeholder-val="{{ true }}">
             <div data-hero="" data-callouts="" style="flex:1 1 220px;max-width:280px;display:flex;flex-direction:column;gap:84px;padding-bottom:54px;text-align:right">
               <div style="position:relative;font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#EBD8CC;line-height:1.6">
@@ -874,13 +909,13 @@
   </div>
 
   <!-- ===================== ЧТО МЫ ДЕЛАЕМ (новый блок, правки 29.09 п.7) ===================== -->
-  <section id="approach" data-screen-label="Что мы делаем" style="background:#F6EEDF;padding:24px 28px 22px;overflow:hidden">
+  <section id="approach" data-screen-label="Что мы делаем" style="background:#F6EEDF;padding:14px 28px 12px;overflow:hidden">
     <div style="max-width:1320px;margin:0 auto">
       <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,60px);align-items:center;margin-bottom:14px">
         <div style="flex:1 1 760px;min-width:0">
           <div style="font-family:'Commissioner';font-size:15px;letter-spacing:0;text-transform:none;color:#8A6B4F;font-weight:600;margin-bottom:8px">Что&nbsp;мы&nbsp;делаем</div>
-          <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,56px);line-height:1.06;color:#420A17;margin:0 0 10px;letter-spacing:-.02em">Что&nbsp;мы&nbsp;делаем и&nbsp;почему это&nbsp;работает на&nbsp;рост&nbsp;продаж?</h2>
-          <div data-intro2="" style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:start"><p style="font-family:'Commissioner',sans-serif;font-weight:600;font-size:clamp(18px,1.9vw,23px);line-height:1.4;color:#3A2418;margin:0">Чтобы маркетинг окупался, он&nbsp;должен играть слаженно, как&nbsp;оркестр. Его&nbsp;мы&nbsp;и&nbsp;настраиваем.</p><div><p style="font-size:15.5px;color:#5c4c3b;line-height:1.6;margin:0">Мы&nbsp;глубоко анализируем не&nbsp;только текущее продвижение, но&nbsp;и&nbsp;ликвидность самого продукта, отстройку, рынок, макросреду и&nbsp;юнит-⁠экономику и&nbsp;даём рекомендации. Далее находим «дыры», куда утекают вложения и&nbsp;где&nbsp;вы&nbsp;недозарабатываете, и&nbsp;закрываем их. А&nbsp;если вы&nbsp;только начинаете, выстраиваем точечную стратегию выхода на&nbsp;стабильные продажи без&nbsp;долгой&nbsp;раскачки.</p><div style="margin-top:10px"><a href="#final" data-lead="" style="background:#420A17;color:#F3EBD8;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:18px 40px;border-radius:2px;display:inline-block" style-hover="background:#2E0710">Получить бесплатный аудит</a></div></div></div>
+          <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,56px);line-height:1.06;color:#420A17;margin:0 0 20px;letter-spacing:-.02em">Что&nbsp;мы&nbsp;делаем и&nbsp;почему это&nbsp;работает на&nbsp;рост&nbsp;продаж?</h2>
+          <div data-intro2="" style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:start"><p style="font-family:'Commissioner',sans-serif;font-weight:600;font-size:clamp(18px,1.9vw,23px);line-height:1.4;color:#3A2418;margin:0">Чтобы маркетинг окупался, он&nbsp;должен играть слаженно, как&nbsp;оркестр. Его&nbsp;мы&nbsp;и&nbsp;настраиваем.</p><div><p style="font-size:15.5px;color:#5c4c3b;line-height:1.6;margin:0">Мы&nbsp;глубоко анализируем не&nbsp;только текущее продвижение, но&nbsp;и&nbsp;ликвидность самого продукта, отстройку, рынок, макросреду и&nbsp;юнит-⁠экономику и&nbsp;даём рекомендации. Далее находим «дыры», куда утекают вложения и&nbsp;где&nbsp;вы&nbsp;недозарабатываете, и&nbsp;закрываем их. А&nbsp;если вы&nbsp;только начинаете, выстраиваем точечную стратегию выхода на&nbsp;стабильные продажи без&nbsp;долгой&nbsp;раскачки.</p><div style="margin-top:22px;margin-bottom:4px"><a href="#final" data-lead="" style="background:#420A17;color:#F3EBD8;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:18px 40px;border-radius:2px;display:inline-block" style-hover="background:#2E0710">Получить бесплатный аудит</a></div></div></div>
         </div>
         <!-- дирижёр: однолинейная графика (по референсам Pinterest), прорисовка + золотой росчерк от палочки -->
         <div data-cond="" style="flex:0 1 240px;min-width:180px;margin:0 auto;max-width:240px">
@@ -996,17 +1031,17 @@
               <span style="position:absolute;left:16px;top:16px;background:#FBF6EC;color:#420A17;font-family:'Commissioner';font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;padding:9px 15px;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,.14)">Сервис</span>
             </div>
             <div style="padding:26px 28px 30px;min-width:0">
-              <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.2;color:#3A2418;margin:0 0 16px;letter-spacing:-.01em">Ремонт и&nbsp;сервис техники</h3>
+              <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.2;color:#3A2418;margin:0 0 16px;letter-spacing:-.01em">Новый канал трафика&nbsp;без&nbsp;конкурентов</h3>
               <div style="font-family:'Forum',serif;font-weight:400;font-size:clamp(24px,2.4vw,32px);line-height:1.15;color:#420A17;padding-top:16px;border-top:1px solid rgba(176,137,104,.4)">67 000&nbsp;₽ с&nbsp;Instagram</div>
             </div>
           </button>
           <button data-idx="6" onclick="{{ pickCase }}" style="appearance:none;border:none;cursor:pointer;text-align:left;padding:0;background:#FBF6EC;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 14px 34px rgba(58,36,24,.12);transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s;flex:0 0 clamp(300px,32%,420px);scroll-snap-align:start" style-hover="transform:translateY(-6px);box-shadow:0 26px 52px rgba(58,36,24,.2)">
             <div style="position:relative;aspect-ratio:4/3;overflow:hidden;background:#EADFCB">
               <img src="assets/aa6efd11-4730-4e65-af10-06ecec58f271.jpg" alt="Музеи и события" style="width:100%;height:100%;object-fit:cover;display:block">
-              <span style="position:absolute;left:16px;top:16px;background:#FBF6EC;color:#420A17;font-family:'Commissioner';font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;padding:9px 15px;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,.14)">Культура</span>
+              <span style="position:absolute;left:16px;top:16px;background:#FBF6EC;color:#420A17;font-family:'Commissioner';font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;padding:9px 15px;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,.14)">Досуг</span>
             </div>
             <div style="padding:26px 28px 30px;min-width:0">
-              <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.2;color:#3A2418;margin:0 0 16px;letter-spacing:-.01em">Музеи и&nbsp;события</h3>
+              <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.2;color:#3A2418;margin:0 0 16px;letter-spacing:-.01em">200&nbsp;заявок и&nbsp;раскачанный профиль к&nbsp;открытию&nbsp;музея</h3>
               <div style="font-family:'Forum',serif;font-weight:400;font-size:clamp(24px,2.4vw,32px);line-height:1.15;color:#420A17;padding-top:16px;border-top:1px solid rgba(176,137,104,.4)">с&nbsp;нуля 709&nbsp;подписчиков и&nbsp;200&nbsp;заявок</div>
             </div>
           </button>
@@ -1016,8 +1051,18 @@
               <span style="position:absolute;left:16px;top:16px;background:#FBF6EC;color:#420A17;font-family:'Commissioner';font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;padding:9px 15px;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,.14)">Личный бренд</span>
             </div>
             <div style="padding:26px 28px 30px;min-width:0">
-              <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.2;color:#3A2418;margin:0 0 16px;letter-spacing:-.01em">Личный бренд</h3>
-              <div style="font-family:'Forum',serif;font-weight:400;font-size:clamp(24px,2.4vw,32px);line-height:1.15;color:#420A17;padding-top:16px;border-top:1px solid rgba(176,137,104,.4)">+66 000&nbsp;₽ за&nbsp;3&nbsp;месяца</div>
+              <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.2;color:#3A2418;margin:0 0 16px;letter-spacing:-.01em">Фотограф-⁠новичок</h3>
+              <div style="font-family:'Forum',serif;font-weight:400;font-size:clamp(24px,2.4vw,32px);line-height:1.15;color:#420A17;padding-top:16px;border-top:1px solid rgba(176,137,104,.4)">Монетизация услуг с&nbsp;1-⁠го&nbsp;месяца</div>
+            </div>
+          </button>
+          <button data-idx="8" onclick="{{ pickCase }}" style="appearance:none;border:none;cursor:pointer;text-align:left;padding:0;background:#FBF6EC;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 14px 34px rgba(58,36,24,.12);transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s;flex:0 0 clamp(300px,32%,420px);scroll-snap-align:start" style-hover="transform:translateY(-6px);box-shadow:0 26px 52px rgba(58,36,24,.2)">
+            <div style="position:relative;aspect-ratio:4/3;overflow:hidden;background:#EADFCB">
+              <img src="assets/e47815ad-b609-4b19-8ab7-347029f44f6c.jpg" alt="Reels: миллионные просмотры" style="width:100%;height:100%;object-fit:cover;display:block">
+              <span style="position:absolute;left:16px;top:16px;background:#FBF6EC;color:#420A17;font-family:'Commissioner';font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;padding:9px 15px;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,.14)">Reels</span>
+            </div>
+            <div style="padding:26px 28px 30px;min-width:0">
+              <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.2;color:#3A2418;margin:0 0 16px;letter-spacing:-.01em">Миллионные просмотры</h3>
+              <div style="font-family:'Forum',serif;font-weight:400;font-size:clamp(24px,2.4vw,32px);line-height:1.15;color:#420A17;padding-top:16px;border-top:1px solid rgba(176,137,104,.4)">1M+ просмотров</div>
             </div>
           </button>
         </div>
@@ -1029,7 +1074,7 @@
       <div data-reveal="" style="background:#FBF6EC;border:1px solid rgba(176,137,104,.34);border-radius:14px;overflow:hidden;box-shadow:0 20px 48px rgba(58,36,24,.1);margin-top:16px">
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,3vw,40px);padding:clamp(26px,3.4vw,40px) clamp(28px,4vw,48px);background:linear-gradient(150deg,#FBF6EC,#F0E4CE);border-bottom:1px solid rgba(176,137,104,.34)">
           <div style="flex:1 1 300px;min-width:0">
-            <div style="font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#8A6B4F;font-weight:700">кейс · {{ activeCase.title&nbsp;}}</div>
+            <div style="font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#8A6B4F;font-weight:700">кейс · {{ activeCase.title }}</div>
             <h3 style="font-family:'Forum',serif;font-weight:400;font-size:clamp(36px,4.4vw,64px);margin:8px 0 4px;color:#420A17;line-height:1;overflow-wrap:break-word">{{ activeCase.metric }}</h3>
             <div style="font-size:15px;color:#6b5a45">{{ activeCase.sub }}</div>
           </div>
@@ -1046,7 +1091,7 @@
           </div>
         </div>
         <div style="display:flex;flex-wrap:wrap">
-        <div style="flex:1 1 380px;padding:clamp(26px,3.4vw,40px) clamp(28px,4vw,48px);min-width:0">
+        <div style="flex:1 1 340px;max-width:520px;padding:clamp(22px,2.6vw,32px) clamp(24px,3vw,36px);min-width:0">
           <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:26px">
             <div style="display:flex;gap:14px;min-width:0"><span style="flex:0 0 64px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#B08968;font-weight:700;padding-top:3px">Было</span><span style="font-size:15px;color:#5c4c3b;line-height:1.6;min-width:0;overflow-wrap:break-word">{{ activeCase.was }}</span></div>
             <div style="display:flex;gap:14px;min-width:0"><span style="flex:0 0 64px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#B08968;font-weight:700;padding-top:3px">Сделали</span><span style="font-size:15px;color:#5c4c3b;line-height:1.6;min-width:0;overflow-wrap:break-word">{{ activeCase.did }}</span></div>
@@ -1057,13 +1102,14 @@
           </sc-if>
           <a href="#final" data-lead="" style="background:#420A17;color:#F3EBD8;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;padding:16px 28px;border-radius:2px;display:inline-block" style-hover="background:#2E0710">Узнать результат&nbsp;в&nbsp;вашей&nbsp;нише</a>
         </div>
-        <div style="flex:1 1 640px;min-width:0;padding:clamp(26px,3.4vw,40px) clamp(28px,4vw,48px);background:#F6EEDF;border-left:1px solid rgba(176,137,104,.34)">
-          <div style="font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:#6b5a45;font-weight:700;margin-bottom:6px">Доказательства</div>
-          <div style="font-size:13px;color:#6b5a45;line-height:1.5;margin-bottom:16px">{{ activeCase.numLabel }}</div>
-          <div data-proof-rail="" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:thin">
+        <div data-proof-col="" style="flex:2 1 600px;min-width:0;padding:14px 16px 12px;background:#F6EEDF;border-left:1px solid rgba(176,137,104,.34);position:relative">
+          <div style="display:flex;align-items:baseline;gap:10px;margin:0 4px 10px"><span style="font-size:13px;font-weight:600;color:#6b5a45">Доказательства</span><span style="font-size:13px;color:#8A6B4F">{{ activeCase.numLabel }}</span></div>
+          <button type="button" data-proof-prev="" aria-label="Назад" style="position:absolute;left:24px;top:50%;z-index:3;width:44px;height:44px;border-radius:50%;border:none;background:rgba(66,10,23,.85);color:#F3EBD8;font-size:18px;cursor:pointer">←</button>
+          <button type="button" data-proof-next="" aria-label="Вперёд" style="position:absolute;right:24px;top:50%;z-index:3;width:44px;height:44px;border-radius:50%;border:none;background:rgba(66,10,23,.85);color:#F3EBD8;font-size:18px;cursor:pointer">→</button>
+          <div data-proof-rail="" style="display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:6px;scrollbar-width:thin">
             <sc-for list="{{ activeCase.proof }}" as="pf">
-              <figure style="margin:0;min-width:0;flex:0 0 min(86%,520px);scroll-snap-align:start">
-                <div style="aspect-ratio:16/10;border-radius:8px;overflow:hidden;border:1px solid rgba(176,137,104,.4);background:#fff;box-shadow:0 8px 18px rgba(58,36,24,.1)">
+              <figure style="margin:0;min-width:0;flex:0 0 100%;scroll-snap-align:start">
+                <div style="height:clamp(360px,62vh,600px);border-radius:8px;overflow:hidden;border:1px solid rgba(176,137,104,.3);background:#fff">
                   <img src="{{ pf.src }}" alt="{{ pf.cap }}" style="width:100%;height:100%;object-fit:contain;background:#fff;display:block">
                 </div>
                 <figcaption style="font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:#8A6B4F;font-weight:700;margin-top:8px">{{ pf.cap }}</figcaption>
@@ -1311,19 +1357,20 @@
   </section>
 
   <!-- ===================== TEAM ===================== -->
-  <section id="team" data-screen-label="Команда" style="padding:90px 28px clamp(60px,8vw,100px);background:#F6EEDF;color:#3A2418;overflow:hidden">
+  <section id="team" data-screen-label="Команда" style="padding:46px 28px 56px;background:#F6EEDF;color:#3A2418;overflow:hidden">
     <div style="max-width:1240px;margin:0 auto">
       <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:clamp(20px,4vw,60px);margin-bottom:8px">
         <div style="flex:1 1 680px;min-width:0">
           <div style="font-family:'Commissioner';font-size:15px;letter-spacing:0;text-transform:none;color:#8A6B4F;font-weight:600;margin-bottom:14px">Команда</div>
           <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(32px,5.6vw,72px);line-height:1.02;color:#420A17;margin:0;letter-spacing:-.02em"><span data-nw="">Ответственная команда,</span><br><span data-nw="">заряженная на&nbsp;результат</span></h2>
+          <div style="font-family:'Commissioner',sans-serif;font-weight:500;font-size:clamp(17px,1.6vw,21px);color:#8A6B4F;margin-top:12px">Руководящий состав&nbsp;агентства</div>
         </div>
         <p style="flex:1 1 300px;max-width:420px;min-width:0;font-size:clamp(15px,1.5vw,17px);line-height:1.65;color:#5c4c3b;margin:0 0 10px">Стратегия, контент, управление и&nbsp;аналитика соединяются в&nbsp;одном процессе: у&nbsp;проекта одна&nbsp;цель и&nbsp;общая ответственность за&nbsp;результат.</p>
         <img data-sketch="" src="assets/722115cc-6e92-4466-8cea-762eb67b937a.svg" alt="" style="flex:0 0 auto;height:150px;width:auto">
       </div>
 
       <!-- TEAM CARDS (static imgs) -->
-      <div data-team-grid="" style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,1.8vw,26px);margin-top:44px;max-width:1240px;margin-left:auto;margin-right:auto">
+      <div data-team-grid="" style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,1.8vw,26px);margin-top:26px;max-width:1240px;margin-left:auto;margin-right:auto">
         <div data-reveal="" data-removed="правки 29.09: Катя убрана из команды" style="min-width:0">
           <img src="assets/e803d3b2-f0fc-40e4-9401-bfb68a174df6.jpg" alt="Катерина Гуревич" style="width:min(100%,190px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 22%;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);box-shadow:0 12px 28px rgba(58,36,24,.18)">
           <h4 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:18px;margin:16px 0 0;color:#3A2418;text-align:center">Катерина Гуревич</h4>
@@ -1337,7 +1384,7 @@
         <div data-reveal="" style="min-width:0">
           <img src="assets/374ee6af-4b16-465b-a20d-680fd470f616.jpg" alt="Виктория Банникова" style="width:min(100%,190px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 22%;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);box-shadow:0 12px 28px rgba(58,36,24,.18)">
           <h4 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:18px;margin:16px 0 0;color:#3A2418;text-align:center">Виктория Банникова</h4>
-          <div style="font-size:10px;letter-spacing:.5px;color:#8A6B4F;font-weight:600;margin-top:6px;line-height:1.5;text-align:center">SMM-⁠МАРКЕТОЛОГ · ЖУРНАЛИСТ ·&nbsp;КОПИРАЙТЕР</div>
+          <div style="font-size:10px;letter-spacing:.5px;color:#8A6B4F;font-weight:600;margin-top:6px;line-height:1.5;text-align:center">SMM-⁠МАРКЕТОЛОГ · ЖУРНАЛИСТ · КОПИРАЙТЕР · ГРАФИЧЕСКИЙ&nbsp;ДИЗАЙНЕР</div>
         </div>
         <div data-reveal="" style="min-width:0">
           <img src="assets/be163049-4da5-4fe9-bc8b-89011fb2377f.jpg" alt="Кристина Белова" style="width:min(100%,190px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 22%;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);box-shadow:0 12px 28px rgba(58,36,24,.18)">
@@ -1380,7 +1427,7 @@
       </div>
     </div>
     <div data-pearl-text="" style="opacity:0;transition:opacity .8s ease;will-change:opacity;max-width:960px">
-      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(26px,4vw,46px);line-height:1.12;color:#F3EBD8;margin:0"><span data-nw="">Делаем ваш&nbsp;бизнес жемчужиной</span><br><span data-nw="" style="color:#CFA98C;font-style:italic">в&nbsp;своей нише.</span></h2>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(26px,4vw,46px);line-height:1.12;color:#F3EBD8;margin:0"><span data-nw="">Делаем ваш&nbsp;бизнес&nbsp;жемчужиной</span><br><span data-nw="" style="color:#CFA98C;font-style:italic">в&nbsp;своей нише.</span></h2>
       <p style="font-family:'Commissioner',sans-serif;font-size:clamp(16px,2vw,20px);color:#E7D2C6;line-height:1.6;margin:24px auto 0;max-width:720px">Хороший маркетинг эффективен, как&nbsp;точная наука, и&nbsp;вдохновляет, как&nbsp;искусство. Для&nbsp;нас&nbsp;каждая стратегия не&nbsp;просто продвижение, а&nbsp;возможность вашему бизнесу раскрыться в&nbsp;полную силу и&nbsp;перестать теряться среди&nbsp;конкурентов.</p>
       <p style="font-family:'Commissioner',sans-serif;font-size:clamp(16px,2vw,20px);color:#E7D2C6;line-height:1.6;margin:14px auto 0;max-width:720px">А&nbsp;вы&nbsp;чувствуете уверенность, потому что&nbsp;за&nbsp;вашим ростом стоит команда, для&nbsp;которой ваш&nbsp;успех так&nbsp;же&nbsp;важен,&nbsp;как&nbsp;собственный.</p>
     </div>
@@ -1503,18 +1550,18 @@
       <div style="position:relative;margin:0 calc(50% - 50vw)">
         <div data-rv-rail="" style="display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px max(24px,calc(50vw - 330px)) 30px;scrollbar-width:none;-webkit-overflow-scrolling:touch">
           <sc-for list="{{ reviewCards }}" as="c">
-            <div data-review-card="" style="flex:0 0 min(660px,86vw);scroll-snap-align:center;background:#FBF6EC;border-radius:16px;box-shadow:0 18px 40px rgba(58,36,24,.14);padding:18px;display:flex;gap:16px;min-height:360px;transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .45s;min-width:0">
-              <div style="flex:0 0 38%;border-radius:10px;overflow:hidden;background:linear-gradient(160deg,#EADFCB,#F3EBD8);position:relative;display:flex;align-items:center;justify-content:center">
+            <div data-review-card="" style="flex:0 0 min(660px,86vw);scroll-snap-align:center;background:#FBF6EC;border-radius:16px;box-shadow:0 18px 40px rgba(58,36,24,.14);padding:18px;display:flex;gap:16px;height:min(480px,70vh);transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .45s;min-width:0">
+              <div data-rvphoto="{{ c.photo }}" style="flex:0 0 34%;border-radius:10px;overflow:hidden;background:linear-gradient(160deg,#EADFCB,#F3EBD8);position:relative;display:flex;align-items:center;justify-content:center">
                 <img src="{{ c.photo }}" alt="{{ c.name }}" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0">
                 <span style="font-family:'Wix Madefor Display',sans-serif;font-size:90px;line-height:1;color:rgba(176,137,104,.35)">“</span>
               </div>
               <div style="flex:1 1 auto;display:flex;flex-direction:column;gap:12px;min-width:0">
                 <div style="flex:1 1 auto;display:flex;gap:10px;min-height:250px">
                   <div style="flex:1 1 0;border-radius:10px;overflow:hidden;background:#F3EBD8;border:1px solid rgba(176,137,104,.25);position:relative;min-width:0">
-                    <img src="{{ c.shot1 }}" alt="Отзыв {{ c.name }}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;position:absolute;inset:0">
+                    <img src="{{ c.shot1 }}" alt="Отзыв {{ c.name }}" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;position:absolute;inset:0">
                   </div>
                   <div data-shot2="{{ c.has2 }}" style="flex:1 1 0;border-radius:10px;overflow:hidden;background:#F3EBD8;border:1px solid rgba(176,137,104,.25);position:relative;min-width:0">
-                    <img src="{{ c.shot2 }}" alt="Отзыв {{ c.name }}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;position:absolute;inset:0">
+                    <img src="{{ c.shot2 }}" alt="Отзыв {{ c.name }}" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;position:absolute;inset:0">
                   </div>
                 </div>
                 <div style="min-width:0">
@@ -1702,23 +1749,21 @@ class Component extends DCLogic {
 
       clientsLoop: (function () {
         const c = [
-          { t: 'Ser Clinic', logo: '', label: 'Ser Clinic' },
+          { t: 'Ser Clinic', logo: 'assets/cbc1a5ef-bdf0-4d08-98cd-700a3e485910.png', label: '' },
           { t: 'Школа массажных методик', logo: 'assets/e16878fb-b985-4241-8f94-547e1532c100.jpg', label: '' },
           { t: 'Enduro Energy', logo: 'assets/05dd9b5b-6a26-4f9b-8fd3-9c2db410ec7e.png', label: '' },
           { t: 'Ginzburg', logo: 'assets/e726f720-aa15-405c-80eb-19e36a702372.jpg', label: '' },
-          { t: 'Анле-⁠Дент', logo: '', label: 'Анле-⁠Дент' },
+          { t: 'Анле-⁠Дент', logo: 'assets/b6d60100-d205-42e6-a08f-552cb5f96126.png', label: '' },
           { t: 'Хирург Помазков', logo: 'assets/491eeedb-3576-41f6-8934-14e30b2ce637.png', label: '' },
           { t: 'Эвакуаторы', logo: 'assets/7b9d235a-248f-4551-bf9b-75e912157180.png', label: '' },
           { t: 'Музей Русской Сказки', logo: 'assets/bfeaf59a-d8e4-4809-aa2a-784c9cdfa395.jpg', label: '' },
-          { t: 'МакШтаб', logo: '', label: 'МакШтаб' },
+          { t: 'МакШтаб', logo: 'assets/a1b6f2e3-26cb-4a86-8dac-72ec21d8e8ce.png', label: '' },
           { t: 'Лодки Ладога', logo: 'assets/fcc10548-2649-49c2-8d26-93360f52d4db.jpg', label: '', photo: '1' },
           { t: 'Libe studio', logo: 'assets/a9aa3613-7f75-41b3-b66a-86c155fad45a.svg', label: '' },
           { t: 'С корабля на бал', logo: 'assets/db3a0357-a141-4989-a429-c63f023dbcf6.jpg', label: '' },
           { t: 'Ильинская больница', logo: 'assets/6f1ccb0b-8df3-4c47-8a63-57a2b5b7ec74.jpg', label: '' },
-          { t: 'Lianika', logo: '', label: 'Lianika' },
           { t: 'Моцарт для детей', logo: 'assets/7549d9eb-7f75-43ef-8eb8-5d4aa947f26b.jpg', label: '' },
-          { t: 'Поляклиника', logo: '', label: 'Поляклиника' },
-          { t: 'Peroarchkids', logo: '', label: 'Peroarchkids' },
+          { t: 'Клиника «Мир здоровья»', logo: 'assets/3e16830e-0958-4c1a-a1f7-ca1f08121be6.png', label: '' },
           { t: 'Цветоград', logo: 'assets/369b10a2-3302-4530-bed3-5fc884908710.jpg', label: '' }
         ];
         return c.concat(c);
@@ -1762,10 +1807,8 @@ class Component extends DCLogic {
         { photo: 'assets/f51abd29-b759-4d11-8320-5df2dcfb3b65.jpg', shot1: 'assets/dcc324c5-9358-440d-b900-27830916ff86.jpg', shot2: '', has2: '0', name: 'Екатерина Гинзбург', role: 'клиника аппаратной косметологии, СПб' },
         { photo: 'assets/81f781f8-9b95-4391-8b67-feaeca9c3ace.jpg', shot1: 'assets/d0b8ee2e-791c-417f-881f-b54774cfa5bd.jpg', shot2: '', has2: '0', name: 'Ирина', role: 'детская студия архитектуры' },
         { photo: 'assets/6fea0e9a-1077-45f2-bb08-8e7aa74ab708.jpg', shot1: 'assets/14b84cc8-ed1f-4775-bdeb-4802d75e5077.jpg', shot2: '', has2: '0', name: 'Юлия', role: 'Музей Русской Сказки' },
-        { photo: 'assets/5f0d0716-7044-410b-9c77-ba8ccb85cc5e.jpg', shot1: 'assets/7c4197a6-2f84-4fc2-8fbc-9a1d0a0ccc98.jpg', shot2: 'assets/7cb63196-7175-4150-9857-70ceef26ac8d.jpg', has2: '1', name: 'Анастасия Романова', role: 'врач-⁠ортодонт, СПб' },
-        { photo: 'assets/80344d4c-c23a-423f-8aaf-d1c05de9c13b.jpg', shot1: 'assets/29a47262-2dab-4a6c-97a7-d8e1e3041e22.jpg', shot2: 'assets/5f165ddb-b106-4be3-8fac-f609671643d8.jpg', has2: '1', name: 'Рейчел Сер', role: 'Ser Clinic, Тель-⁠Авив' },
-        { photo: '', shot1: 'assets/039c7c7b-fe06-4bcf-95b2-45e8d11ead96.jpg', shot2: 'assets/86b145ac-2528-4359-a683-1fde38c0e4a3.jpg', has2: '1', name: 'МакШтаб', role: 'сервис техники Apple, СПб' },
-        { photo: '', shot1: 'assets/ba04e860-7324-4dec-9a11-dd96a0c3f8a3.jpg', shot2: '', has2: '0', name: 'Фотограф', role: 'личный бренд с нуля, СПб' },
+        { photo: '', shot1: 'assets/1b5f3688-8074-4ae4-9443-b9eca2d6555b.jpg', shot2: '', has2: '0', name: 'Ангелина Фоминых', role: '' },
+        { photo: '', shot1: 'assets/49a8a957-e0ac-4e4b-93fb-37727d4ec0ed.jpg', shot2: '', has2: '0', name: 'Александра', role: 'женский клуб' },
       ],
 
       testimonials: [
@@ -1776,10 +1819,11 @@ class Component extends DCLogic {
 
       reviews: [
         { photo: 'assets/4985ecb6-7649-4a6e-bc81-441b880a8ea1.jpg', name: 'Юлия Терещенко', role: 'ген. директор группы компаний', link: 'https://t.me/trschnkj' },
-        { photo: '', name: 'Иван Лохмотов', role: 'серийный предприниматель', link: 'https://t.me/lacoce' },
-        { photo: '', name: 'Артём Рябоконь', role: 'владелец ивент-⁠агентства', link: 'https://t.me/Mitrandir' },
+        { photo: 'assets/bfe02535-2f5a-4247-bc8c-ad68bfbaa754.jpg', name: 'Иван Лохмотов', role: 'серийный предприниматель', link: 'https://t.me/lacoce' },
         { photo: 'assets/58919e4e-a39a-451b-8581-7c50df61e017.jpg', name: 'Нина Северина', role: 'школа массажа', link: 'https://t.me/Nina_Severina18' },
+        { photo: 'assets/0abcf3cd-167b-4497-a619-802f9006f45b.jpg', name: 'Артём Рябоконь', role: 'владелец ивент-⁠агентства', link: 'https://t.me/Mitrandir' },
         { photo: 'assets/80344d4c-c23a-423f-8aaf-d1c05de9c13b.jpg', name: 'Рейчел Сер', role: 'клиника косметологии', link: 'https://t.me/RachelSerr' },
+        { photo: 'assets/6e84192c-6c57-42a9-bbd4-510e9c0d7888.jpg', name: 'Елена Шкарупа', role: 'врач-⁠эндокринолог, нутрициолог', link: 'https://t.me/dr_shkarupa' },
         { photo: 'assets/5f0d0716-7044-410b-9c77-ba8ccb85cc5e.jpg', name: 'Анастасия Романова', role: 'врач-⁠ортодонт', link: 'https://t.me/drromanovaa' },
         { photo: 'assets/86bcbab5-6d7a-4e9a-a362-6a62c47c8d90.jpg', name: 'Алина Острецова', role: 'руководитель агентства', link: 'https://t.me/alinochka_ost' },
       ].map(function (r) {
@@ -1817,7 +1861,7 @@ class Component extends DCLogic {
         result: 'Контракты на лечение на 1 029 500 ₽ при бюджете 30 000 ₽ (CPL от 210 ₽, окупаемость ×34). +402 активных подписчика, ER с 1% до 5,2%. Аккаунт стал каналом привлечения, а не визиткой.',
         note: 'Методы не устаревают: они основаны на потребностях рынка и психологии выбора пациента. Со временем растут лишь бюджеты, но растут и цены на услуги.',
         fromN: '30 000 ₽', toN: '1 029 500 ₽', numLabel: 'бюджет → контракты · окупаемость ×34' },
-      { proof: [{src:'assets/413ef8e7-ecbe-4e19-8c24-bfee1cdad328.jpg',cap:'Кейс'},{src:'',cap:'Кабинет'},{src:'',cap:'Статистика'}], slot: 'case-massage', ph: 'Фото занятия / студии →', src: 'images/case-massage-web.jpg', title: 'Системный маркетинг для школы массажа', metric: '+30% выручки, +200 студентов', sub: 'школа массажа Нины Севериной · за 4 месяца',
+      { proof: [{src:'assets/511f3d39-510d-404a-914c-159132684a2c.jpg',cap:'Подписчики: было и стало'},{src:'assets/5eee493f-52b5-48a2-89be-a6cbbfcce6b6.jpg',cap:'Семинар и онлайн-⁠курсы'},{src:'assets/99e01aa5-9a9d-4b59-a387-8f89fb144572.jpg',cap:'Продажа курса с сайта'}], slot: 'case-massage', ph: 'Фото занятия / студии →', src: 'images/case-massage-web.jpg', title: 'Системный маркетинг для школы массажа', metric: '+30% выручки, +200 студентов', sub: 'школа массажа Нины Севериной · за 4 месяца',
         was: 'Набор шёл рассылками и сарафаном, стабильного потока заявок не было, выручка стояла. Сильная зависимость от личного бренда основателя и её правой руки.',
         did: 'Сегментировали аудиторию, выстроили новую коммуникационную стратегию (тексты, визуал, контент, воронки), запустили платный трафик (ВКонтакте, Яндекс), провели вебинары и мини-⁠мероприятия, обновили упаковку (сайт, страницы курсов), проконсультировали отдел продаж.',
         result: '+200 новых студентов, +1000 к базе (+600 ВК, +210 ТГ без таргета), рост выручки на 30% за 4 месяца. Sold out семинара: 18 мест на 567 000 ₽ + предзапись на следующий поток. Продано 30 мест на новый поток двухгодичного курса «Массажист-⁠кинезиолог» на сумму 10+ млн. Онлайн-⁠курсы: 221 556 ₽ выручки за месяц. Собрана команда, которая работает без ежедневного участия основателя.',
@@ -1828,26 +1872,31 @@ class Component extends DCLogic {
         result: 'С нуля: 88 заявок за 1,5 месяца. 5 семей дошли и купили абонементы на 4400 ₪. Подписчики 80→170, собрано 2 группы (одна занимается стабильно), сформирована база под ретаргет. Клиент поверила в спрос и начала искать помещение под студию.',
         note: 'Кейс о том, что запустить поток заявок можно с полного нуля, даже с нуля самого бизнеса. Решает стратегия и системная работа, а не бюджет.',
         fromN: '0', toN: '88 заявок', numLabel: 'с нуля за 1,5 месяца' },
-      { proof: [{src:'assets/f3e311ae-6d58-4fec-9e9c-ebb3b6cd115f.jpg',cap:'Коллаж кейса'},{src:'assets/a0d63021-848b-49a2-9372-daa7cad72813.jpg',cap:'Показатели'},{src:'assets/ef86c5cd-27c7-4586-ac73-bcec52d3def0.jpg',cap:'Результаты'},{src:'assets/9f117bc9-4249-4262-ab24-84158fd53567.jpg',cap:'Выручка'},{src:'',cap:'Профиль'}], slot: 'case-ginzburg', ph: 'Фото клиники / аппаратов →', src: 'images/case-apparat-web.jpg', title: 'Аппаратная косметология', metric: '768 100 ₽ за 2 месяца', sub: 'клиника Екатерины Гинзбург, СПб',
+      { proof: [{src:'assets/a0d63021-848b-49a2-9372-daa7cad72813.jpg',cap:'До'},{src:'assets/569e3c7f-e46d-4353-aaa1-338caaed9131.jpg',cap:'После'},{src:'assets/9f117bc9-4249-4262-ab24-84158fd53567.jpg',cap:'Выручка'}], slot: 'case-ginzburg', ph: 'Фото клиники / аппаратов →', src: 'images/case-apparat-web.jpg', title: 'Аппаратная косметология', metric: '768 100 ₽ за 2 месяца', sub: 'клиника Екатерины Гинзбург, СПб',
         was: 'Студия готовилась к ребрендингу в клинику: вложили миллионы в аппараты (SMAS, Thermo C, лазер), но стабильного потока не было. Весь трафик держался на личном бренде топ-⁠мастера: клинике как бренду не доверяли. Лояльная база не знала о новых процедурах, платный трафик не окупался, а клиника: в спальном районе далеко от метро.',
         did: 'Сфокусировались на продуктах с высоким спросом и маржинальностью (SMAS, Thermo C, лазерная эпиляция) и усилили их УТП. Построили воронку вручную: от подписки до повторной записи: приветствие, консультация в директе, гайды, дожим, учёт заявок. Обновили упаковку и контент под возрастные сегменты (18–⁠27 / 28–⁠37 / 38–⁠55+) с акцентом на доверие и результат (до/⁠после, отзывы, снятие страхов). Запустили таргет в Meta*, протестировали 30+ связок (заявка ≈ 300 ₽), добавили условно-⁠бесплатное продвижение (бонусы за отзывы и репосты). Дожим взяли на себя: разгрузили администраторов и директора.',
         result: '768 100 ₽ продаж за 2 месяца, +144 заявки в месяц, стоимость заявки снижена до 292–⁠417 ₽, ROI рекламы 229–⁠449%, стабильные 350 000 ₽/⁠мес через Instagram. Клиника стала отдельным брендом, вокруг неё начало формироваться комьюнити, а владелица перестала «тащить всё на себе».',
         fromN: '+144 заявки/⁠мес', toN: '768 100 ₽', numLabel: 'продажи за 2 месяца · ROI 229–⁠449%' },
-      { proof: [{src:'assets/039c7c7b-fe06-4bcf-95b2-45e8d11ead96.jpg',cap:'Кабинет'},{src:'assets/86b145ac-2528-4359-a683-1fde38c0e4a3.jpg',cap:'Статистика'}], slot: 'case-apple', ph: 'Фото мастерской →', src: 'images/case-apple-web.jpg', title: 'Ремонт и сервис техники', metric: '67 000 ₽ с Instagram', sub: 'мастерская Apple «МакШтаб», СПб',
+      { proof: [{src:'assets/039c7c7b-fe06-4bcf-95b2-45e8d11ead96.jpg',cap:'Кабинет'},{src:'assets/86b145ac-2528-4359-a683-1fde38c0e4a3.jpg',cap:'Статистика'}], slot: 'case-apple', ph: 'Фото мастерской →', src: 'images/case-apple-web.jpg', title: 'Новый канал трафика без конкурентов', metric: '67 000 ₽ с Instagram', sub: 'мастерская Apple «МакШтаб», СПб',
         did: 'Зашли через репутацию и узнаваемость: быть первыми в голове, когда «упал айфон». Переупаковали аккаунт и УТП, вывели харизматичного директора как лицо бренда (сторис, Reels), добавили отзывы, рейтинги, геометки. Контент живой и полезный + треш, чтобы выделяться. Оживили старую базу ретаргетом, подключили инфлюенсеров по бартеру.',
         result: '67 000 ₽ выручки с Instagram при вложении в рекламу всего 5 000 ₽. +200 целевых подписчиков, ожили «забытые» клиенты, аккаунт из «мёртвой визитки» стал каналом доверия.',
         fromN: '5 000 ₽', toN: '67 000 ₽', numLabel: 'вложения в рекламу → выручка с Instagram' },
-      { proof: [{src:'assets/f8e8d943-de67-4e45-bb58-8bfc64dd644e.jpg',cap:'Коллаж кейса'},{src:'assets/b667b3f8-e883-4391-b2ff-3376bc3a0603.jpg',cap:'До'},{src:'assets/1c732806-c871-4952-8c0e-acf5cb1233e9.jpg',cap:'После'}], slot: 'case-museum', ph: 'Фото музея →', src: 'images/case-museum-web.jpg', title: 'Музеи и события', metric: 'с нуля 709 подписчиков и 200 заявок', sub: 'Музей Русской Сказки «За лесами, за горами», СПб · за 3 недели',
+      { proof: [{src:'assets/d7873402-7eeb-42b9-a016-515a7d7890a1.jpg',cap:'До: 4 подписчика'},{src:'assets/90cdd01b-262d-44c9-a0b4-ecf77749f2dc.jpg',cap:'После: 711 подписчиков'},{src:'assets/22a69aa6-c6cb-45a1-a278-079af6f469e5.jpg',cap:'Реклама ВКонтакте'},{src:'assets/d8771430-edd3-499f-af82-1c7e54b67d83.jpg',cap:'Диалог с гостем'},{src:'assets/49ba37ee-0140-429c-b091-a1335461e0f1.jpg',cap:'Заявка на экскурсию'},{src:'assets/dfb278a8-7285-465e-a692-7b5b1f2b641f.jpg',cap:'Таблица заявок'}], slot: 'case-museum', ph: 'Фото музея →', src: 'images/case-museum-web.jpg', title: '200 заявок и раскачанный профиль к открытию музея', metric: 'с нуля 709 подписчиков и 200 заявок', sub: 'Музей Русской Сказки «За лесами, за горами», СПб · за 3 недели',
         was: 'Идейный предприниматель создаёт интерактивный музей (500 м², 15+ зон, вложения 10+ млн ₽). За 2 месяца до открытия: нулевая точка: нет сайта, соцсетей, продуктовой линейки. Проект с душой, но без аналитики рынка, а нужно быстро выйти в рентабельность.',
         did: 'Выстроили маркетинг музея с нуля: выбрали ВК под ЦА, сформулировали миссию и позиционирование, собрали продуктовую линейку (самостоятельно / экскурсия / мини-⁠группа / семейные тарифы), карточки в 2GIS/⁠Яндекс/⁠Google. Запустили предзапись и прогрев: оффер для первых, серия рассылок (сказки, легенды, интрига), конкурсная механика, чат-⁠бот бронирования. Таргет ВК с тестом сегментов.',
         result: 'За 3 недели на 24 000 ₽: 709 подписчиков (37 ₽/⁠подписчик), 200 заявок в предзапись (лид 184 ₽), 16 закрытых лидов, заявки на экскурсии (групповые + семейные). KPI превышены ещё до открытия без сайта и без онлайн-⁠оплаты.',
         fromN: '0', toN: '200 заявок', numLabel: '709 подписчиков · 3 недели · 24 000 ₽' },
-      { proof: [{src:'assets/ba04e860-7324-4dec-9a11-dd96a0c3f8a3.jpg',cap:'Коллаж кейса'}], slot: 'case-photo', ph: 'Фото со съёмки →', src: 'images/case-photo-web.jpg', title: 'Личный бренд', metric: '+66 000 ₽ за 3 месяца', sub: 'фотограф, СПб · с нуля',
+      { proof: [{src:'assets/1492793b-9524-40ec-9a08-ebf6d4be0a1a.jpg',cap:'Съёмка'},{src:'assets/ba04e860-7324-4dec-9a11-dd96a0c3f8a3.jpg',cap:'Профиль: до и после'}], slot: 'case-photo', ph: 'Фото со съёмки →', src: 'images/case-photo-web.jpg', title: 'Фотограф-⁠новичок', metric: 'Поток клиентов к 3-⁠му месяцу', sub: 'фотограф, СПб · с нуля',
         was: 'Только закончила обучение: ни портфолио, ни базы, ни опыта продвижения: аккаунт только зарегистрирован. Огромная конкуренция в Петербурге, ограниченный бюджет. Но есть талант и цель: уйти из найма и зарабатывать на любимом деле.',
         did: 'Определили нишу (девушки 23–⁠30) и позиционирование не просто фото, а «женский портрет + трансформация», ощущение себя «с обложки». Собрали портфолио с нуля стратегически (TFP-⁠съёмки, коллаборации) и каждую съёмку превращали в маркетинговый кейс (закулисье, отзывы, отметки). Переупаковали профиль под доверие и эмоцию. Продвижение: бесплатные методы + таргет. Плюс менторство: научили клиента вести блог как маркетолог.',
         result: '+520 живых целевых подписчиков, 21 000 ₽ за 2 месяца и +45 000 ₽ на третий (на рекомендациях): всего +66 000 ₽ за 3 месяца при 5 000 ₽ на рекламу. Блог ожил, пошли повторные съёмки и сарафан. Клиент ведёт блог сама и запустила новое направление.',
         note: 'Даже новичок выходит на доход, если продукт грамотно упакован. Решает нишевание, позиционирование и эмпатия, а не дешёвый оффер.',
         fromN: '5 000 ₽', toN: '+66 000 ₽', numLabel: 'бюджет на рекламу → доход за 3 месяца' },
+      { proof: [{src:'assets/e47815ad-b609-4b19-8ab7-347029f44f6c.jpg',cap:'Рост статистики в блоге'},{src:'assets/11dc9193-a43b-43b5-8644-1aeb0c0636ba.jpg',cap:'Раскачка личного блога'},{src:'assets/e1bd6267-40d6-46d9-a0cc-61566502d58c.jpg',cap:'Хирургия'},{src:'assets/57450215-61ab-41ea-a87a-8f79760d7866.jpg',cap:'Косметология'},{src:'assets/54627f0d-9d54-4038-9e97-c39fab969e4b.jpg',cap:'Косметология'},{src:'assets/29e31563-af6a-441d-a36d-e9198d67ff01.jpg',cap:'Косметология'},{src:'assets/546b1386-408a-41c6-880d-729aff8b0558.jpg',cap:'Инъекции'},{src:'assets/938a2384-2017-4848-a8e7-0f8eda2504ff.jpg',cap:'Медицина'},{src:'assets/91cd7b08-65b5-4537-ae51-e0d7126609f4.jpg',cap:'Педиатрия'},{src:'assets/1a6d78a7-5eef-44a3-8ad4-07f886c8e915.jpg',cap:'Ниша здоровья'},{src:'assets/7d39a6b4-4572-4436-8cbd-7bf70cdbe09d.jpg',cap:'Ниша одежда'},{src:'assets/8462f680-ffb0-43be-ab9d-334341b170fd.jpg',cap:'Косметика'},{src:'assets/6361cde7-88ed-431d-90cb-1addf2f0223e.jpg',cap:'Личный блог'},{src:'assets/95655b71-3e4d-4c50-bada-7f64b90ca6ea.jpg',cap:'Раскачка мамского блога'},{src:'assets/21d1da06-b4bd-4fb2-b8bb-b257f71eb16e.jpg',cap:'Рост показателей в блоге'},{src:'assets/471cfaa2-633f-479d-9e12-81c11aec5c6d.jpg',cap:'Карусель'},{src:'assets/491b9379-1050-4bff-9ef2-aec1ae781922.jpg',cap:'Статистика роликов'},{src:'assets/dc075dc2-0508-4056-8fcd-948e89b7cc38.jpg',cap:'Статистика роликов'}], slot: 'case-reels', ph: '', src: '', title: 'Миллионные просмотры', metric: '1M+ просмотров', sub: 'Reels · без бюджета на рекламу',
+        was: 'Залетевший ролик не везение. Это понимание, что сейчас смотрят, почему досматривают и что заставляет написать в директ.',
+        did: 'Перед стартом проводим аналитику клиентов и маркетинга бизнеса в целом, чтобы трафик сразу монетизировался. Разбираем контент в вашей нише и смежных: что набирает, какие форматы, хуки, регулярность и ритм работают именно сейчас. Прописываем конверсионные сценарии: каждый ролик собираем по структуре «хук в первые 2 секунды → удержание → смысл → призыв», исходя из того, что реально цепляет вашу ЦА и ведёт к действию. Усиливаем воронкой: просмотры без воронки просто цифры, поэтому подключаем прогрев, закреплённые посты, сторис и ответы в директе, чтобы зритель дошёл до заявки. Считаем и повторяем: анализируем, почему залетело, и закладываем это в следующие ролики, чтобы это была система, а не разовый выстрел.',
+        result: 'Миллионы просмотров, рост аудитории и заявки с контента без бюджета на рекламу.',
+        fromN: '0 ₽ на рекламу', toN: '1M+ просмотров', numLabel: 'скриншоты статистики роликов' },
     ];
   }
 
@@ -1956,13 +2005,16 @@ class Component extends DCLogic {
       const icoMail = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
       const icoCal = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>';
       const feed = [
-        { ic: icoMail, bg: '#B08968', t: 'Новая заявка с сайта', d: 'Анна: хочу на консультацию', lead: 1 },
-        { ic: '₽', bg: '#2F7A4D', t: 'Поступление', d: '+48 000 ₽ · оплата по договору', sum: 48000 },
-        { ic: icoMail, bg: '#B08968', t: 'Заявка из соцсетей', d: 'Михаил: сколько стоит запуск?', lead: 1 },
+        { ic: '₽', bg: '#2F7A4D', t: 'Поступление', d: '+215 000 ₽ · оплата по договору', sum: 215000 },
+        { ic: icoMail, bg: '#B08968', t: 'Новая заявка с сайта', d: 'Можно прийти посмотреть товар?', lead: 1 },
+        { ic: icoMail, bg: '#B08968', t: 'Сообщение в директ', d: 'Сколько стоит?', lead: 1 },
+        { ic: '₽', bg: '#2F7A4D', t: 'Поступление', d: '+340 000 ₽ · предоплата', sum: 340000 },
+        { ic: icoMail, bg: '#B08968', t: 'Новый заказ', d: 'Хочу заказать 3 штуки', lead: 1 },
+        { ic: icoMail, bg: '#B08968', t: 'Новая заявка', d: 'Как я рад, что нашёл вашу клинику!', lead: 1 },
         { ic: icoCal, bg: '#6A1A2A', t: 'Запись на завтра', d: 'Консультация в 11:00', lead: 1 },
-        { ic: '₽', bg: '#2F7A4D', t: 'Поступление', d: '+120 000 ₽ · предоплата', sum: 120000 },
-        { ic: icoMail, bg: '#B08968', t: 'Новая заявка с сайта', d: 'Елена: нужна реклама клиники', lead: 1 },
-        { ic: '₽', bg: '#2F7A4D', t: 'Поступление', d: '+36 500 ₽ · оплата курса', sum: 36500 },
+        { ic: '₽', bg: '#2F7A4D', t: 'Поступление', d: '+480 000 ₽ · оплата заказа', sum: 480000 },
+        { ic: icoCal, bg: '#6A1A2A', t: 'Встреча в пятницу', d: 'Подписание контракта на стройку', lead: 1 },
+        { ic: '₽', bg: '#2F7A4D', t: 'Поступление', d: '+260 000 ₽ · оплата курса', sum: 260000 },
       ];
       const leadsEl = root.querySelector('[data-ph-leads]'), sumEl = root.querySelector('[data-ph-sum]');
       let i = 0, leads = 0, sum = 0, shown = 0, sound = false, actx = null;
@@ -1984,7 +2036,7 @@ class Component extends DCLogic {
         const id = (el._cnt = (el._cnt || 0) + 1), st = Date.now();
         const tick = function () {
           if (el._cnt !== id) return;
-          const p = Math.max(0, Math.min(1, (Date.now() - st) / 700));
+          const p = Math.max(0, Math.min(1, (Date.now() - st) / 450));
           const v = from + (to - from) * (1 - Math.pow(1 - p, 3));
           el.textContent = money ? fmt(v) : String(Math.round(v));
           if (p < 1) setTimeout(tick, 30);
@@ -2007,8 +2059,8 @@ class Component extends DCLogic {
         tone(!!f.sum);
       };
       leadsEl.textContent = '0'; sumEl.textContent = '0 ₽';
-      push(); setTimeout(push, 900);
-      setInterval(function () { if (!document.hidden) push(); }, 2400);
+      push(); setTimeout(push, 500); setTimeout(push, 1000);
+      setInterval(function () { if (!document.hidden) push(); }, 1100);
       const sb = root.querySelector('[data-ph-sound]');
       if (sb) sb.addEventListener('click', function (e) {
         e.preventDefault(); e.stopPropagation();
@@ -2131,6 +2183,16 @@ class Component extends DCLogic {
         target.style.boxShadow = '0 0 0 2px rgba(207,169,140,.5)';
         setTimeout(function () { target.style.background = 'transparent'; target.style.boxShadow = 'none'; }, 1400);
       });
+    });
+
+    // ---- листание доказательств в кейсе ----
+    document.addEventListener('click', function (e) {
+      const b = e.target.closest && e.target.closest('[data-proof-prev],[data-proof-next]');
+      if (!b) return;
+      const rail = document.querySelector('[data-proof-rail]');
+      if (!rail) return;
+      const w = rail.clientWidth + 12;
+      rail.scrollBy({ left: b.hasAttribute('data-proof-next') ? w : -w, behavior: 'smooth' });
     });
 
     // ---- листание кейсов ----
