@@ -665,6 +665,10 @@
   img[src=""]{display:none !important}
   [data-removed]{display:none !important}
   [data-rvphoto=""]{display:none !important}
+  [data-q=""],[data-shots=""]{display:none !important}
+  [data-kind="q"]{flex:0 0 26% !important;background:none !important;align-items:flex-start !important;padding-top:18px}
+  [data-kind="q"] img{position:static !important;width:min(150px,100%) !important;height:auto !important;aspect-ratio:1;border-radius:50% !important;object-fit:cover !important;box-shadow:0 10px 24px rgba(58,36,24,.18)}
+  [data-kind="q"] span{display:none}
   [data-formulas] [data-f]{opacity:0;transition:opacity .7s ease}
   [data-sketch].on [data-formulas] [data-f="1"]{opacity:1;transition-delay:.3s}
   [data-sketch].on [data-formulas] [data-f="2"]{opacity:1;transition-delay:.9s}
@@ -1387,8 +1391,8 @@
           <div style="font-size:10px;letter-spacing:.5px;color:#8A6B4F;font-weight:600;margin-top:6px;line-height:1.5;text-align:center">SMM-⁠МАРКЕТОЛОГ · ЖУРНАЛИСТ · КОПИРАЙТЕР · ГРАФИЧЕСКИЙ&nbsp;ДИЗАЙНЕР</div>
         </div>
         <div data-reveal="" style="min-width:0">
-          <img src="assets/be163049-4da5-4fe9-bc8b-89011fb2377f.jpg" alt="Кристина Белова" style="width:min(100%,190px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 22%;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);box-shadow:0 12px 28px rgba(58,36,24,.18)">
-          <h4 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:18px;margin:16px 0 0;color:#3A2418;text-align:center">Кристина Белова</h4>
+          <img src="assets/be163049-4da5-4fe9-bc8b-89011fb2377f.jpg" alt="Тина Димантова" style="width:min(100%,190px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 22%;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);box-shadow:0 12px 28px rgba(58,36,24,.18)">
+          <h4 style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:18px;margin:16px 0 0;color:#3A2418;text-align:center">Тина Димантова</h4>
           <div style="font-size:10px;letter-spacing:.5px;color:#8A6B4F;font-weight:600;margin-top:6px;line-height:1.5;text-align:center">РУКОВОДИТЕЛЬ ТРАФИКА И&nbsp;ВЕБ-⁠РАЗРАБОТКИ</div>
         </div>
         <div data-reveal="" style="min-width:0">
@@ -1551,12 +1555,17 @@
         <div data-rv-rail="" style="display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px max(24px,calc(50vw - 330px)) 30px;scrollbar-width:none;-webkit-overflow-scrolling:touch">
           <sc-for list="{{ reviewCards }}" as="c">
             <div data-review-card="" style="flex:0 0 min(660px,86vw);scroll-snap-align:center;background:#FBF6EC;border-radius:16px;box-shadow:0 18px 40px rgba(58,36,24,.14);padding:18px;display:flex;gap:16px;height:min(480px,70vh);transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .45s;min-width:0">
-              <div data-rvphoto="{{ c.photo }}" style="flex:0 0 34%;border-radius:10px;overflow:hidden;background:linear-gradient(160deg,#EADFCB,#F3EBD8);position:relative;display:flex;align-items:center;justify-content:center">
+              <div data-rvphoto="{{ c.photo }}" data-kind="{{ c.kind }}" style="flex:0 0 34%;border-radius:10px;overflow:hidden;background:linear-gradient(160deg,#EADFCB,#F3EBD8);position:relative;display:flex;align-items:center;justify-content:center">
                 <img src="{{ c.photo }}" alt="{{ c.name }}" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0">
                 <span style="font-family:'Wix Madefor Display',sans-serif;font-size:90px;line-height:1;color:rgba(176,137,104,.35)">“</span>
               </div>
               <div style="flex:1 1 auto;display:flex;flex-direction:column;gap:12px;min-width:0">
-                <div style="flex:1 1 auto;display:flex;gap:10px;min-height:250px">
+                <div data-q="{{ c.quote }}" style="flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:6px 10px 0">
+                  <span style="font-family:'Forum',serif;font-size:72px;line-height:.5;color:#B08968;height:30px">“</span>
+                  <p style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;font-size:clamp(18px,1.7vw,22px);line-height:1.4;color:#3A2418;margin:0">{{ c.quote }}</p>
+                  <div style="font-size:12.5px;color:#8A6B4F">{{ c.about }}</div>
+                </div>
+                <div data-shots="{{ c.shot1 }}" style="flex:1 1 auto;display:flex;gap:10px;min-height:250px">
                   <div style="flex:1 1 0;border-radius:10px;overflow:hidden;background:#F3EBD8;border:1px solid rgba(176,137,104,.25);position:relative;min-width:0">
                     <img src="{{ c.shot1 }}" alt="Отзыв {{ c.name }}" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;position:absolute;inset:0">
                   </div>
@@ -1797,18 +1806,22 @@ class Component extends DCLogic {
         { slot: 'team-katya', name: 'Катерина Гуревич', pos: 'основатель · маркетолог-⁠стратег · таргетолог', img: 'images/team-katya-web.jpg', ph: 'Фото Катерины →' },
         { slot: 'team-roza', name: 'Роза Халилова', pos: 'правая рука основателя · руководитель отдела реализации · маркетолог-⁠стратег', img: 'images/team-roza-web.jpg', ph: 'Фото Розы →' },
         { slot: 'team-vika', name: 'Виктория Банникова', pos: 'главный SMM-⁠маркетолог · журналист · копирайтер', img: 'images/team-vika-web.jpg', ph: 'Фото Вики →' },
-        { slot: 'team-kristina', name: 'Кристина Белова', pos: 'руководитель отдела трафика и веб-⁠разработки', img: 'images/team-kristina-web.jpg', ph: 'Фото Кристины →' },
+        { slot: 'team-kristina', name: 'Тина Димантова', pos: 'руководитель отдела трафика и веб-⁠разработки', img: 'images/team-kristina-web.jpg', ph: 'Фото Кристины →' },
         { slot: 'team-marina', name: 'Марина Петрова', pos: 'главный монтажёр и веб-⁠дизайнер', img: 'images/team-marina-web.jpg', ph: 'Фото Марины →' },
         { slot: 'team-petr', name: 'Пётр Лившиц', pos: 'дата-⁠аналитик · маркетолог-⁠исследователь', img: '', ph: 'Фото Петра →' },
       ],
 
       reviewCards: [
-        { photo: 'assets/1a13fc4a-dc1d-4495-a6f5-962067a91858.jpg', shot1: 'assets/ac907d0c-fccf-406d-8c2d-eb73f7f36b7d.jpg', shot2: 'assets/ca745932-969c-4a94-9c0b-b18713e26d5a.jpg', has2: '1', name: 'Нина Северина', role: 'школа массажных методик' },
-        { photo: 'assets/f51abd29-b759-4d11-8320-5df2dcfb3b65.jpg', shot1: 'assets/dcc324c5-9358-440d-b900-27830916ff86.jpg', shot2: '', has2: '0', name: 'Екатерина Гинзбург', role: 'клиника аппаратной косметологии, СПб' },
-        { photo: 'assets/81f781f8-9b95-4391-8b67-feaeca9c3ace.jpg', shot1: 'assets/d0b8ee2e-791c-417f-881f-b54774cfa5bd.jpg', shot2: '', has2: '0', name: 'Ирина', role: 'детская студия архитектуры' },
-        { photo: 'assets/6fea0e9a-1077-45f2-bb08-8e7aa74ab708.jpg', shot1: 'assets/14b84cc8-ed1f-4775-bdeb-4802d75e5077.jpg', shot2: '', has2: '0', name: 'Юлия', role: 'Музей Русской Сказки' },
-        { photo: '', shot1: 'assets/1b5f3688-8074-4ae4-9443-b9eca2d6555b.jpg', shot2: '', has2: '0', name: 'Ангелина Фоминых', role: '' },
-        { photo: '', shot1: 'assets/49a8a957-e0ac-4e4b-93fb-37727d4ec0ed.jpg', shot2: '', has2: '0', name: 'Александра', role: 'женский клуб' },
+        { photo: 'assets/1a13fc4a-dc1d-4495-a6f5-962067a91858.jpg', shot1: 'assets/ac907d0c-fccf-406d-8c2d-eb73f7f36b7d.jpg', shot2: 'assets/ca745932-969c-4a94-9c0b-b18713e26d5a.jpg', has2: '1', name: 'Нина Северина', role: 'школа массажных методик', kind: 'p', quote: '', about: '' },
+        { photo: 'assets/f51abd29-b759-4d11-8320-5df2dcfb3b65.jpg', shot1: 'assets/dcc324c5-9358-440d-b900-27830916ff86.jpg', shot2: '', has2: '0', name: 'Екатерина Гинзбург', role: 'клиника аппаратной косметологии, СПб', kind: 'p', quote: '', about: '' },
+        { photo: 'assets/81f781f8-9b95-4391-8b67-feaeca9c3ace.jpg', shot1: 'assets/d0b8ee2e-791c-417f-881f-b54774cfa5bd.jpg', shot2: '', has2: '0', name: 'Ирина', role: 'детская студия архитектуры', kind: 'p', quote: '', about: '' },
+        { photo: 'assets/6fea0e9a-1077-45f2-bb08-8e7aa74ab708.jpg', shot1: 'assets/14b84cc8-ed1f-4775-bdeb-4802d75e5077.jpg', shot2: '', has2: '0', name: 'Юлия', role: 'Музей Русской Сказки', kind: 'p', quote: '', about: '' },
+        { photo: '', shot1: 'assets/1b5f3688-8074-4ae4-9443-b9eca2d6555b.jpg', shot2: '', has2: '0', name: 'Ангелина Фоминых', role: '', kind: 'p', quote: '', about: '' },
+        { photo: '', shot1: 'assets/49a8a957-e0ac-4e4b-93fb-37727d4ec0ed.jpg', shot2: '', has2: '0', name: 'Александра', role: 'женский клуб', kind: 'p', quote: '', about: '' },
+        { photo: 'assets/0b0d8c10-124e-48ff-adb6-186a3789b331.jpg', shot1: '', shot2: '', has2: '0', name: 'Филипп Помазков', role: 'пластический хирург, drpomazkov.ru', kind: 'q', quote: '«Колоссальную работу ты проделала, прям реально титаническую. Получилось всё даже лучше, чем я себе это представлял.»', about: 'отзыв о работе Тины Димантовой, руководителя разработки' },
+        { photo: 'assets/fd05c07a-3adf-4d55-a301-99180db3a735.jpg', shot1: '', shot2: '', has2: '0', name: 'Анастасия и Владимир', role: 'основатели Enduro Energy', kind: 'q', quote: '«Всё сделала быстро, постоянно на связи, разобралась в теме проката. Я счастлива!»', about: 'отзыв о работе Тины Димантовой, руководителя разработки' },
+        { photo: 'assets/c5db68fd-69f7-4732-a9b8-add40b16c375.jpg', shot1: '', shot2: '', has2: '0', name: 'Илона Либерман', role: 'архитектор и дизайнер интерьеров, libermanstudio.ru', kind: 'q', quote: '«Супер, я тогда напишу тебе на неделе, мне прям очень нравится.»', about: 'отзыв о работе Тины Димантовой, руководителя разработки' },
+        { photo: 'assets/5ecd8bf1-1cb7-4d7c-bb09-392f7e9338cb.jpg', shot1: '', shot2: '', has2: '0', name: 'Алина', role: 'прокат лодок на Ладоге', kind: 'q', quote: '«Добрый день, хотелось бы поблагодарить за рабочий сайт, продажи у мужа выросли, проверено при опросе клиентов.»', about: 'отзыв о работе Тины Димантовой, руководителя разработки' },
       ],
 
       testimonials: [
