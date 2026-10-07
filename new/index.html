@@ -664,6 +664,25 @@
   [data-money]:hover svg{transform:scale(1.03)} [data-money] svg{transition:transform .3s}
   img[src=""]{display:none !important}
   [data-removed]{display:none !important}
+  @media (max-width:760px){
+    [data-mob-hide]{display:none !important}
+    section#team{padding-top:30px !important;padding-bottom:34px !important}
+    [data-stats]{grid-template-columns:repeat(2,1fr) !important}
+    [data-stats] > div{padding:12px 12px !important}
+    [data-stats] > div > div:last-child{font-size:15px !important}
+    #team > div > div[data-team-grid][data-team-grid]{grid-template-columns:repeat(3,1fr) !important;gap:16px 10px !important}
+    #team [data-team-grid] img{width:84px !important;box-shadow:none !important}
+    #team [data-team-grid] h4{font-size:13px !important;margin-top:8px !important}
+    #team [data-team-grid] h4 + div{font-size:10px !important;letter-spacing:0 !important;text-transform:lowercase !important;line-height:1.35 !important;overflow-wrap:anywhere !important}
+    img[data-founder]{width:140px !important;height:140px !important;max-height:none !important;aspect-ratio:1 !important;border-radius:50% !important;margin:0 auto}
+    a[data-rec]{flex:0 0 150px !important}
+    [data-rec-photo]{aspect-ratio:auto !important;background:none !important;padding:16px 0 0;display:flex;justify-content:center}
+    [data-rec-photo] img{width:92px !important;height:92px !important;border-radius:50%}
+    a[data-rec] > div:last-child{padding:12px 12px 16px !important;text-align:center}
+    [data-case-detail]{display:none !important}
+    [data-case-detail].open{display:block !important;position:fixed;inset:0;z-index:8500;margin:0 !important;border-radius:0 !important;overflow:auto !important;opacity:1 !important;transform:none !important}
+    [data-case-detail].open [data-case-close]{display:block !important}
+  }
   [data-rvphoto=""]{display:none !important}
   [data-q=""],[data-shots=""]{display:none !important}
   [data-kind="q"]{flex:0 0 26% !important;background:none !important;align-items:flex-start !important;padding-top:18px}
@@ -887,7 +906,7 @@
 
           <!-- numbered stat band -->
           <div data-hero="" style="margin-top:28px;font-size:15px;letter-spacing:0;text-transform:none;color:#CDA892">СНГ · Израиль · Мир</div>
-          <div data-hero="" style="margin-top:16px;border-top:1px solid rgba(176,137,104,.4);border-bottom:1px solid rgba(176,137,104,.4);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
+          <div data-hero="" data-stats="" style="margin-top:16px;border-top:1px solid rgba(176,137,104,.4);border-bottom:1px solid rgba(176,137,104,.4);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
             <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="4">
               <div style="padding:20px 18px;border-right:1px solid rgba(176,137,104,.22);text-align:left">
                 <div style="font-family:'Commissioner';font-size:11px;letter-spacing:2px;color:#B08968;font-weight:600">{{ s.n }}</div>
@@ -1075,7 +1094,8 @@
       </div>
 
       <!-- expanding detail panel for active case -->
-      <div data-reveal="" style="background:#FBF6EC;border:1px solid rgba(176,137,104,.34);border-radius:14px;overflow:hidden;box-shadow:0 20px 48px rgba(58,36,24,.1);margin-top:16px">
+      <div data-reveal="" data-case-detail="" style="background:#FBF6EC;border:1px solid rgba(176,137,104,.34);border-radius:14px;overflow:hidden;box-shadow:0 20px 48px rgba(58,36,24,.1);margin-top:16px">
+        <button type="button" data-case-close="" aria-label="Закрыть" style="display:none;position:sticky;top:0;margin-left:auto;z-index:5;width:46px;height:46px;border:none;background:#420A17;color:#F3EBD8;font-size:26px;line-height:1;cursor:pointer;border-radius:0 0 0 12px">×</button>
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,3vw,40px);padding:clamp(26px,3.4vw,40px) clamp(28px,4vw,48px);background:linear-gradient(150deg,#FBF6EC,#F0E4CE);border-bottom:1px solid rgba(176,137,104,.34)">
           <div style="flex:1 1 300px;min-width:0">
             <div style="font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#8A6B4F;font-weight:700">кейс · {{ activeCase.title }}</div>
@@ -1322,7 +1342,7 @@
       <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4.5vw,72px);align-items:center;position:relative">
         <!-- фото Рейчел убрано по правкам 29.09; слева – Катя -->
         <div data-reveal="" style="flex:1 1 380px;min-width:0;position:relative;display:flex;justify-content:center;align-items:flex-end;align-self:stretch">
-          <img src="assets/76a7ab0a-0662-421f-8fb0-fc14165bf431.jpg" alt="Катерина Гуревич" style="width:100%;max-width:500px;max-height:66vh;aspect-ratio:4/5;object-fit:cover;object-position:40% 30%;display:block;border-radius:6px;box-shadow:0 22px 46px rgba(58,36,24,.25)">
+          <img data-founder="" src="assets/76a7ab0a-0662-421f-8fb0-fc14165bf431.jpg" alt="Катерина Гуревич" style="width:100%;max-width:500px;max-height:66vh;aspect-ratio:4/5;object-fit:cover;object-position:40% 30%;display:block;border-radius:6px;box-shadow:0 22px 46px rgba(58,36,24,.25)">
         </div>
 
         <div data-reveal="" style="flex:1 1 520px;max-width:700px;min-width:0;position:relative;z-index:2">
@@ -1347,7 +1367,7 @@
       </div>
 
       <!-- коллаж ч/б: работа с клиентами и сертификаты (фото с клиентами добавим, когда пришлют) -->
-      <div data-collage="" style="position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(6px,1.4vw,18px);margin-top:clamp(50px,7vw,90px)">
+      <div data-collage="" data-mob-hide="" style="position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(6px,1.4vw,18px);margin-top:clamp(50px,7vw,90px)">
         <figure data-reveal="" style="margin:0;background:#fff;padding:8px 8px 26px;box-shadow:0 16px 32px rgba(58,36,24,.22);transform:rotate(-5deg) translateY(8px);width:clamp(150px,15vw,200px)"><img src="assets/0608ac47-d62e-4f02-8551-e4c7a64209c6.jpg" alt="Работа с клиентом онлайн" style="width:100%;display:block;filter:grayscale(1) contrast(1.05)"></figure>
         <figure data-reveal="" style="margin:0;background:#fff;padding:8px 8px 26px;box-shadow:0 16px 32px rgba(58,36,24,.22);transform:rotate(3deg) translateY(-16px);width:clamp(130px,12vw,170px)"><img src="assets/46bb67a2-0027-4e7c-9423-81e4bd98793b.jpg" alt="Катерина с клиентом" style="width:100%;display:block;filter:grayscale(1) contrast(1.05)"></figure>
         <figure data-reveal="" style="margin:0;background:#fff;padding:8px 8px 26px;box-shadow:0 16px 32px rgba(58,36,24,.22);transform:rotate(-2deg) translateY(10px);width:clamp(190px,19vw,250px)"><img src="assets/efe9395f-cc70-4d50-bb74-e402d7e485ba.jpg" alt="Работа команды" style="width:100%;display:block;filter:grayscale(1) contrast(1.05)"></figure>
@@ -1410,7 +1430,7 @@
   </section>
 
   <!-- ===================== PEARL REVEAL ===================== -->
-  <section data-pearl-sec="" data-screen-label="Философия" style="position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 28%,#5A1422,#2E0710 72%);padding:clamp(44px,6vh,70px) 28px;display:flex;flex-direction:column;align-items:center;text-align:center">
+  <section data-pearl-sec="" data-mob-hide="" data-screen-label="Философия" style="position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 28%,#5A1422,#2E0710 72%);padding:clamp(44px,6vh,70px) 28px;display:flex;flex-direction:column;align-items:center;text-align:center">
     <div data-reveal="" style="font-family:'Commissioner';font-size:15px;letter-spacing:0;text-transform:none;color:#CFA98C;font-weight:600;margin-bottom:clamp(30px,5vh,60px);max-width:560px;line-height:1.7">Мы&nbsp;не&nbsp;конвейерное агентство с&nbsp;шаблонным&nbsp;подходом</div>
     <div style="position:relative;width:min(230px,60vw);aspect-ratio:1;margin-bottom:clamp(30px,5vh,60px)">
       <div data-pearl-glow="" style="position:absolute;left:50%;top:52%;width:72%;height:72%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,246,232,.75),rgba(255,246,232,0) 68%);opacity:0;will-change:opacity"></div>
@@ -1497,8 +1517,8 @@
       <div style="position:relative;padding:0 clamp(24px,6vw,72px)">
         <div data-reveal="" data-review-rail="" style="display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 20px;-webkit-overflow-scrolling:touch">
           <sc-for list="{{ reviews }}" as="rv">
-            <a href="{{ rv.link }}" target="_blank" rel="noopener" style="flex:0 0 clamp(200px,19%,235px);scroll-snap-align:start;text-decoration:none;display:flex;flex-direction:column;background:#FBF6EC;border:1px solid rgba(58,36,24,.1);border-radius:14px;overflow:hidden;box-shadow:0 14px 30px rgba(58,36,24,.1);transition:transform .3s,box-shadow .3s;min-width:0" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px rgba(58,36,24,.18)">
-              <div style="aspect-ratio:4/5;background:#EADFCB;overflow:hidden"><img src="{{ rv.photo }}" alt="{{ rv.name }}" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <a data-rec="" href="{{ rv.link }}" target="_blank" rel="noopener" style="flex:0 0 clamp(200px,19%,235px);scroll-snap-align:start;text-decoration:none;display:flex;flex-direction:column;background:#FBF6EC;border:1px solid rgba(58,36,24,.1);border-radius:14px;overflow:hidden;box-shadow:0 14px 30px rgba(58,36,24,.1);transition:transform .3s,box-shadow .3s;min-width:0" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px rgba(58,36,24,.18)">
+              <div data-rec-photo="" style="aspect-ratio:4/5;background:#EADFCB;overflow:hidden"><img src="{{ rv.photo }}" alt="{{ rv.name }}" style="width:100%;height:100%;object-fit:cover;display:block"></div>
               <div style="padding:18px 20px 22px;min-width:0">
                 <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:19px;color:#3A2418;overflow-wrap:break-word">{{ rv.name }}</div>
                 <div style="font-size:12.5px;color:#6b5a45;margin-top:2px;overflow-wrap:break-word">{{ rv.role }}</div>
@@ -1657,7 +1677,7 @@
             <a href="mailto:gurevichsmm@gmail.com" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">gurevichsmm@gmail.com</a>
             <a href="#final" data-lead="" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none;white-space:nowrap;flex-shrink:0">Поговорить о&nbsp;проекте ↗</a>
           </div>
-          <div>
+          <div data-removed="языки убраны 07.10, пока нет перевода">
             <b style="display:block;color:#F3EBD8;margin-bottom:12px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:500">Языки</b>
             <span style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6">Русский</span>
             <span style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6">עברית</span>
@@ -2196,6 +2216,17 @@ class Component extends DCLogic {
         target.style.boxShadow = '0 0 0 2px rgba(207,169,140,.5)';
         setTimeout(function () { target.style.background = 'transparent'; target.style.boxShadow = 'none'; }, 1400);
       });
+    });
+
+    // ---- кейсы на телефоне: подробности во всплывающем окне ----
+    document.addEventListener('click', function (e) {
+      const det = document.querySelector('[data-case-detail]');
+      if (!det) return;
+      if (e.target.closest && e.target.closest('[data-case-close]')) { det.classList.remove('open'); document.body.style.overflow = ''; return; }
+      const card = e.target.closest && e.target.closest('[data-case-grid] button');
+      if (card && window.matchMedia('(max-width:760px)').matches) {
+        setTimeout(function () { det.classList.add('open'); det.scrollTop = 0; document.body.style.overflow = 'hidden'; }, 30);
+      }
     });
 
     // ---- листание доказательств в кейсе ----
