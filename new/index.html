@@ -666,6 +666,61 @@
   [data-removed]{display:none !important}
   @media (max-width:760px){
     [data-mob-hide]{display:none !important}
+    /* первый экран на телефоне: всё в один экран (правки 07.10) */
+    [data-hdr]{padding:12px 16px 4px !important}
+    [data-hdr] [data-cursor-btn]{display:none !important}
+    [data-hdr] > a:first-child span:first-child{font-size:19px !important}
+    [data-hdr] > a:first-child span:last-child{font-size:8px !important;letter-spacing:1.4px !important;margin-top:3px !important}
+    [data-hero-top]{padding:0 0 10px !important;gap:6px !important;min-height:0 !important}
+    [data-hero-top] [data-hero] h1{font-size:64px !important}
+    [data-hero-top] span[data-gold]{font-size:19px !important}
+    [data-hero-top] span[style*="больше"], [data-hero-top] span[style*="Forum"][style*="uppercase"]{font-size:17px !important}
+    [data-hero-top] [data-hero][style*="Страшно"], [data-hero-top] div[data-hero][style*="Forum"]{font-size:26px !important;margin-top:6px !important}
+    [data-hero-top] p[data-hero]{font-size:14px !important;margin-top:10px !important}
+    [data-hero-top] div[data-hero][style*="Wix"]{font-size:20px !important;margin-top:4px !important}
+    [data-phone-wrap]{zoom:.68}
+    /* блоки в экран телефона (07.10) */
+    [data-approach-grid],[data-why-grid],[data-hscroll]{display:flex !important;overflow-x:auto !important;scroll-snap-type:x mandatory;gap:12px !important;padding:2px 2px 10px;margin-right:-28px;padding-right:28px;scrollbar-width:none}
+    [data-approach-grid] > *,[data-why-grid] > *,[data-hscroll] > *{flex:0 0 84% !important;scroll-snap-align:start;min-width:0}
+    #why [data-stagger]{transform:none !important}
+    [data-cond]{max-width:150px !important;min-width:0 !important;margin:0 auto !important}
+    [data-hero2] [data-formulas-wrap]{max-width:270px !important;margin:0 auto}
+    [data-hero2] [data-h2row] > div > div{font-size:14.5px !important}
+    [data-offer]{font-size:19px !important;margin-top:14px !important}
+    #formats-details img[data-sketch]{display:none !important}
+    #formats-details{padding-top:24px !important;margin-top:24px !important}
+    [data-clamp]:not(.open) > p:nth-of-type(n+3), [data-clamp]:not(.open) > div:last-child{display:none !important}
+    [data-more]{display:inline-block !important}
+    [data-clamp].open [data-more="about"]{display:none !important}
+    #faq:not(.open) details:nth-of-type(n+7){display:none !important}
+    #faq.open [data-more="faq"]{display:none !important}
+    [data-more="faq"]{display:block !important}
+    figure[data-final2]{display:none !important}
+    #final figure{width:min(260px,80%) !important}
+    section#approach,section#cases,section#formats,section#about,section#why,section#reviews,section#faq,section#testimonials,section#final{padding-top:34px !important;padding-bottom:34px !important}
+    #cases [data-case-grid] > button{flex:0 0 78% !important}
+    #cases h2{margin-bottom:0 !important}
+    #cases > div > div:first-child{margin-bottom:18px !important}
+    [data-hero2] [data-formulas-wrap]{max-width:230px !important}
+    [data-cond]{display:none !important}
+    #faq:not(.open) details:nth-of-type(n+6){display:none !important}
+    #faq summary{padding:12px 16px !important}
+    #final figure{width:min(200px,60%) !important}
+    #final [data-reveal]{min-height:0 !important}
+    #testimonials [data-review-card]{height:440px !important}
+    [data-hero2] [data-formulas-wrap]{max-width:200px !important}
+    [data-hero2] [data-h2row]{gap:12px !important;margin-top:6px !important}
+    [data-hero2] > p:first-child{font-size:19px !important}
+    #formats-details + div, #formats-details ~ div[data-reveal]{margin-top:18px !important;padding-top:18px !important}
+    #formats p[style*="Meta"]{margin-top:12px !important}
+    #faq:not(.open) details:nth-of-type(n+5){display:none !important}
+    #faq h2{margin-top:0 !important}
+    #final figure{width:min(150px,45%) !important}
+    #final h2{font-size:28px !important}
+    #team p{display:none !important}
+    #team [data-team-grid]{margin-top:16px !important}
+    #why > div[style*="position:absolute"]{display:none !important}
+  
     section#team{padding-top:30px !important;padding-bottom:34px !important}
     [data-stats]{grid-template-columns:repeat(2,1fr) !important}
     [data-stats] > div{padding:12px 12px !important}
@@ -1236,7 +1291,7 @@
         <img data-sketch="" src="assets/edfb024b-f0a7-463e-8acc-c13478ae3211.svg" alt="" style="height:clamp(130px,14vw,190px);width:auto;flex:0 0 auto">
       </div>
 
-      <div data-svc-grid="" style="display:grid;gap:18px;grid-template-columns:repeat(3,1fr)">
+      <div data-svc-grid="" data-hscroll="" style="display:grid;gap:18px;grid-template-columns:repeat(3,1fr)">
         <div data-reveal="" style="background:rgba(243,235,216,.07);border:1px solid rgba(207,169,140,.28);border-radius:14px;padding:clamp(26px,3vw,34px);display:flex;flex-direction:column;min-width:0">
           <div style="font-family:'Wix Madefor Display',sans-serif;font-size:15px;color:#CFA98C;font-weight:600;margin-bottom:26px">01</div>
           <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(21px,2.2vw,26px);color:#F3EBD8;margin:0 0 14px">Консалтинг</h3>
@@ -1263,7 +1318,7 @@
           <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(24px,2.6vw,32px);line-height:1.15;color:#F3EBD8;margin:0">Столько участия, сколько нужно&nbsp;бизнесу</h3>
           <img data-sketch="" src="assets/ff531f60-8da3-46f0-82d8-c55ca6b31821.svg" alt="" style="width:100%;max-width:300px;height:auto;margin-top:14px">
         </div>
-        <div data-svc-grid="" style="display:grid;gap:22px;grid-template-columns:repeat(3,1fr)">
+        <div data-svc-grid="" data-hscroll="" style="display:grid;gap:22px;grid-template-columns:repeat(3,1fr)">
           <div data-reveal="">
             <div style="font-family:'Wix Madefor Display',sans-serif;font-size:13px;color:#CFA98C;font-weight:600;margin-bottom:10px">01</div>
             <h4 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:18px;color:#F3EBD8;margin:0 0 8px">С&nbsp;вашей&nbsp;командой</h4>
@@ -1345,7 +1400,7 @@
           <img data-founder="" src="assets/76a7ab0a-0662-421f-8fb0-fc14165bf431.jpg" alt="Катерина Гуревич" style="width:100%;max-width:500px;max-height:66vh;aspect-ratio:4/5;object-fit:cover;object-position:40% 30%;display:block;border-radius:6px;box-shadow:0 22px 46px rgba(58,36,24,.25)">
         </div>
 
-        <div data-reveal="" style="flex:1 1 520px;max-width:700px;min-width:0;position:relative;z-index:2">
+        <div data-reveal="" data-about-text="" data-clamp="" style="flex:1 1 520px;max-width:700px;min-width:0;position:relative;z-index:2">
           <div style="font-family:'Commissioner';font-size:20px;letter-spacing:0;text-transform:none;color:#8A6B4F;font-weight:500;margin-bottom:16px">Об&nbsp;основателе</div>
           <h3 style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:clamp(30px,4.4vw,56px);line-height:1;color:#420A17;margin:0 0 22px;letter-spacing:-.02em">Катерина Гуревич</h3>
           <p style="font-family:'Commissioner',sans-serif;font-weight:600;font-size:clamp(19px,2.1vw,26px);line-height:1.35;color:#3A2418;margin:0 0 18px">Знаю, как&nbsp;выстроить эффективный маркетинг и&nbsp;в&nbsp;теории,&nbsp;и&nbsp;на&nbsp;практике.</p>
@@ -1354,6 +1409,7 @@
           <p style="font-size:15.5px;color:#5c4c3b;line-height:1.6;margin:0 0 10px">Я&nbsp;считаю, что&nbsp;каждый&nbsp;должен заниматься тем, что&nbsp;получается у&nbsp;него лучше всего. Поэтому я&nbsp;собрала команду сильных специалистов с&nbsp;таким же&nbsp;подходом, как&nbsp;мой, и&nbsp;выстроила агентский формат, где&nbsp;стратегия не&nbsp;остаётся&nbsp;презентацией.</p>
           <p style="font-size:15.5px;color:#5c4c3b;line-height:1.6;margin:0 0 18px">У&nbsp;меня редкая комбинация аналитических и&nbsp;творческих навыков, отшлифованных долгой «работой руками» почти во&nbsp;всех аспектах интернет-⁠маркетинга: от&nbsp;аналитики и&nbsp;стратегии до&nbsp;контента, рекламы и&nbsp;системных&nbsp;процессов.</p>
 
+          <button type="button" data-more="about" style="display:none;margin:4px 0 16px;border:none;background:none;color:#420A17;font:600 15px Commissioner,sans-serif;text-decoration:underline;cursor:pointer;padding:0">Читать полностью</button>
           <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px">
             <span style="font-family:'Commissioner';font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#420A17;background:#F0E4CE;border-radius:40px;padding:9px 16px">В&nbsp;маркетинге с&nbsp;2019</span>
             <span style="font-family:'Commissioner';font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#420A17;background:#F0E4CE;border-radius:40px;padding:9px 16px">35+ ниш</span>
@@ -1556,6 +1612,7 @@
         </details>
       </sc-for>
       </div>
+      <button type="button" data-more="faq" style="display:none;margin:10px auto 0;border:1.5px solid #420A17;background:none;color:#420A17;font:600 15px Commissioner,sans-serif;border-radius:40px;padding:12px 26px;cursor:pointer">Все вопросы</button>
       <div data-reveal="" style="margin-top:20px;background:#420A17;color:#F3EBD8;border-radius:12px;padding:clamp(24px,3vw,34px) clamp(24px,3.4vw,40px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
         <p style="font-family:'Commissioner',sans-serif;font-weight:600;font-size:clamp(18px,2vw,23px);line-height:1.35;margin:0;flex:1 1 380px;min-width:0">Не&nbsp;нашли ответ на&nbsp;свой&nbsp;вопрос? Запишитесь на&nbsp;консультацию с&nbsp;маркетологом</p>
         <a href="#final" data-lead="" style="background:#B08968;color:#420A17;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:17px 36px;border-radius:2px;white-space:nowrap" style-hover="background:#c79c78">Записаться</a>
@@ -1648,7 +1705,7 @@
           <figure style="margin:0;width:min(400px,82%);transform:rotate(-2deg);align-self:flex-start">
             <img src="assets/dd85565d-8b46-45d5-a66e-f494f1530f90.jpg" alt="Созвон с клиентом" style="width:100%;display:block;border-radius:4px;box-shadow:0 26px 46px rgba(0,0,0,.4);border:8px solid #F3EBD8">
           </figure>
-          <figure style="margin:0;position:absolute;right:0;bottom:-30px;width:min(190px,40%);transform:rotate(4deg)">
+          <figure data-final2="" style="margin:0;position:absolute;right:0;bottom:-30px;width:min(190px,40%);transform:rotate(4deg)">
             <img src="assets/46bb67a2-0027-4e7c-9423-81e4bd98793b.jpg" alt="Консультация с клиентом" style="width:100%;display:block;border-radius:4px;box-shadow:0 26px 46px rgba(0,0,0,.45);border:8px solid #F3EBD8">
           </figure>
         </div>
@@ -2216,6 +2273,14 @@ class Component extends DCLogic {
         target.style.boxShadow = '0 0 0 2px rgba(207,169,140,.5)';
         setTimeout(function () { target.style.background = 'transparent'; target.style.boxShadow = 'none'; }, 1400);
       });
+    });
+
+    // ---- «Читать полностью» и «Все вопросы» на телефоне ----
+    document.addEventListener('click', function (e) {
+      const b = e.target.closest && e.target.closest('[data-more]');
+      if (!b) return;
+      const t = b.getAttribute('data-more') === 'faq' ? document.getElementById('faq') : b.closest('[data-clamp]');
+      if (t) t.classList.add('open');
     });
 
     // ---- кейсы на телефоне: подробности во всплывающем окне ----
