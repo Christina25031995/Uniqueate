@@ -1697,9 +1697,9 @@
         <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap">
           <a href="#final" data-lead="" style="background:#F3EBD8;color:#420A17;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:17px 32px;border-radius:2px" style-hover="background:#fff">Записаться на&nbsp;консультацию</a>
           <a href="https://t.me/katyagurevich" target="_blank" rel="noopener" style="background:#B08968;color:#420A17;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:17px 32px;border-radius:2px" style-hover="background:#c79c78">Написать в&nbsp;Telegram</a>
-          <a data-removed="email-кнопка убрана 01.10" href="mailto:gurevichsmm@gmail.com" style="background:transparent;color:#F3EBD8;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:15.5px 30px;border-radius:2px;border:1.5px solid rgba(243,235,216,.6)" style-hover="background:rgba(243,235,216,.12)">Написать на&nbsp;email</a>
+          <a data-removed="email-кнопка убрана 01.10" href="mailto:unikatemarketing@yandex.com" style="background:transparent;color:#F3EBD8;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:15.5px 30px;border-radius:2px;border:1.5px solid rgba(243,235,216,.6)" style-hover="background:rgba(243,235,216,.12)">Написать на&nbsp;email</a>
         </div>
-        <div style="font-size:13px;color:#CDA892;margin-top:16px">Telegram @katyagurevich · gurevichsmm@gmail.com</div>
+        <div style="font-size:13px;color:#CDA892;margin-top:16px">Telegram @katyagurevich · unikatemarketing@yandex.com</div>
         </div>
         <div data-reveal="" style="flex:1 1 340px;min-width:260px;position:relative;min-height:320px;display:flex;justify-content:center">
           <figure style="margin:0;width:min(400px,82%);transform:rotate(-2deg);align-self:flex-start">
@@ -1731,7 +1731,7 @@
           <div>
             <b style="display:block;color:#F3EBD8;margin-bottom:12px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:500">Контакты</b>
             <a href="https://t.me/katyagurevich" target="_blank" rel="noopener" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">Telegram @katyagurevich</a>
-            <a href="mailto:gurevichsmm@gmail.com" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">gurevichsmm@gmail.com</a>
+            <a href="mailto:unikatemarketing@yandex.com" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none">unikatemarketing@yandex.com</a>
             <a href="#final" data-lead="" style="display:block;font-size:14px;margin-bottom:8px;color:#D7C8B6;text-decoration:none;white-space:nowrap;flex-shrink:0">Поговорить о&nbsp;проекте ↗</a>
           </div>
           <div data-removed="языки убраны 07.10, пока нет перевода">
@@ -2061,7 +2061,7 @@ class Component extends DCLogic {
         const d = new FormData(form);
         const body = 'Имя: ' + d.get('name') + '\nТелефон: ' + d.get('phone') + '\nПочта: ' + d.get('email') + '\nTelegram: ' + d.get('tg') + '\nСогласие на рассылку: ' + (d.get('ads') ? 'да' : 'нет');
         // TODO: подключить отправку в Telegram/CRM; пока заявка уходит письмом
-        window.location.href = 'mailto:gurevichsmm@gmail.com?subject=' + encodeURIComponent('Заявка с сайта UniKate') + '&body=' + encodeURIComponent(body);
+        window.location.href = 'mailto:unikatemarketing@yandex.com?subject=' + encodeURIComponent('Заявка с сайта UniKate') + '&body=' + encodeURIComponent(body);
         m.querySelector('[data-lead-form]').style.display = 'none';
         m.querySelector('[data-lead-ok]').style.display = 'block';
         form.reset();
