@@ -95,7 +95,7 @@
               
               <path data-dc-tpl="80" d="M44 74 Q44 62 56 62 L204 62 Q216 62 216 74 L228 178 Q229 190 217 190 L43 190 Q31 190 32 178 Z" fill="url(#mmBody)" stroke="url(#mmGold)" stroke-width="2"></path>
               <rect data-dc-tpl="81" x="74" y="84" width="112" height="36" rx="5" fill="#140307" stroke="#B08968" stroke-width="1.2"></rect>
-              <text data-dc-tpl="82" data-mm-count="" x="130" y="109" text-anchor="middle" font-size="19" font-family="ui-monospace,Menlo,monospace" fill="#F6DFA8" letter-spacing="1">066 317 ₽</text>
+              <text data-dc-tpl="82" data-mm-count="" x="130" y="109" text-anchor="middle" font-size="19" font-family="ui-monospace,Menlo,monospace" fill="#F6DFA8" letter-spacing="1">068 234 ₽</text>
               <circle data-dc-tpl="83" cx="88" cy="146" r="7" fill="#B08968"></circle><circle data-dc-tpl="84" cx="110" cy="146" r="7" fill="none" stroke="#B08968" stroke-width="1.4"></circle>
               <rect data-dc-tpl="85" x="150" y="140" width="46" height="12" rx="6" fill="none" stroke="#B08968" stroke-width="1.4"></rect>
               <rect data-dc-tpl="86" x="56" y="168" width="148" height="8" rx="4" fill="#140307"></rect>
@@ -3717,7 +3717,9 @@ class Component extends DCLogic {
         '<label style="' + lbl + '">Telegram<input name="tg" required placeholder="@username" style="' + fld + '"></label>' +
         '<label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#5c4c3b;margin-top:22px;line-height:1.45"><input type="checkbox" name="pd" required style="margin-top:3px;accent-color:#420A17"><span>Даю <a href="soglasie/" target="_blank" style="color:#420A17">согласие на обработку персональных данных</a> и принимаю <a href="privacy/" target="_blank" style="color:#420A17">политику конфиденциальности</a></span></label>' +
         '<label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#5c4c3b;margin-top:10px;line-height:1.45"><input type="checkbox" name="ads" style="margin-top:3px;accent-color:#420A17">Согласен(на) получать информационные и рекламные материалы</label>' +
+        '<input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
         '<div data-err style="display:none;color:#A1262E;font-size:13px;margin-top:14px">Все поля обязательны, заполните, пожалуйста.</div>' +
+        '<div data-send-err style="display:none;color:#A1262E;font-size:13px;margin-top:14px;line-height:1.5">Не\u00a0получилось отправить заявку. Попробуйте ещё раз или напишите нам на\u00a0<a href="mailto:unikatemarketing@yandex.com" style="color:#420A17">unikatemarketing@yandex.com</a></div>' +
         '<button type="submit" style="margin-top:22px;width:100%;border:none;background:#420A17;color:#F3EBD8;font:600 16px Commissioner,system-ui,sans-serif;letter-spacing:0;text-transform:none;padding:15px 30px;border-radius:40px;cursor:pointer">Отправить заявку</button>' +
         '</div>' +
         '<div data-lead-ok style="display:none;text-align:center;padding:30px 0"><h3 style="font-family:\'Wix Madefor Display\',sans-serif;font-weight:700;font-size:28px;color:#420A17;margin:0 0 10px">Спасибо!</h3><p style="font-size:15px;color:#5c4c3b;margin:0">Заявка принята. Свяжемся с вами в ближайшее время.</p></div>' +
@@ -3746,12 +3748,19 @@ class Component extends DCLogic {
         m.querySelector('[data-err]').style.display = ok ? 'none' : 'block';
         if (!ok) return;
         const d = new FormData(form);
-        const body = 'Имя: ' + d.get('name') + '\nТелефон: ' + d.get('phone') + '\nПочта: ' + d.get('email') + '\nTelegram: ' + d.get('tg') + '\nСогласие на рассылку: ' + (d.get('ads') ? 'да' : 'нет');
-        // TODO: подключить отправку в Telegram/CRM; пока заявка уходит письмом
-        window.location.href = 'mailto:unikatemarketing@yandex.com?subject=' + encodeURIComponent('Заявка с сайта UniKate') + '&body=' + encodeURIComponent(body);
-        m.querySelector('[data-lead-form]').style.display = 'none';
-        m.querySelector('[data-lead-ok]').style.display = 'block';
-        form.reset();
+        const btn = form.querySelector('button[type=submit]');
+        const se = m.querySelector('[data-send-err]');
+        se.style.display = 'none';
+        btn.disabled = true; btn.textContent = 'Отправляем…';
+        fetch('api/lead.php', { method: 'POST', body: d })
+          .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || !j.ok) throw new Error('send'); }); })
+          .then(function () {
+            m.querySelector('[data-lead-form]').style.display = 'none';
+            m.querySelector('[data-lead-ok]').style.display = 'block';
+            form.reset();
+          })
+          .catch(function () { se.style.display = 'block'; })
+          .then(function () { btn.disabled = false; btn.textContent = 'Отправить заявку'; });
       });
     }
 
